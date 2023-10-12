@@ -1,38 +1,70 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap');
+
+.App{
+  font-family: 'Mulish', sans-serif;
+}
+#banner, #footer{
+  background-color: #f4f1e9;
+}
+hr{
+  color: #e7ab3d;
+  width: 75px;
+  border: 2px solid #e7ab3d;
+  opacity: 100;
+}
+.btn-orange{
+  background-color: #e7ab3d;
+  color: #f4f1e9;
+  font-weight: 700;
+  padding: 10px 20px;
+  border: none;
+}
+.price{
+	color: #e7ab3d;
+	font-weight: 700;
+	font-size: 24px;
+	margin-bottom: 0;
+}
+span{
+	color: #b2b2b2;
+	font-size: 12px;
+}
+/* categories */
+.cat1 {
+	text-align: center;
+	position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.overlay {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 10px 20px;
+	border-radius: 2px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.text {
+	color: #252525;
+	font-size: 24px;
+	font-weight: 700;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+i {
+  font-size: 18px;
+  color: #e7ab3d;
 }
-
-.App-link {
-  color: #61dafb;
+.icon-text{
+  font-size: 18px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.shipping{
+  border: 2px solid #f3f4f0;
+}
+.shipping:not(:last-child){
+  border-right: 1px solid #f3f4f0;
+}
+.shipping i{
+  font-size: 36px;
+  margin-right: 20px;
 }
