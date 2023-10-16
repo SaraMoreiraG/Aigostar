@@ -1,31 +1,25 @@
-import Navbar from './components/NavBar/navbar';
-import Home from './components/home';
-import Categories from './components/categories';
-import Airfryers from './components/airfryers';
-import Banner from './components/banner';
-import Accesories from './components/accesories';
-import Blog from './components/blog';
-import Shipping from './components/shipping';
-import Footer from './components/footer';
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./store/configureStore";
 
-import './App.css';
+import NavBar from "./components/NavBar/NavBar.js"
+import Home from "./components/Home";
+import ProductDetails from "./components/ProductDetails";
+import Footer from "./components/Footer"
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Home />
-      <Categories />
-      <Airfryers />
-      <Banner />
-      <Accesories />
-      <Blog />
-      <Shipping />
-      <Footer />
-      <div className='row text-center py-2'>
-        <span>Web desarrollada por <a href='https://www.linkedin.com/in/sara-moreira-g' target='blank'>SaraMorDev</a></span>
-      </div>
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </Provider>
   );
 }
 
