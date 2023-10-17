@@ -2,7 +2,7 @@ const initialState = {
   airfryers: [
     {
       id: 1,
-      name: "HAYDEN-A",
+      name: "HaydenA",
       price: 56,
 	  imgtable:"https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-table.png",
       description:
@@ -30,11 +30,16 @@ const initialState = {
 		"https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-4.jpg",
 		"https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-5.jpg",
 		"https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-6.jpg",
-	  ]
+	  ],
+	  estadisticas:{
+		puntuacion: 4.8,
+		valoraciones: 11,
+		vendidos: 55
+	  }
     },
     {
       id: 2,
-      name: "HAYDEN-X",
+      name: "HaydenX",
       price: 60,
 	  imgtable:"https://aigostar-img.s3.amazonaws.com/hayden-x/hayden-x-table.png",
       details: {
@@ -64,15 +69,20 @@ const initialState = {
 		"https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-4.jpg",
 		"https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-5.jpg",
 		"https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-6.jpg"
-	  ]
+	  ],
+	  estadisticas:{
+		puntuacion: 4.7,
+		valoraciones: 56,
+		vendidos: 224
+	  }
     },
     {
-      id: 3, // Corregí el id
-      name: "CUBE SMART", // Diferente nombre o detalles, para ilustrar la diferencia
+      id: 3,
+      name: "CubeSmart",
       price: 95,
 	  imgtable:"https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-table.png",
       description:
-        "La freidora de aire le ofrece una experiencia de cocinado totalmente nueva, podrá controlar la freidora desde su móvil, solo hay que conectarla mediante wifi a la aplicación AigoSmart para tener acceso a sus numerosas funciones y facilidades de uso.",
+        "Experiencia de cocinado totalmente nueva, podrás controlar la freidora desde tu móvil. Solo hay que conectarla mediante wifi a la aplicación AigoSmart para tener acceso a sus numerosas funciones y facilidades de uso.",
       details: {
         capacidad: 7,
         comensales: "6-10",
@@ -100,7 +110,12 @@ const initialState = {
 		"https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-4.jpg",
 		"https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-5.jpg",
 		"https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-6.jpg"
-	  ]
+	  ],
+	  estadisticas:{
+		puntuacion: 4.9,
+		valoraciones: 13,
+		vendidos: 47
+	  }
     },
   ],
   accesories: [
@@ -110,31 +125,51 @@ const initialState = {
 		price: 15,
 		thumbnails: [
 			"https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1.jpg"
-		]
+		],
+		estadisticas:{
+			puntuacion: 4.7,
+			valoraciones: 95,
+			vendidos: 317
+		  }
 	},
 	{
-		id: 1,
+		id: 2,
 		name: 'Bandeja',
 		price: 15,
 		thumbnails: [
 			"https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja1.jpg"
-		]
+		],
+		estadisticas:{
+			puntuacion: 4.9,
+			valoraciones: 779,
+			vendidos: +4000
+		  }
 	},
 	{
-		id: 1,
+		id: 3,
 		name: 'Kit2',
 		price: 15,
 		thumbnails: [
 			"https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2.jpg"
-		]
+		],
+		estadisticas:{
+			puntuacion: 4.7,
+			valoraciones: 95,
+			vendidos: 317
+		  }
 	},
 	{
-		id: 1,
+		id: 4,
 		name: 'Pulverizador',
 		price: 15,
 		thumbnails: [
 			"https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-pulverizador/pulverizador.jpg"
-		]
+		],
+		estadisticas:{
+			puntuacion: 4.8,
+			valoraciones: 5,
+			vendidos: 54
+		  }
 	}
   ],
   cart: [],
