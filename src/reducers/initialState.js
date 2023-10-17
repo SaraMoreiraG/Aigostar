@@ -1,7 +1,7 @@
 const initialState = {
   airfryers: [
     {
-      id: 1,
+      id: 0,
       name: "HaydenA",
       price: 56,
 	  imgtable:"https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-table.png",
@@ -38,7 +38,7 @@ const initialState = {
 	  }
     },
     {
-      id: 2,
+      id: 1,
       name: "HaydenX",
       price: 60,
 	  imgtable:"https://aigostar-img.s3.amazonaws.com/hayden-x/hayden-x-table.png",
@@ -77,7 +77,7 @@ const initialState = {
 	  }
     },
     {
-      id: 3,
+      id: 2,
       name: "CubeSmart",
       price: 95,
 	  imgtable:"https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-table.png",
@@ -120,7 +120,7 @@ const initialState = {
   ],
   accesories: [
 	{
-		id: 1,
+		id: 0,
 		name: 'Kit1',
 		price: 15,
 		thumbnails: [
@@ -133,7 +133,7 @@ const initialState = {
 		  }
 	},
 	{
-		id: 2,
+		id: 1,
 		name: 'Bandeja',
 		price: 15,
 		thumbnails: [
@@ -146,7 +146,7 @@ const initialState = {
 		  }
 	},
 	{
-		id: 3,
+		id: 2,
 		name: 'Kit2',
 		price: 15,
 		thumbnails: [
@@ -159,7 +159,7 @@ const initialState = {
 		  }
 	},
 	{
-		id: 4,
+		id: 3,
 		name: 'Pulverizador',
 		price: 15,
 		thumbnails: [

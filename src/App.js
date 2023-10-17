@@ -4,7 +4,8 @@ import { Provider } from "react-redux";
 import store from "./store/configureStore";
 
 import NavBar from "./components/NavBar/NavBar.js"
-import Home from "./components/Home";
+import Home from "./components/home";
+
 import ProductDetails from "./components/ProductDetails";
 import Footer from "./components/Footer"
 
@@ -15,7 +16,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/:product" element={<ProductDetails />} />
+          <Route path="/:category/:name/:id" element={<ProductDetails />} />
         </Routes>
         <Footer />
       </BrowserRouter>

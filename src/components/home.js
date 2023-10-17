@@ -16,14 +16,14 @@ const Home = () => {
   };
 
   return (
-    <main>
+    <>
       {/******** BANNER ********/}
-      <secction>
+      <section>
         <img
           src="https://aigostar-img.s3.amazonaws.com/banner1.jpg"
           alt="airfryer o freidora de aire"
         />
-      </secction>
+      </section>
       {/******** CATEGORIAS ********/}
       <section className="row p-5 py-5">
         <div
@@ -105,7 +105,7 @@ const Home = () => {
           {airfryers.map((airfryer) => (
             <div key={airfryer.id} className="text-center px-3 col-4">
               <Link
-                to={`/${airfryer.name}/${airfryer.id}`}
+                to={`airfryers/${airfryer.name}/${airfryer.id}`}
                 className="no-underline"
               >
                 <div className="magic-div">
@@ -171,7 +171,7 @@ const Home = () => {
           {accesories.map((accesory) => (
             <div key={accesory.id} className="text-center px-3 col-3">
               <Link
-                to={`/accesorios-airfryer-freidoradeaire/${accesory.name}`}
+                to={`/accesories/${accesory.name}/${accesory.id}`}
                 className="no-underline"
               >
                 <div className="magic-div">
@@ -282,7 +282,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 };
 

@@ -1,16 +1,24 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import ImageGallery from './ImageGallery/ImageGallery';
+import { useParams } from 'react-router-dom';
 
 function ProductDetails() {
-	const airfryers = useSelector((state) => state.airfryers);
+	let { category, name, id, } = useParams();
+	console.log(category, name, id)
+	const categoryData = useSelector((state) => {
+		if (category === "airfryers") {
+		  return state.airfryers;
+		} else if (category === "accesories") {
+		  return state.accesories;
+		}
+		return null; // Maneja el caso en el que no se encuentra la categoría
+	  });
 	useEffect(() => {
-		// Utiliza el identificador para desplazarte a la parte superior de la vista
-		  // Supongamos que deseas desplazarte a la parte superior cuando el id es '2'
-		  window.scrollTo(0, 0); // Esto llevará la vista al principio
+		  window.scrollTo(0, 0);
 	  }, []);
 	return (
-		<ImageGallery images={airfryers[0].thumbnails} />
+		<ImageGallery images={categoryData[id].thumbnails} />
 	);
   }
 
