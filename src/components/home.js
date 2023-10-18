@@ -2,13 +2,15 @@ import React, { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
+import { scrollToSection } from '../utils/scrollUtils';
+
 import "../App.css";
 
 const Home = () => {
   const airfryers = useSelector((state) => state.airfryers);
-  const accesories = useSelector((state) => state.accesories);
+  const accessories = useSelector((state) => state.accessories);
   const airfryersSectionRef = useRef(null);
-  const accesoriesSectionRef = useRef(null);
+  const accessoriesSectionRef = useRef(null);
   const homeSectionRef = useRef(null);
 
   useEffect(() => {
@@ -16,20 +18,15 @@ const Home = () => {
     if (window.location.hash === "#airfryers" && airfryersSectionRef.current) {
       airfryersSectionRef.current.scrollIntoView({ behavior: "smooth" });
     }
-    else if (window.location.hash === "#accesories" && accesoriesSectionRef.current) {
-      accesoriesSectionRef.current.scrollIntoView({ behavior: "smooth" });
+    else if (window.location.hash === "#accessories" && accessoriesSectionRef.current) {
+      accessoriesSectionRef.current.scrollIntoView({ behavior: "smooth" });
     }
     else if (window.location.hash === "#home" && homeSectionRef.current) {
       homeSectionRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, []);
 
-  const scrollToSection = (sectionId) => {
-    const targetSection = document.getElementById(sectionId);
-    if (targetSection) {
-      targetSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+
 
   return (
     <>
@@ -59,7 +56,7 @@ const Home = () => {
         </div>
         <div
           className="magic-div col-4 p-3"
-          onClick={() => scrollToSection("accesories")}
+          onClick={() => scrollToSection("accessories")}
         >
           <img
             src="https://aigostar-img.s3.amazonaws.com/accesorios-freidora-de-aire-cat2.jpg"
@@ -132,7 +129,7 @@ const Home = () => {
                   />
                   <button className="btn-cart right-to-left margin product-card m-0"></button>
                   <div className="text-overlay up-opaccity-effect">
-                    <button className="btn-orange btn-info">+ INFO</button>
+                    <button className="btn-orange">+ INFO</button>
                   </div>
                 </div>
                 <span className="no-underline">{airfryer.name}</span>
@@ -181,13 +178,13 @@ const Home = () => {
           />
         </div>
       </section>
-      {/******** ACCESORIES ********/}
-      <section ref={accesoriesSectionRef} id="accesories" className="row align-items-center p-5 pb-0">
+      {/******** accessories ********/}
+      <section ref={accessoriesSectionRef} id="accessories" className="row align-items-center p-5 pb-0">
         <div className="d-flex">
-          {accesories.map((accesory) => (
+          {accessories.map((accesory) => (
             <div key={accesory.id} className="text-center px-3 col-3">
               <Link
-                to={`/accesories/${accesory.name}/${accesory.id}`}
+                to={`/accessories/${accesory.name}/${accesory.id}`}
                 className="no-underline"
               >
                 <div className="magic-div">
@@ -198,7 +195,7 @@ const Home = () => {
                   />
                   <button className="btn-cart right-to-left product-card m-0"></button>
                   <div className="text-overlay up-opaccity-effect">
-                    <button className="btn-orange btn-info">+ INFO</button>
+                    <button className="btn-orange">+ INFO</button>
                   </div>
                 </div>
                 <span className="no-underline">{accesory.name}</span>

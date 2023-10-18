@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 function AirfryerComparisonTable({ infoClick }) {
   const airfryers = useSelector((state) => state.airfryers);
+
   const handleInfoClick = () => {
-    // Call the infoClick function passed as a prop
     infoClick();
   };
   return (
@@ -16,15 +16,21 @@ function AirfryerComparisonTable({ infoClick }) {
             <th className="align-middle col-2">Modelo</th>
             {airfryers.map((airfryer) => (
               <th key={airfryer.id} className="align-middle col-3">
-                <div>
-                  <img
-                    src={airfryer.imgtable}
-                    alt={airfryer.name}
-                    width="80"
-                    height="80"
-                  />
-                  <p className="m-0">{airfryer.name}</p>
-                </div>
+                <Link
+                  to={`/airfryers/${airfryer.name}/${airfryer.id}`}
+                  className="no-underline"
+                  onClick={handleInfoClick}
+                >
+                  <div>
+                    <img
+                      src={airfryer.imgtable}
+                      alt={airfryer.name}
+                      width="80"
+                      height="80"
+                    />
+                    <p className="m-0 mt-2">{airfryer.name}</p>
+                  </div>
+                </Link>
               </th>
             ))}
           </tr>
@@ -148,7 +154,7 @@ function AirfryerComparisonTable({ infoClick }) {
                   </div>
 
                   <div className="d-flex justify-content-end pe-4 col-5">
-                    <button className="btn-cart with-text"></button>
+                    <button className="btn-cart table-btn"></button>
                   </div>
                 </div>
               </td>

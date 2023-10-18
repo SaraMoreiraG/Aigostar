@@ -3,14 +3,14 @@ const initialState = {
     {
       id: 0,
       name: "HaydenA",
-	  title: "Clothing And Accessory Boutiques For Sale",
+	  title: "Freidora de aire 1500W, Freidora sin aceite con capacidad de 4L, con circulación de aire rápido, temporizador de 30 minutos, temperatura ajustable",
       price: 56,
 	  imgtable:"https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-table.png",
       description:
-        "Con un control manual de doble dial fácil de usar para que pueda realizarlas fácilmente y la comida siempre quede perfecta: Asar, pollo, patatas fritas, verduras y postres.",
+        "Para cocinar en la freidora de aire se requiere poco o nada de aceite, manteniendo un excelente sabor. Cocina con la circulación de aire caliente de 360° a gran velocidad, nuestras freidoras de aire cocinan hasta un 30% más rápido y con un 99% menos de grasa que las freidoras tradicionales de inmersión en aceite.",
       details: {
         capacidad: 4,
-        comensales: "2-4",
+        comensales: "2/4",
         bandejaantihaderente: "Si",
         control: "Dial",
         funciones: "no",
@@ -42,7 +42,7 @@ const initialState = {
       id: 1,
       name: "HaydenX",
       price: 60,
-	  imgtable:"https://aigostar-img.s3.amazonaws.com/hayden-x/hayden-x-table.png",
+	  imgtable:"https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-table.png",
       details: {
         capacidad: 4,
         comensales: "2-4",
@@ -119,7 +119,7 @@ const initialState = {
 	  }
     },
   ],
-  accesories: [
+  accessories: [
 	{
 		id: 0,
 		name: 'Kit1',

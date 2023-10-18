@@ -35,6 +35,7 @@ hr {
 
 .no-underline {
 	text-decoration: none;
+	color: #000;
 }
 
 
@@ -43,7 +44,7 @@ hr {
 	transition: transform 1s ease-in-out;
 }
 
-.accesories:hover .zoom,
+.accessories:hover .zoom,
 .magic-div:hover .zoom,
 .zoom:hover {
 	cursor: pointer;
@@ -66,21 +67,49 @@ hr {
 
 /********* BUTTONS ***********/
 
-.btn-orange {
+.btn-orange,
+.btn-buy {
 	text-transform: uppercase;
-	background-color: #e7ab3d;
-	color: #f4f1e9;
 	font-weight: 700;
 	padding: 10px 20px;
 	border: none;
 	transform: scale3d(1, 1, 1);
 	transition: transform 1s ease-in-out;
+	transition: background-color 1s, color 0.5s ease-in-out;
+
+}
+
+.btn-orange {
+	background-color: #e7ab3d;
+	color: #fff;
+}
+
+.btn-buy {
+	background-color: #f4f1e9;
+	color: #212529;
+}
+
+.fa-credit-card {
+	color: #212529;
+	margin: 10px;
+	transition: color 0.5s ease-in-out;
 }
 
 .btn-orange:hover(:not(.btn-categories)) {
 	background-color: #c89230;
+	transition: background-color 1s ease-in-out;
+
 }
 
+.btn-buy:hover {
+	background-color: #e7ab3d;
+	color: #fff;
+	transition: background-color 1s, color 0.5s ease-in-out;
+}
+.btn-buy:hover .fa-credit-card{
+	color: #fff;
+	transition: color 0.5s ease-in-out;
+}
 .btn-cart {
 	background-image: url('https://aigostar-img.s3.amazonaws.com/icon-basket-black.png');
 	background-size: contain;
@@ -88,21 +117,49 @@ hr {
 	background-color: transparent;
 	border: none;
 }
-.product-card{
+
+.icon-button img {
+	width: 30px;
+	height: 30px;
+	margin-left: 10px;
+}
+
+.moving img {
+	transition: transform 0.7s, color 0.3s;
+}
+
+.moving {
+	transition: transform 0.7s, color 0.3s;
+	width: 250px;
+}
+
+.moving:hover img {
+	transform: translateX(-170px);
+	/* Mueve el ícono hacia la izquierda */
+}
+
+.moving:hover {
+	color: transparent;
+}
+
+.product-card {
 	height: 50px;
 	width: 50px;
 }
-.with-text{
+
+.table-btn {
 	height: 40px;
 	width: 40px;
-	border-radius: 10px 0px ;
+	border-radius: 10px 0px;
 	background-color: #f4f1e9;
 	border: 7px solid #f4f1e9;
 }
-.with-text:hover{
+
+.table-btn:hover {
 	background-color: #e7ab3d;
 	border: 7px solid #e7ab3d;
 }
+
 /*** MAGIC DIV ***/
 .magic-div {
 	position: relative;
@@ -140,10 +197,12 @@ hr {
 	opacity: 1;
 	transition: right 0.5s ease-in-out, opacity 0.7s ease-in-out;
 }
-.magic-div:hover .right-to-left .margin{
+
+.magic-div:hover .right-to-left .margin {
 	right: 15%;
 }
-.magic-div:hover .right-to-left{
+
+.magic-div:hover .right-to-left {
 	right: 0%;
 }
 
@@ -151,7 +210,7 @@ hr {
 	color: #212529;
 	background-color: #f4f1e9;
 	border: 7px solid #f4f1e9;
-	border-radius: 10px 0px ;
+	border-radius: 10px 0px;
 	position: absolute;
 	top: 5%;
 	right: -40px;
@@ -183,7 +242,7 @@ hr {
 	transition: transform 1s ease-in-out;
 }
 
-.text-overlay.up-effect{
+.text-overlay.up-effect {
 	top: 90%;
 	transition: top 1s ease-in-out;
 }
@@ -204,10 +263,37 @@ hr {
 }
 
 /********* PRODUCT DETAIL SECTIONS ***********/
-
-
-  .icon-button img {
-	width: 30px; /* Adjust the width to the desired size */
-	height: 30px; /* Adjust the height to the desired size */
-	margin-left: 10px;
-  }
+.second-navbar{
+	text-decoration: none;
+	color: #808080;
+	font-size: 11px;
+}
+.fa-brands{
+	color: #212529;
+}
+.quantity{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	border: 1px solid #f4f1e9 ;
+}
+.quantity p{
+	margin: 0;
+}
+.quantity-text{
+	cursor: pointer;
+	font-size: 20px;
+}
+.especifications{
+	display: flex;
+	justify-content: space-evenly;
+}
+.especifications h5{
+	cursor: pointer;
+}
+.especifications .active{
+	text-decoration: underline;
+	text-underline-offset: 19px;
+	text-decoration-color: #c89230;
+}
