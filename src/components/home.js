@@ -2,7 +2,8 @@ import React, { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { scrollToSection } from '../utils/scrollUtils';
+import ProductCard from "./ProductCard/ProductCard";
+import { scrollToSection } from "../utils/scrollUtils";
 
 import "../App.css";
 
@@ -17,16 +18,15 @@ const Home = () => {
     // Verifica si la URL contiene el fragmento #airfryers y, si es así, haz scroll a la sección.
     if (window.location.hash === "#airfryers" && airfryersSectionRef.current) {
       airfryersSectionRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-    else if (window.location.hash === "#accessories" && accessoriesSectionRef.current) {
+    } else if (
+      window.location.hash === "#accessories" &&
+      accessoriesSectionRef.current
+    ) {
       accessoriesSectionRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-    else if (window.location.hash === "#home" && homeSectionRef.current) {
+    } else if (window.location.hash === "#home" && homeSectionRef.current) {
       homeSectionRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, []);
-
-
 
   return (
     <>
@@ -106,7 +106,11 @@ const Home = () => {
         </div>
       </section>
       {/******** AIRFRYERS ********/}
-      <section ref={airfryersSectionRef} id="airfryers" className="row align-items-center p-5 pb-0">
+      <section
+        ref={airfryersSectionRef}
+        id="airfryers"
+        className="row align-items-center p-5 pb-0"
+      >
         <div className="col-3">
           <img
             src="https://aigostar-img.s3.amazonaws.com/woman.jpg"
@@ -121,36 +125,7 @@ const Home = () => {
                 to={`airfryers/${airfryer.name}/${airfryer.id}`}
                 className="no-underline"
               >
-                <div className="magic-div">
-                  <img
-                    src={airfryer.thumbnails[0]}
-                    alt={`airfryer ${airfryer.name}`}
-                    className="img-fluid zoom mb-2"
-                  />
-                  <button className="btn-cart right-to-left margin product-card m-0"></button>
-                  <div className="text-overlay up-opaccity-effect">
-                    <button className="btn-orange">+ INFO</button>
-                  </div>
-                </div>
-                <span className="no-underline">{airfryer.name}</span>
-                <div>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <span> {airfryer.estadisticas.puntuacion}</span>
-                </div>
-                <div>
-                  <span>
-                    {airfryer.estadisticas.valoraciones} valoraciones |{" "}
-                  </span>
-                  <span>{airfryer.estadisticas.vendidos} vendidos</span>
-                </div>
-                <h5 className="mt-2 mb-1">
-                  Capacidad: {airfryer.details.capacidad}L
-                </h5>
-                <p className="price">{airfryer.price}€</p>
+                <ProductCard product={airfryer} />
               </Link>
             </div>
           ))}
@@ -179,7 +154,11 @@ const Home = () => {
         </div>
       </section>
       {/******** accessories ********/}
-      <section ref={accessoriesSectionRef} id="accessories" className="row align-items-center p-5 pb-0">
+      <section
+        ref={accessoriesSectionRef}
+        id="accessories"
+        className="row align-items-center p-5 pb-0"
+      >
         <div className="d-flex">
           {accessories.map((accesory) => (
             <div key={accesory.id} className="text-center px-3 col-3">
@@ -187,34 +166,7 @@ const Home = () => {
                 to={`/accessories/${accesory.name}/${accesory.id}`}
                 className="no-underline"
               >
-                <div className="magic-div">
-                  <img
-                    src={accesory.thumbnails[0]}
-                    alt={`accesory ${accesory.name}`}
-                    className="img-fluid zoom mb-2"
-                  />
-                  <button className="btn-cart right-to-left product-card m-0"></button>
-                  <div className="text-overlay up-opaccity-effect">
-                    <button className="btn-orange">+ INFO</button>
-                  </div>
-                </div>
-                <span className="no-underline">{accesory.name}</span>
-                <div>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <span> {accesory.estadisticas.puntuacion}</span>
-                </div>
-                <div>
-                  <span>
-                    {accesory.estadisticas.valoraciones} valoraciones |{" "}
-                  </span>
-                  <span>{accesory.estadisticas.vendidos} vendidos</span>
-                </div>
-                <h5 className="mt-2 mb-1">Capacidad: {accesory.id}L</h5>
-                <p className="price">{accesory.price}€</p>
+                <ProductCard product={accesory} />
               </Link>
             </div>
           ))}

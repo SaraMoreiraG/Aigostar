@@ -2,8 +2,11 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
+import AddToCartButton from "./AddToCartButton/AddToCartButton";
+
 function AirfryerComparisonTable({ infoClick }) {
   const airfryers = useSelector((state) => state.airfryers);
+  const cartItems = useSelector((state) => state.cart);
 
   const handleInfoClick = () => {
     infoClick();
@@ -139,26 +142,40 @@ function AirfryerComparisonTable({ infoClick }) {
             ))}
           </tr>
           <tr>
-            <td>Precio</td>
-            {airfryers.map((airfryer) => (
-              <td key={airfryer.id}>
-                <div className="row">
-                  <div className="d-flex col-7 justify-content-end p-0">
-                    <Link
-                      to={`/airfryers/${airfryer.name}/${airfryer.id}`}
-                      className="no-underline"
-                      onClick={handleInfoClick}
-                    >
-                      <button className="btn-orange"> + info</button>
-                    </Link>
+          <td></td>
+            {airfryers.map((airfryer) => {
+              const { id, thumbnails, name, price, quantity } = airfryer;
+              const isInCart = cartItems.some((item) => item.id === airfryer.id);
+              console.log("table ", isInCart)
+              const item = {
+                id: id,
+                img: thumbnails[0],
+                name: name,
+                price: price,
+                quantity: quantity,
+              };
+              return (
+                <td key={airfryer.id}>
+                  <div className="row">
+                    <div className="d-flex col-7 justify-content-end p-0">
+                      <Link
+                        to={`/airfryers/${airfryer.name}/${airfryer.id}`}
+                        className="no-underline"
+                        onClick={handleInfoClick}
+                      >
+                        <button className="btn-orange"> + info</button>
+                      </Link>
+                    </div>
+                    <div className="d-flex justify-content-end pe-4 col-5">
+                      <AddToCartButton
+                        item={item}
+                        style="table-btn"
+                      />
+                    </div>
                   </div>
-
-                  <div className="d-flex justify-content-end pe-4 col-5">
-                    <button className="btn-cart table-btn"></button>
-                  </div>
-                </div>
-              </td>
-            ))}
+                </td>
+              );
+            })}
           </tr>
         </tbody>
       </table>

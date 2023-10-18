@@ -164,7 +164,7 @@ const initialState = {
   ],
   accessories: [
     {
-      id: 0,
+      id: 3,
       name: "Kit1",
       title: "Clothing And Accessory Boutiques For Sale",
       description:
@@ -186,7 +186,7 @@ const initialState = {
       },
     },
     {
-      id: 1,
+      id: 4,
       name: "Bandeja",
       title: "Clothing And Accessory Boutiques For Sale",
       description:
@@ -208,7 +208,7 @@ const initialState = {
       },
     },
     {
-      id: 2,
+      id: 5,
       name: "Kit2",
       title: "Clothing And Accessory Boutiques For Sale",
       description:
@@ -230,7 +230,7 @@ const initialState = {
       },
     },
     {
-      id: 3,
+      id: 6,
       name: "Pulverizador",
       title: "Clothing And Accessory Boutiques For Sale",
       description:

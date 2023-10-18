@@ -2,13 +2,11 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../actions/cartActions';
 
 import { scrollToSection } from "../utils/scrollUtils";
-
-import cart from "../assets/images/icon-basket.png";
+import useCartItem from "./AddToCartButton/hooks/useCartItem";
 import ImageGallery from "./ImageGallery/ImageGallery";
+import AddToCartButton from "./AddToCartButton/AddToCartButton";
 import AirfryerComparisonTable from "./AirfryerComparisonTable";
 
 function ProductDetails() {
@@ -46,28 +44,14 @@ function ProductDetails() {
     setActiveDialog(dialogNumber);
   };
 
-  const cartItems = useSelector((state) => state.cart); // Asegúrate de que 'cart' coincida con el nombre de tu slice de carrito
-
-  // Puedes imprimir el estado del carrito en la consola
-  console.log('Estado del carrito:', cartItems);
-
-  const dispatch = useDispatch();
-
+  // const { item, isInCartss } = useCartItem(id, categoryData[id].thumbnails[0], name, categoryData[id].price, quantity);
   const item = {
+    id: parseInt(id, 10),
     img: categoryData[id].thumbnails[0],
     name: name,
     price: categoryData[id].price,
-    quantity: quantity
-   };
-
-  const handleAddToCart = () => {
-    dispatch(addToCart(item));
+    quantity: quantity,
   };
-
-  // Scroll to the top of the page when the component mounts
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <div>
@@ -142,10 +126,7 @@ function ProductDetails() {
             </p>
           </div>
           <div className="mb-3">
-            <button onClick={handleAddToCart} className="btn-orange icon-button moving">
-              Añadir al carrito
-              <img src={cart} alt="Icon" />
-            </button>
+            <AddToCartButton item={item} style="btn-orange icon-button moving"/>
           </div>
 
           <div className="d-flex col-12">

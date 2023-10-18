@@ -7,7 +7,7 @@ function Login() {
       {/************ SECOND NAVBAR **************/}
       <section className="d-flex my-3 px-5 mx-5" id="second-navbar">
         <Link to="/#home" className="second-navbar">
-          <i class="fa-solid fa-house me-1"></i> Inicio &nbsp; {">"} &nbsp;
+          <i className="fa-solid fa-house me-1"></i> Inicio &nbsp; {">"} &nbsp;
         </Link>
         <a className="second-navbar">Acceso</a>
       </section>

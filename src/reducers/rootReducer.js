@@ -12,6 +12,11 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         cart: state.cart.filter((item) => item.id !== action.payload),
       };
+    case "LOAD_CART_FROM_LOCAL_STORAGE":
+      return {
+        ...state,
+        cart: action.payload,
+      };
     case "LOGIN":
       return {
         ...state,
@@ -21,6 +26,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         user: null,
+      };
+    case "LOAD_USER_FROM_LOCAL_STORAGE":
+      return {
+        ...state,
+        user: action.payload,
       };
     case "SET_AIRFRYERS":
       return {

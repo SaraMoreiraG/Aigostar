@@ -115,7 +115,14 @@ hr {
 	color: #fff;
 	transition: color 0.5s ease-in-out;
 }
-.btn-cart {
+.btn-in-cart {
+	background-image: url('https://aigostar-img.s3.amazonaws.com/icon-basket-full.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	border: none;
+}
+.btn-not-cart {
 	background-image: url('https://aigostar-img.s3.amazonaws.com/icon-basket-black.png');
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -126,19 +133,24 @@ hr {
 .icon-button img {
 	width: 30px;
 	height: 30px;
-	margin-left: 10px;
 }
-
-.moving img {
+.icon-button i{
+	color: #fff;
+	font-size: 28px;
+	margin: 0 0 0 10px;
+}
+.moving img,
+.moving i {
 	transition: transform 0.7s, color 0.3s;
 }
 
 .moving {
 	transition: transform 0.7s, color 0.3s;
-	width: 250px;
+	width: 260px;
 }
 
-.moving:hover img {
+.moving:hover img,
+.moving:hover i {
 	transform: translateX(-170px);
 	/* Mueve el ícono hacia la izquierda */
 }
@@ -153,8 +165,8 @@ hr {
 }
 
 .table-btn {
-	height: 40px;
-	width: 40px;
+	height: 30px;
+	width: 30px;
 	border-radius: 10px 0px;
 	background-color: #f4f1e9;
 	border: 7px solid #f4f1e9;
@@ -164,6 +176,7 @@ hr {
 	background-color: #e7ab3d;
 	border: 7px solid #e7ab3d;
 }
+
 
 .btn-login{
 	color: #000;
