@@ -32,6 +32,11 @@ hr {
 	border: 1.5px solid #e7ab3d;
 	opacity: 100;
 }
+.grey-line{
+	color: #ebebeb;
+	border: 0.8px solid #ebebeb;
+	width: 100%;
+}
 
 .no-underline {
 	text-decoration: none;
@@ -160,6 +165,14 @@ hr {
 	border: 7px solid #e7ab3d;
 }
 
+.btn-login{
+	color: #000;
+	letter-spacing: 2px;
+	text-decoration: underline;
+	text-underline-offset: 10px;
+	text-decoration-color: #ebebeb;
+}
+
 /*** MAGIC DIV ***/
 .magic-div {
 	position: relative;
@@ -229,7 +242,10 @@ hr {
 #footer {
 	background-color: #f4f1e9;
 }
-
+#register,
+#login{
+	height: 100vh;
+}
 /*** CATEGORIES section ***/
 
 .btn-categories {
@@ -271,6 +287,9 @@ hr {
 .fa-brands{
 	color: #212529;
 }
+.fa-house{
+	font-size: 10px;
+}
 .quantity{
 	display: flex;
 	justify-content: space-between;
@@ -296,4 +315,22 @@ hr {
 	text-decoration: underline;
 	text-underline-offset: 19px;
 	text-decoration-color: #c89230;
+}
+ .dialog-content{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+ }
+.even{
+	background-color: #f4f1e9;
+}
+
+input{
+	height: 50px;
+	border: 1px solid #ebebeb;
+}
+
+.forget-password{
+	font-size: 12px;
+	color: #797979;
 }

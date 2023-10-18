@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../actions/cartActions';
 
 import { scrollToSection } from "../utils/scrollUtils";
 
@@ -44,6 +46,24 @@ function ProductDetails() {
     setActiveDialog(dialogNumber);
   };
 
+  const cartItems = useSelector((state) => state.cart); // Asegúrate de que 'cart' coincida con el nombre de tu slice de carrito
+
+  // Puedes imprimir el estado del carrito en la consola
+  console.log('Estado del carrito:', cartItems);
+
+  const dispatch = useDispatch();
+
+  const item = {
+    img: categoryData[id].thumbnails[0],
+    name: name,
+    price: categoryData[id].price,
+    quantity: quantity
+   };
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(item));
+  };
+
   // Scroll to the top of the page when the component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -53,11 +73,20 @@ function ProductDetails() {
     <div>
       {/************ SECOND NAVBAR **************/}
       <section className="d-flex my-3 px-5 mx-5" id="second-navbar">
-        <Link to="/#home" className="second-navbar">Inicio &nbsp; {">"} &nbsp;</Link>
+        <Link to="/#home" className="second-navbar">
+          Inicio &nbsp; {">"} &nbsp;
+        </Link>
         {category === "airfryers" ? (
-          <Link to="/#airfryers" className="second-navbar">Freidoras de aire &nbsp; {">"} &nbsp;</Link>
+          <Link to="/#airfryers" className="second-navbar">
+            Freidoras de aire &nbsp; {">"} &nbsp;
+          </Link>
         ) : (
-          <a className="second-navbar" onClick={() => scrollToSection("accessories")}>Accesorios &nbsp; {">"} &nbsp;</a>
+          <a
+            className="second-navbar"
+            onClick={() => scrollToSection("accessories")}
+          >
+            Accesorios &nbsp; {">"} &nbsp;
+          </a>
         )}
         <a className="second-navbar">{name}</a>
       </section>
@@ -67,9 +96,7 @@ function ProductDetails() {
           <ImageGallery images={categoryData[id].thumbnails} />
         </section>
         <section className="col-5">
-          <h2>
-            {name} - {categoryData[id].title}
-          </h2>
+          <h2>{categoryData[id].title}</h2>
           <div className="my-3">
             <i className="fa-solid fa-star"></i>
             <i className="fa-solid fa-star"></i>
@@ -100,16 +127,22 @@ function ProductDetails() {
 
           <p className="fw-bold">Cantidad: {quantity}</p>
           <div className="quantity d-flex mb-3 col-2">
-            <p className="quantity-text" onClick={() => handleQuantityChange(-1)}>
+            <p
+              className="quantity-text"
+              onClick={() => handleQuantityChange(-1)}
+            >
               -
             </p>
             <p>{quantity}</p>
-            <p className="quantity-text" onClick={() => handleQuantityChange(1)}>
+            <p
+              className="quantity-text"
+              onClick={() => handleQuantityChange(1)}
+            >
               +
             </p>
           </div>
           <div className="mb-3">
-            <button className="btn-orange icon-button moving">
+            <button onClick={handleAddToCart} className="btn-orange icon-button moving">
               Añadir al carrito
               <img src={cart} alt="Icon" />
             </button>
@@ -117,13 +150,13 @@ function ProductDetails() {
 
           <div className="d-flex col-12">
             <button className="btn-buy icon-button w-100">
-              <i class="fa-regular fa-credit-card"></i>
+              <i className="fa-regular fa-credit-card"></i>
               Comprar ahora
             </button>
             <div className="d-flex align-items-center ps-2">
-            <i class="fa-brands fa-cc-visa me-1"></i>
-            <i class="fa-brands fa-cc-mastercard me-1"></i>
-            <i class="fa-brands fa-cc-amex"></i>
+              <i className="fa-brands fa-cc-visa me-1"></i>
+              <i className="fa-brands fa-cc-mastercard me-1"></i>
+              <i className="fa-brands fa-cc-amex"></i>
             </div>
           </div>
         </section>
@@ -131,52 +164,145 @@ function ProductDetails() {
 
       {/************ ESPECIFICATIONS **************/}
       <div className="my-5">
-      <div className="especifications px-5 mx-5">
-        <h5 onClick={() => openDialog(1)} className={activeDialog === 1 ? 'active' : ''}>Descripción</h5>
-        <h5 onClick={() => openDialog(2)} className={activeDialog === 2 ? 'active' : ''}>Detalles</h5>
-        <h5 onClick={() => openDialog(3)} className={activeDialog === 3 ? 'active' : ''}>Valoraciones</h5>
-        <h5 onClick={() => openDialog(4)} className={activeDialog === 4 ? 'active' : ''}>Sección 4</h5>
+        <div className="especifications px-5 mx-5">
+          <h5
+            onClick={() => openDialog(1)}
+            className={activeDialog === 1 ? "active" : ""}
+          >
+            Descripción
+          </h5>
+          <h5
+            onClick={() => openDialog(2)}
+            className={activeDialog === 2 ? "active" : ""}
+          >
+            Detalles
+          </h5>
+          <h5
+            onClick={() => openDialog(3)}
+            className={activeDialog === 3 ? "active" : ""}
+          >
+            Valoraciones
+          </h5>
+          <h5
+            onClick={() => openDialog(4)}
+            className={activeDialog === 4 ? "active" : ""}
+          >
+            Sección 4
+          </h5>
+        </div>
+        <div className="px-5 mx-5">
+          <hr className="grey-line m-2"></hr>
+        </div>
+
+        {/* Cuadros de diálogo */}
+        {activeDialog === 1 && (
+          <div className="dialog d-flex justify-content-center pt-3 px-5 mx-5">
+            <div className="dialog-content col-8 px-3">
+              <ul>
+                {categoryData[id].descriptionDetails.map((item, index) => {
+                  if (index % 2 === 0) {
+                    // Elemento par (título)
+                    return <h5 key={index}>{item}</h5>;
+                  } else {
+                    // Elemento impar (párrafo)
+                    return <p className="mb-4" key={index}>{item}</p>;
+                  }
+                })}
+              </ul>
+            </div>
+          </div>
+        )}
+
+        {activeDialog === 2 && (
+          <div className="dialog px-5 mx-5">
+            <div className="dialog-content p-3">
+              <div className="col-6 d-flex justify-content-end pe-3">
+                <table className="col-8">
+                  <tbody>
+                    {Object.entries(categoryData[id].details)
+                      .slice(0, 7) // Limitar a las primeras 7 propiedades
+                      .map(([key, value], index) => (
+                        <tr
+                          key={index}
+                          className={index % 2 === 0 ? "even" : "odd"}
+                        >
+                          <td className="col-6 p-2">
+                            {key === "bandejaantihaderente"
+                              ? "Bandeja Antiadherente"
+                              : key.charAt(0).toUpperCase() + key.slice(1)}
+                          </td>
+                          <td className="text-end p-2 col-6">
+                            {key === "capacidad"
+                              ? value + " L"
+                              : key === "funciones"
+                              ? value.map((funcion, i) => (
+                                  <div key={i}>{funcion}</div>
+                                ))
+                              : value + (key === "temporizador" ? " Min" : "")}
+                          </td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="col-6 d-flex justify-content-start ps-3 ">
+                <table className="col-6">
+                  <tbody>
+                    {Object.entries(categoryData[id].details)
+                      .slice(-7) // Obtener las últimas 7 propiedades
+                      .map(([key, value], index) => (
+                        <tr
+                          key={index}
+                          className={index % 2 === 0 ? "even" : "odd"}
+                        >
+                          <td className="col-9 p-2">
+                            {key === "temperaturamax"
+                              ? "Temperatura Max"
+                              : key === "temperaturamin"
+                              ? "Temperatura Min"
+                              : key.charAt(0).toUpperCase() + key.slice(1)}
+                          </td>
+                          <td className="text-end p-2 col-3">
+                            {key === "temperaturamax" ||
+                            key === "temperaturamin"
+                              ? value + "º"
+                              : value +
+                                (key === "potencia"
+                                  ? "W"
+                                  : key === "ancho" ||
+                                    key === "alto" ||
+                                    key === "fondo"
+                                  ? "cm"
+                                  : "Kg")}
+                          </td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {activeDialog === 3 && (
+          <div className="dialog px-5 mx-5">
+            <div className="dialog-content">
+              <p>Cuadro de diálogo de la Sección 3</p>
+            </div>
+          </div>
+        )}
+
+        {activeDialog === 4 && (
+          <div className="dialog px-5 mx-5">
+            <div className="dialog-content">
+              <p>Cuadro de diálogo de la Sección 4</p>
+            </div>
+          </div>
+        )}
       </div>
-      <div className="px-5 mx-5">
-      <hr className="w-100 m-2"></hr>
-      </div>
-
-      {/* Cuadros de diálogo */}
-      {activeDialog === 1 && (
-        <div className="dialog px-5 mx-5">
-          <div className="dialog-content px-3">
-            <p>Cuadro de diálogo de la Sección 1</p>
-          </div>
-        </div>
-      )}
-
-      {activeDialog === 2 && (
-        <div className="dialog px-5 mx-5">
-          <div className="dialog-content">
-            <p>Cuadro de diálogo de la Sección 2</p>
-          </div>
-        </div>
-      )}
-
-      {activeDialog === 3 && (
-        <div className="dialog px-5 mx-5">
-          <div className="dialog-content">
-            <p>Cuadro de diálogo de la Sección 3</p>
-          </div>
-        </div>
-      )}
-
-      {activeDialog === 4 && (
-        <div className="dialog px-5 mx-5">
-          <div className="dialog-content">
-            <p>Cuadro de diálogo de la Sección 4</p>
-          </div>
-        </div>
-      )}
-    </div>
 
       {/************ COMPARATION TABLE **************/}
-      <section className="row p-5 m-5">
+      <section className="row px-5 mx-5">
         <AirfryerComparisonTable
           infoClick={() => scrollToSection("second-navbar")}
         />
