@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -7,6 +7,22 @@ import "../App.css";
 const Home = () => {
   const airfryers = useSelector((state) => state.airfryers);
   const accesories = useSelector((state) => state.accesories);
+  const airfryersSectionRef = useRef(null);
+  const accesoriesSectionRef = useRef(null);
+  const homeSectionRef = useRef(null);
+
+  useEffect(() => {
+    // Verifica si la URL contiene el fragmento #airfryers y, si es así, haz scroll a la sección.
+    if (window.location.hash === "#airfryers" && airfryersSectionRef.current) {
+      airfryersSectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+    else if (window.location.hash === "#accesories" && accesoriesSectionRef.current) {
+      accesoriesSectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+    else if (window.location.hash === "#home" && homeSectionRef.current) {
+      homeSectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
 
   const scrollToSection = (sectionId) => {
     const targetSection = document.getElementById(sectionId);
@@ -25,7 +41,7 @@ const Home = () => {
         />
       </section>
       {/******** CATEGORIAS ********/}
-      <section className="row p-5 py-5">
+      <section ref={homeSectionRef} className="row p-5 py-5">
         <div
           className="magic-div col-4 p-1"
           onClick={() => scrollToSection("airfryers")}
@@ -93,7 +109,7 @@ const Home = () => {
         </div>
       </section>
       {/******** AIRFRYERS ********/}
-      <section id="airfryers" className="row align-items-center p-5 pb-0">
+      <section ref={airfryersSectionRef} id="airfryers" className="row align-items-center p-5 pb-0">
         <div className="col-3">
           <img
             src="https://aigostar-img.s3.amazonaws.com/woman.jpg"
@@ -114,7 +130,7 @@ const Home = () => {
                     alt={`airfryer ${airfryer.name}`}
                     className="img-fluid zoom mb-2"
                   />
-                  <button className="btn-cart right-to-left margin m-0"></button>
+                  <button className="btn-cart right-to-left margin product-card m-0"></button>
                   <div className="text-overlay up-opaccity-effect">
                     <button className="btn-orange btn-info">+ INFO</button>
                   </div>
@@ -166,7 +182,7 @@ const Home = () => {
         </div>
       </section>
       {/******** ACCESORIES ********/}
-      <section id="accesories" className="row align-items-center p-5 pb-0">
+      <section ref={accesoriesSectionRef} id="accesories" className="row align-items-center p-5 pb-0">
         <div className="d-flex">
           {accesories.map((accesory) => (
             <div key={accesory.id} className="text-center px-3 col-3">
@@ -180,7 +196,7 @@ const Home = () => {
                     alt={`accesory ${accesory.name}`}
                     className="img-fluid zoom mb-2"
                   />
-                  <button className="btn-cart right-to-left m-0"></button>
+                  <button className="btn-cart right-to-left product-card m-0"></button>
                   <div className="text-overlay up-opaccity-effect">
                     <button className="btn-orange btn-info">+ INFO</button>
                   </div>

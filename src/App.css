@@ -86,11 +86,23 @@ hr {
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-color: transparent;
-	height: 50px;
-	width: 50px;
 	border: none;
 }
-
+.product-card{
+	height: 50px;
+	width: 50px;
+}
+.with-text{
+	height: 40px;
+	width: 40px;
+	border-radius: 10px 0px ;
+	background-color: #f4f1e9;
+	border: 7px solid #f4f1e9;
+}
+.with-text:hover{
+	background-color: #e7ab3d;
+	border: 7px solid #e7ab3d;
+}
 /*** MAGIC DIV ***/
 .magic-div {
 	position: relative;
@@ -152,7 +164,7 @@ hr {
 	border-color: #e7ab3d;
 }
 
-/********* SECTIONS ***********/
+/********* HOME SECTIONS ***********/
 
 #banner,
 #footer {
@@ -190,3 +202,12 @@ hr {
 	font-size: 36px;
 	margin-right: 20px;
 }
+
+/********* PRODUCT DETAIL SECTIONS ***********/
+
+
+  .icon-button img {
+	width: 30px; /* Adjust the width to the desired size */
+	height: 30px; /* Adjust the height to the desired size */
+	margin-left: 10px;
+  }

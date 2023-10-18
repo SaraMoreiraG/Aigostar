@@ -16,7 +16,9 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/#airfryers" element={<Home />} />
           <Route path="/:category/:name/:id" element={<ProductDetails />} />
+          {/* <Route path="/#second-navbar/:category/:name/:id" element={<ProductDetails />} /> */}
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -1,9 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
-function AirfryerComparisonTable() {
+function AirfryerComparisonTable({ infoClick }) {
   const airfryers = useSelector((state) => state.airfryers);
-
+  const handleInfoClick = () => {
+    // Call the infoClick function passed as a prop
+    infoClick();
+  };
   return (
     <div className="table-responsive">
       <table className="table table-bordered">
@@ -126,6 +130,28 @@ function AirfryerComparisonTable() {
             <td>Precio</td>
             {airfryers.map((airfryer) => (
               <td key={airfryer.id}>{airfryer.price} €</td>
+            ))}
+          </tr>
+          <tr>
+            <td>Precio</td>
+            {airfryers.map((airfryer) => (
+              <td key={airfryer.id}>
+                <div className="row">
+                  <div className="d-flex col-7 justify-content-end p-0">
+                    <Link
+                      to={`/airfryers/${airfryer.name}/${airfryer.id}`}
+                      className="no-underline"
+                      onClick={handleInfoClick}
+                    >
+                      <button className="btn-orange"> + info</button>
+                    </Link>
+                  </div>
+
+                  <div className="d-flex justify-content-end pe-4 col-5">
+                    <button className="btn-cart with-text"></button>
+                  </div>
+                </div>
+              </td>
             ))}
           </tr>
         </tbody>
