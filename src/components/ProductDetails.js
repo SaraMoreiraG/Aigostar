@@ -9,7 +9,6 @@ import AddToCartButton from "./AddToCartButton/AddToCartButton";
 import AirfryerComparisonTable from "./AirfryerComparisonTable";
 import ProductCard from "./ProductCard/ProductCard";
 
-
 function ProductDetails() {
   // Get route parameters
   const { category, name, id } = useParams();
@@ -103,18 +102,22 @@ function ProductDetails() {
           {category === "airfryers" ? (
             <>
               <p className="m-0">
-                Capacidad: {categoryData[id].details.capacidad}L
+                {categoryData[id].details[0].name}: {categoryData[id].details[0].size}
               </p>
               <p className="m-0">
-                Comensales: {categoryData[id].details.comensales} personas
+                {categoryData[id].details[1].name}: {categoryData[id].details[1].size} personas
               </p>
-              <p className="m-0">Control: {categoryData[id].details.control}</p>
+              <p className="m-0">{categoryData[id].details[3].name}: {categoryData[id].details[3].size}</p>
               <p>
-                Temporizador: {categoryData[id].details.temporizador} minutos
+              {categoryData[id].details[6].name}: {categoryData[id].details[6].size}utos
               </p>
             </>
           ) : (
-            <p>Comensales: {categoryData[id].details.name}</p>
+            categoryData[id].details.map((detail, index) => (
+              <p key={index} className="m-0">
+                {detail.name} : {detail.size}
+              </p>
+            ))
           )}
           <h2 className="price my-3">{categoryData[id].price}€</h2>
           <p className="fw-bold">Cantidad: {quantity}</p>
@@ -188,7 +191,7 @@ function ProductDetails() {
         </div>
 
         {/**** CUADROS DE DIALOGO ****/}
-        {/* {activeDialog === 1 && (
+        {activeDialog === 1 && (
           <div className="dialog d-flex justify-content-center pt-3 px-5 mx-5">
             <div className="dialog-content col-8 px-3">
               <ul>
@@ -198,81 +201,79 @@ function ProductDetails() {
                     return <h5 key={index}>{item}</h5>;
                   } else {
                     // Elemento impar (párrafo)
-                    return <p className="mb-4" key={index}>{item}</p>;
+                    return (
+                      <p className="mb-4" key={index}>
+                        {item}
+                      </p>
+                    );
                   }
                 })}
               </ul>
             </div>
           </div>
-        )} */}
+        )}
 
         {activeDialog === 2 && (
           <div className="dialog px-5 mx-5">
             <div className="dialog-content p-3">
-              <div className="col-6 d-flex justify-content-end pe-3">
-                <table className="col-8">
-                  <tbody>
-                    {Object.entries(categoryData[id].details)
-                      .slice(0, 7) // Limitar a las primeras 7 propiedades
-                      .map(([key, value], index) => (
+                {categoryData[id].details.length <= 7 ? (
+                  // Si hay 7 o menos detalles, muestra la tabla completa
+                  <table className="col-6">
+                    <tbody>
+                      {categoryData[id].details.map((detail, index) => (
                         <tr
                           key={index}
                           className={index % 2 === 0 ? "even" : "odd"}
                         >
-                          <td className="col-6 p-2">
-                            {key === "bandejaantihaderente"
-                              ? "Bandeja Antiadherente"
-                              : key.charAt(0).toUpperCase() + key.slice(1)}
-                          </td>
-                          <td className="text-end p-2 col-6">
-                            {key === "capacidad"
-                              ? value + " L"
-                              : key === "funciones"
-                              ? value.map((funcion, i) => (
-                                  <div key={i}>{funcion}</div>
-                                ))
-                              : value + (key === "temporizador" ? " Min" : "")}
-                          </td>
+                          <td className="col-8 p-2">{detail.name}</td>
+                          <td className="text-end p-2 col-4">{detail.size}</td>
                         </tr>
                       ))}
-                  </tbody>
-                </table>
-              </div>
-              <div className="col-6 d-flex justify-content-start ps-3 ">
-                <table className="col-6">
-                  <tbody>
-                    {Object.entries(categoryData[id].details)
-                      .slice(-7) // Obtener las últimas 7 propiedades
-                      .map(([key, value], index) => (
-                        <tr
-                          key={index}
-                          className={index % 2 === 0 ? "even" : "odd"}
-                        >
-                          <td className="col-9 p-2">
-                            {key === "temperaturamax"
-                              ? "Temperatura Max"
-                              : key === "temperaturamin"
-                              ? "Temperatura Min"
-                              : key.charAt(0).toUpperCase() + key.slice(1)}
-                          </td>
-                          <td className="text-end p-2 col-3">
-                            {key === "temperaturamax" ||
-                            key === "temperaturamin"
-                              ? value + "º"
-                              : value +
-                                (key === "potencia"
-                                  ? "W"
-                                  : key === "ancho" ||
-                                    key === "alto" ||
-                                    key === "fondo"
-                                  ? "cm"
-                                  : "Kg")}
-                          </td>
-                        </tr>
-                      ))}
-                  </tbody>
-                </table>
-              </div>
+                    </tbody>
+                  </table>
+                ) : (
+                  // Si hay más de 7 detalles, divide la tabla en dos
+                  <>
+                  <div className="d-flex justify-content-end pe-3 col-6">
+                    <table className="col-8">
+                      <tbody>
+                        {categoryData[id].details
+                          .slice(0, 7)
+                          .map((detail, index) => (
+                            <tr
+                              key={index}
+                              className={index % 2 === 0 ? "even" : "odd"}
+                            >
+                              <td className="col-6 p-2">{detail.name}</td>
+                              <td className="text-end p-2 col-6">
+                                {detail.size}
+                              </td>
+                            </tr>
+                          ))}
+                      </tbody>
+                    </table>
+                    </div>
+                    <div className="d-flex justify-content-start ps-3 col-6">
+                    <table className="col-8">
+                      <tbody>
+                        {categoryData[id].details
+                          .slice(7)
+                          .map((detail, index) => (
+                            <tr
+                              key={index}
+                              className={index % 2 === 0 ? "even" : "odd"}
+                            >
+                              <td className="col-6 p-2">{detail.name}</td>
+                              <td className="text-end p-2 col-6">
+                                {detail.size}
+                              </td>
+                            </tr>
+                          ))}
+                      </tbody>
+                    </table>
+                    </div>
+                  </>
+                )}
             </div>
           </div>
         )}
@@ -302,20 +303,21 @@ function ProductDetails() {
       </section>
 
       {/******** ACCESSORIES ********/}
-      <section
-        id="accessories"
-        className="row align-items-center p-5 pb-0"
-      >
+      <section id="accessories" className="row align-items-center p-5 pb-0">
         <div className="d-flex">
-        {accessories.map((accesory) => (
-              <div key={accesory.id} className="text-center px-3 col-3" onClick={() => scrollToSection("second-navbar")}>
-                <Link
-                  to={`/accessories/${accesory.name}/${accesory.id}`}
-                  className="no-underline"
-                >
-                  <ProductCard product={accesory} />
-                </Link>
-              </div>
+          {accessories.map((accesory) => (
+            <div
+              key={accesory.id}
+              className="text-center px-3 col-3"
+              onClick={() => scrollToSection("second-navbar")}
+            >
+              <Link
+                to={`/accessories/${accesory.name}/${accesory.id}`}
+                className="no-underline"
+              >
+                <ProductCard product={accesory} />
+              </Link>
+            </div>
           ))}
         </div>
       </section>

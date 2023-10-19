@@ -9,22 +9,64 @@ const initialState = {
         "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-table.png",
       description:
         "Freidora de Aire 4L, Circulación de Aire Rápido, Freidora Sin Aceite con Temporizador de 30 Minutos, Temperatura Ajustable, Cocina Baja en Grasa, Libre BPA, 1500W",
-      details: {
-        capacidad: 4,
-        comensales: "2/4",
-        bandejaantihaderente: "Si",
-        control: "Dial",
-        funciones: ["no"],
-        programas: 0,
-        temporizador: 30,
-        temperaturamax: 200,
-        temperaturamin: 80,
-        potencia: 1500,
-        ancho: 318,
-        alto: 306,
-        fondo: 266,
-        peso: 5.4,
-      },
+        details: [
+          {
+            name: "Capacidad",
+            size: "4 L",
+          },
+          {
+            name: "Comensales",
+            size: "2-4",
+          },
+          {
+            name: "Bandeja Antihaderente",
+            size: "Si",
+          },
+          {
+            name: "Control",
+            size: "Dial",
+          },
+          {
+            name: "Funciones",
+            size: ["no"],
+          },
+          {
+            name: "Programas",
+            size: "0",
+          },
+          {
+            name: "Temporizador",
+            size: "30 Min",
+          },
+          {
+            name: "Temperatura Máx",
+            size: "200º",
+          },
+          {
+            name: "Temperatura Min",
+            size: "80º",
+          },
+          {
+            name: "Potencia",
+            size: "1500W",
+          },
+          {
+            name: "Ancho",
+            size: "318cm",
+          },
+          {
+            name: "Alto",
+            size: "306cm",
+          },
+          {
+            name: "Fondo",
+            size: "266cm",
+          },
+          {
+            name: "Peso",
+            size: "5,4Kg",
+          },
+        ],
       thumbnails: [
         "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-1.jpg",
         "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-2.jpg",
@@ -60,26 +102,68 @@ const initialState = {
         "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-table.png",
       description:
         "Freidora de Aire 9 en 1, Air Fryer 4L con Temporizador de 60 Minutos y Pantalla LED, Temperatura Ajustable de 40℃ a 200℃, Canasta Antiadherente, Menos Aceite y Sin Humo, 1500W",
-      details: {
-        capacidad: 4,
-        comensales: "2-4",
-        bandejaantihaderente: "Si",
-        control: "Pantalla táctil",
-        funciones: [
-          "Recordatorio de agitar",
-          "Precalentamiento",
-          "Cuenta regresiva",
-        ],
-        programas: 8,
-        temporizador: 60,
-        temperaturamax: 200,
-        temperaturamin: 40,
-        potencia: 1500,
-        ancho: 318,
-        alto: 297,
-        fondo: 266,
-        peso: 5.4,
-      },
+      details: [
+        {
+          name: "Capacidad",
+          size: "4 L",
+        },
+        {
+          name: "Comensales",
+          size: "2-4",
+        },
+        {
+          name: "Bandeja Antihaderente",
+          size: "Si",
+        },
+        {
+          name: "Control",
+          size: "Pantalla tactil",
+        },
+        {
+          name: "Funciones",
+          size: [
+            "Recordatorio de agitar ",
+            "Precalentamiento ",
+            "Cuenta regresiva",
+          ],
+        },
+        {
+          name: "Programas",
+          size: "8",
+        },
+        {
+          name: "Temporizador",
+          size: "60 Min",
+        },
+        {
+          name: "Temperatura Máx",
+          size: "200º",
+        },
+        {
+          name: "Temperatura Min",
+          size: "40º",
+        },
+        {
+          name: "Potencia",
+          size: "1500W",
+        },
+        {
+          name: "Ancho",
+          size: "318cm",
+        },
+        {
+          name: "Alto",
+          size: "297cm",
+        },
+        {
+          name: "Fondo",
+          size: "266cm",
+        },
+        {
+          name: "Peso",
+          size: "5,4Kg",
+        },
+      ],
       thumbnails: [
         "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-1.jpg",
         "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-2.jpg",
@@ -115,26 +199,68 @@ const initialState = {
         "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-table.png",
       description:
         "Freidora de Aire Inteligente Sin Aceite, 7L, Pantalla LED Táctil, 7 Funciones Preestablecidas + Mantener Caliente y Modo Manual, Cesta Antiadherente Extraíble, Conexión Wifi, Libre de BPA, 1900W",
-      details: {
-        capacidad: 7,
-        comensales: "6-10",
-        bandejaantihaderente: "Si",
-        control: "Pantalla tactil | Conexión móvil",
-        funciones: [
-          "Recordatorio de agitar",
-          "Precalentamiento",
-          "Cuenta regresiva",
-        ],
-        programas: 7,
-        temporizador: 60,
-        temperaturamax: 200,
-        temperaturamin: 80,
-        potencia: 1900,
-        ancho: 318,
-        alto: 346,
-        fondo: 416,
-        peso: 5.9,
-      },
+      details: [
+        {
+          name: "Capacidad",
+          size: "7 L",
+        },
+        {
+          name: "Comensales",
+          size: "6-10",
+        },
+        {
+          name: "Bandeja Antihaderente",
+          size: "Si",
+        },
+        {
+          name: "Control",
+          size: "Pantalla tactil | Conexión móvil",
+        },
+        {
+          name: "Funciones",
+          size: [
+            "Recordatorio de agitar ",
+            "Precalentamiento ",
+            "Cuenta regresiva",
+          ],
+        },
+        {
+          name: "Programas",
+          size: "7",
+        },
+        {
+          name: "Temporizador",
+          size: "60 Min",
+        },
+        {
+          name: "Temperatura Máx",
+          size: "200º",
+        },
+        {
+          name: "Temperatura Min",
+          size: "80º",
+        },
+        {
+          name: "Potencia",
+          size: "1900W",
+        },
+        {
+          name: "Ancho",
+          size: "318cm",
+        },
+        {
+          name: "Alto",
+          size: "346cm",
+        },
+        {
+          name: "Fondo",
+          size: "416",
+        },
+        {
+          name: "Peso",
+          size: "5,9Kg",
+        },
+      ],
       thumbnails: [
         "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-1.jpg",
         "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-2.jpg",
@@ -166,25 +292,57 @@ const initialState = {
     {
       id: 0,
       name: "Kit1",
-      title: "Clothing And Accessory Boutiques For Sale",
+      title: "Kit de accesorios para freidora de aire",
       description:
-        "Con un control manual de doble dial fácil de usar para que pueda realizarlas fácilmente y la comida siempre quede perfecta: Asar, pollo, patatas fritas, verduras y postres.",
+        "Incluye: 3 rejillas para vaporizar, tostar y un soporte para brochetas. 2 moldes para tartas y pizzas. 1 pinzas antioxidantes.",
       price: 15,
       thumbnails: [
         "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1.jpg",
         "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1.jpg",
       ],
-      details: {
-        capacidad: 4,
-        comensales: "2-4",
-        bandejaantihaderente: "Si",
-        control: "Dial",
-      },
+      details: [
+        {
+          name: "1 Rejilla para asar",
+          size: "20 x 14.7 cm",
+        },
+        {
+          name: "1 Soporte para tostar rebanadas de pan",
+          size: "14.7 x 10.5 cm",
+        },
+        {
+          name: "1 Soporte metálico con pinchos para brochetas",
+          size: "19.5 x 2.5 cm",
+        },
+        {
+          name: "1 Pinzas con punta de silicona",
+          size: "21 cm",
+        },
+        {
+          name: "1 Molde para pizza",
+          size: "20 x 2.5 cm",
+        },
+        {
+          name: "1 Molde para repostería",
+          size: "20 x 7.2 cm",
+        },
+      ],
       estadisticas: {
         puntuacion: 4.7,
         valoraciones: 95,
         vendidos: 317,
       },
+      descriptionDetails: [
+        "* Cocina saludable con un sinfín de posibilidades *",
+        "Sácale el máximo partido a tu Aigostar con este completo pack de accesorios que te permitirá cocinar cientos de recetas de la forma más cómoda y eficaz. Elige el que más se adapte a tu receta, saca tu lado más creativo y disfruta de resultados únicos.",
+        "* Accesorios para carnes *",
+        "Cocina carne de la forma más eficaz con su rejilla para asar y sus pinchos para brochetas, que te permitirán conseguir el punto perfecto de la carne de la forma más saludable.",
+        "* Molde para pizzas *",
+        "No te compliques cocinando pizzas en el horno, métela en el molde, elige el menú preconfigurado y disfruta de resultados perfectos de la forma más cómoda.",
+        "* Molde para repostería *",
+        "Prepara un sinfín de postres sin manchar la cubeta y disfruta de recetas irresistibles.",
+        "* Máxima versatilidad y comodidad *",
+        "El kit de accesorios también cuenta con un soporte metálico, un soporte para tostar pan y pinzas con punta de silicona para que puedas cocinar siempre de la forma más cómoda y eficaz.",
+      ],
     },
     {
       id: 1,
