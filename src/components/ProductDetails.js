@@ -4,22 +4,20 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 import { scrollToSection } from "../utils/scrollUtils";
-import useCartItem from "./AddToCartButton/hooks/useCartItem";
 import ImageGallery from "./ImageGallery/ImageGallery";
 import AddToCartButton from "./AddToCartButton/AddToCartButton";
 import AirfryerComparisonTable from "./AirfryerComparisonTable";
+import ProductCard from "./ProductCard/ProductCard";
+
 
 function ProductDetails() {
   // Get route parameters
   const { category, name, id } = useParams();
 
-  // Initialize quantity state and function to set it
-  const [quantity, setQuantity] = useState(1);
-
   // Access accessories data from Redux store
   const accessories = useSelector((state) => state.accessories);
 
-  // Determine the category data based on the route parameter
+  // Determine the product based on the route parameter 'category'
   const categoryData = useSelector((state) => {
     if (category === "airfryers") {
       return state.airfryers;
@@ -29,6 +27,18 @@ function ProductDetails() {
     return null; // Handle the case where the category is not found
   });
 
+  // Initialize quantity state and function to set it
+  const [quantity, setQuantity] = useState(1);
+
+  // Create an item object for the cart
+  const item = {
+    id: parseInt(id, 10),
+    img: categoryData[id]?.thumbnails[0],
+    name: name,
+    price: categoryData[id]?.price,
+    quantity: quantity,
+  };
+
   // Function to handle changes in the quantity
   const handleQuantityChange = (change) => {
     if (quantity + change >= 1) {
@@ -36,25 +46,21 @@ function ProductDetails() {
     }
   };
 
-  // Estado para controlar la visibilidad de los cuadros de diálogo
+  // State to control the visibility of dialog boxes
   const [activeDialog, setActiveDialog] = useState(1);
 
-  // Función para abrir un cuadro de diálogo
+  // Function to open a dialog box
   const openDialog = (dialogNumber) => {
     setActiveDialog(dialogNumber);
   };
 
-  // const { item, isInCartss } = useCartItem(id, categoryData[id].thumbnails[0], name, categoryData[id].price, quantity);
-  const item = {
-    id: parseInt(id, 10),
-    img: categoryData[id].thumbnails[0],
-    name: name,
-    price: categoryData[id].price,
-    quantity: quantity,
-  };
+  // Scroll to the top of the page on component mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
-    <div>
+    <>
       {/************ SECOND NAVBAR **************/}
       <section className="d-flex my-3 px-5 mx-5" id="second-navbar">
         <Link to="/#home" className="second-navbar">
@@ -67,7 +73,10 @@ function ProductDetails() {
         ) : (
           <a
             className="second-navbar"
-            onClick={() => scrollToSection("accessories")}
+            onClick={(event) => {
+              event.preventDefault(); // Prevent the default navigation behavior
+              scrollToSection("accessories");
+            }}
           >
             Accesorios &nbsp; {">"} &nbsp;
           </a>
@@ -79,6 +88,7 @@ function ProductDetails() {
         <section className="col-6">
           <ImageGallery images={categoryData[id].thumbnails} />
         </section>
+        {/**** PRODUCT DETAILS ****/}
         <section className="col-5">
           <h2>{categoryData[id].title}</h2>
           <div className="my-3">
@@ -106,9 +116,7 @@ function ProductDetails() {
           ) : (
             <p>Comensales: {categoryData[id].details.name}</p>
           )}
-
           <h2 className="price my-3">{categoryData[id].price}€</h2>
-
           <p className="fw-bold">Cantidad: {quantity}</p>
           <div className="quantity d-flex mb-3 col-2">
             <p
@@ -125,10 +133,14 @@ function ProductDetails() {
               +
             </p>
           </div>
+          {/** CART BUTTON **/}
           <div className="mb-3">
-            <AddToCartButton item={item} style="btn-orange icon-button moving"/>
+            <AddToCartButton
+              item={item}
+              style="btn-orange icon-button moving"
+            />
           </div>
-
+          {/** BUY BUTTON **/}
           <div className="d-flex col-12">
             <button className="btn-buy icon-button w-100">
               <i className="fa-regular fa-credit-card"></i>
@@ -175,8 +187,8 @@ function ProductDetails() {
           <hr className="grey-line m-2"></hr>
         </div>
 
-        {/* Cuadros de diálogo */}
-        {activeDialog === 1 && (
+        {/**** CUADROS DE DIALOGO ****/}
+        {/* {activeDialog === 1 && (
           <div className="dialog d-flex justify-content-center pt-3 px-5 mx-5">
             <div className="dialog-content col-8 px-3">
               <ul>
@@ -192,7 +204,7 @@ function ProductDetails() {
               </ul>
             </div>
           </div>
-        )}
+        )} */}
 
         {activeDialog === 2 && (
           <div className="dialog px-5 mx-5">
@@ -288,52 +300,26 @@ function ProductDetails() {
           infoClick={() => scrollToSection("second-navbar")}
         />
       </section>
-      {/******** accessories ********/}
-      <section id="accessories" className="row align-items-center p-5 pb-0">
+
+      {/******** ACCESSORIES ********/}
+      <section
+        id="accessories"
+        className="row align-items-center p-5 pb-0"
+      >
         <div className="d-flex">
-          {accessories.map((accesory) => (
-            <div
-              key={accesory.id}
-              className="text-center px-3 col-3"
-              onClick={() => scrollToSection("second-navbar")}
-            >
-              <Link
-                to={`/accessories/${accesory.name}/${accesory.id}`}
-                className="no-underline"
-              >
-                <div className="magic-div">
-                  <img
-                    src={accesory.thumbnails[0]}
-                    alt={`accesory ${accesory.name}`}
-                    className="img-fluid zoom mb-2"
-                  />
-                  <button className="btn-cart right-to-left product-card m-0"></button>
-                  <div className="text-overlay up-opaccity-effect">
-                    <button className="btn-orange btn-info">+ INFO</button>
-                  </div>
-                </div>
-                <span className="no-underline">{accesory.name}</span>
-                <div>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <span> {accesory.estadisticas.puntuacion}</span>
-                </div>
-                <div>
-                  <span>
-                    {accesory.estadisticas.valoraciones} valoraciones |{" "}
-                  </span>
-                  <span>{accesory.estadisticas.vendidos} vendidos</span>
-                </div>
-                <h5 className="mt-2 mb-1">Capacidad: {accesory.id}L</h5>
-                <p className="price">{accesory.price}€</p>
-              </Link>
-            </div>
+        {accessories.map((accesory) => (
+              <div key={accesory.id} className="text-center px-3 col-3" onClick={() => scrollToSection("second-navbar")}>
+                <Link
+                  to={`/accessories/${accesory.name}/${accesory.id}`}
+                  className="no-underline"
+                >
+                  <ProductCard product={accesory} />
+                </Link>
+              </div>
           ))}
         </div>
       </section>
+
       {/******** RECEIPES ********/}
       <section id="recipes" className="row text-center p-5 pb-0">
         <h1 className="mb-0">Recetas</h1>
@@ -385,7 +371,7 @@ function ProductDetails() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }
 

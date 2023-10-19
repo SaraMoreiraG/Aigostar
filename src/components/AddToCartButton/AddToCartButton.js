@@ -3,27 +3,33 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../actions/cartActions";
 import cart from "../../assets/images/icon-basket.png";
 
-// En AddToCartButton.js
 function AddToCartButton({ item, style }) {
+  // Get the Redux dispatch function
   const dispatch = useDispatch();
+
+  // Get the cart items from the Redux store
   const cartItems = useSelector((state) => state.cart);
-  // Estado local para isInCart\
-  console.log('Store Cart: ', cartItems)
-    const [isInCart, setIsInCart] = useState(false);
 
-    // UseEffect para escuchar cambios en cartItems y actualizar isInCart
-    useEffect(() => {
-      const inCart = cartItems.some((cartItem) => cartItem.id === item.id);
-      setIsInCart(inCart);
-    }, [cartItems, item.id]);
+  // Local state to track whether the item is in the cart
+  const [isInCart, setIsInCart] = useState(false);
 
+  // Check if the item is in the cart
+  useEffect(() => {
+    const inCart = cartItems.some((cartItem) => cartItem.id === item.id);
+    setIsInCart(inCart);
+  }, [cartItems, item.id]);
+
+  // Function to handle adding the item to the cart
   const handleAddToCart = (e) => {
-    // Evitar la acción de navegación
+    // Prevent the default navigation action
     e.preventDefault();
+    // Dispatch the addToCart action with the item
     dispatch(addToCart(item));
   };
+
   return (
-    <div>
+    <>
+      {/* Img & Text Effect Button*/}
       {style === "btn-orange icon-button moving" && (
         <button
           onClick={handleAddToCart}
@@ -37,6 +43,7 @@ function AddToCartButton({ item, style }) {
           )}
         </button>
       )}
+      {/* Table Small Button */}
       {style === "table-btn" && (
         <button
           onClick={handleAddToCart}
@@ -45,6 +52,7 @@ function AddToCartButton({ item, style }) {
           }
         ></button>
       )}
+      {/* Square moving button */}
       {style === "btn-cart right-to-left margin product-card m-0" && (
         <button
           onClick={handleAddToCart}
@@ -53,8 +61,7 @@ function AddToCartButton({ item, style }) {
           }
         ></button>
       )}
-
-    </div>
+    </>
   );
 }
 export default AddToCartButton;

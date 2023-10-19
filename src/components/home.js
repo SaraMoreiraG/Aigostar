@@ -8,23 +8,38 @@ import { scrollToSection } from "../utils/scrollUtils";
 import "../App.css";
 
 const Home = () => {
+  // Import necessary dependencies and hooks
   const airfryers = useSelector((state) => state.airfryers);
   const accessories = useSelector((state) => state.accessories);
+
+  // Create refs for each section
+  const homeSectionRef = useRef(null);
   const airfryersSectionRef = useRef(null);
   const accessoriesSectionRef = useRef(null);
-  const homeSectionRef = useRef(null);
+  const recipesSectionRef = useRef(null);
 
   useEffect(() => {
-    // Verifica si la URL contiene el fragmento #airfryers y, si es así, haz scroll a la sección.
-    if (window.location.hash === "#airfryers" && airfryersSectionRef.current) {
-      airfryersSectionRef.current.scrollIntoView({ behavior: "smooth" });
-    } else if (
-      window.location.hash === "#accessories" &&
-      accessoriesSectionRef.current
-    ) {
-      accessoriesSectionRef.current.scrollIntoView({ behavior: "smooth" });
-    } else if (window.location.hash === "#home" && homeSectionRef.current) {
-      homeSectionRef.current.scrollIntoView({ behavior: "smooth" });
+    // Check if there is a hash in the URL
+    if (window.location.hash) {
+      // Check the hash in the URL and scroll to the corresponding section if it exists
+      if (
+        window.location.hash === "#airfryers" &&
+        airfryersSectionRef.current
+      ) {
+        airfryersSectionRef.current.scrollIntoView({ behavior: "smooth" });
+      } else if (
+        window.location.hash === "#accessories" &&
+        accessoriesSectionRef.current
+      ) {
+        accessoriesSectionRef.current.scrollIntoView({ behavior: "smooth" });
+      } else if (
+        window.location.hash === "#recipes" &&
+        recipesSectionRef.current
+      ) {
+        recipesSectionRef.current.scrollIntoView({ behavior: "smooth" });
+      } else if (window.location.hash === "#home" && homeSectionRef.current) {
+        homeSectionRef.current.scrollIntoView({ behavior: "smooth" });
+      }
     }
   }, []);
 
@@ -41,7 +56,7 @@ const Home = () => {
       <section ref={homeSectionRef} className="row p-5 py-5">
         <div
           className="magic-div col-4 p-1"
-          onClick={() => scrollToSection("airfryers")}
+          onClick={() => scrollToSection("airfryers", airfryersSectionRef)}
         >
           <img
             src="https://aigostar-img.s3.amazonaws.com/freidora-aire-airfryer-cat1.png"
@@ -56,7 +71,7 @@ const Home = () => {
         </div>
         <div
           className="magic-div col-4 p-3"
-          onClick={() => scrollToSection("accessories")}
+          onClick={() => scrollToSection("accessories", accessoriesSectionRef)}
         >
           <img
             src="https://aigostar-img.s3.amazonaws.com/accesorios-freidora-de-aire-cat2.jpg"
@@ -69,7 +84,7 @@ const Home = () => {
         </div>
         <div
           className="magic-div col-4 p-3"
-          onClick={() => scrollToSection("recipes")}
+          onClick={() => scrollToSection("recipes", recipesSectionRef)}
         >
           <img
             src="https://aigostar-img.s3.amazonaws.com/recetas-freidora-aire-cat3.jpg"
@@ -153,7 +168,7 @@ const Home = () => {
           />
         </div>
       </section>
-      {/******** accessories ********/}
+      {/******** ACCESSORIES ********/}
       <section
         ref={accessoriesSectionRef}
         id="accessories"
@@ -173,7 +188,11 @@ const Home = () => {
         </div>
       </section>
       {/******** RECEIPES ********/}
-      <section id="recipes" className="row text-center p-5 pb-0">
+      <section
+        id="recipes"
+        ref={homeSectionRef}
+        className="row text-center p-5 pb-0"
+      >
         <h1 className="mb-0">Recetas</h1>
         <div className="d-flex justify-content-center">
           <hr></hr>

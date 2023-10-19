@@ -5,15 +5,18 @@ import { Link } from "react-router-dom";
 import AddToCartButton from "./AddToCartButton/AddToCartButton";
 
 function AirfryerComparisonTable({ infoClick }) {
+   // Get the list of airfryers and cart items from the Redux store
   const airfryers = useSelector((state) => state.airfryers);
   const cartItems = useSelector((state) => state.cart);
 
+  // Function to handle the "info" button click
   const handleInfoClick = () => {
     infoClick();
   };
   return (
     <div className="table-responsive">
       <table className="table table-bordered">
+        {/* Display the airfryer image */}
         <thead>
           <tr className="text-center">
             <th className="align-middle col-2">Modelo</th>
@@ -38,6 +41,7 @@ function AirfryerComparisonTable({ infoClick }) {
             ))}
           </tr>
         </thead>
+        {/* Display the airfryer details */}
         <tbody>
           <tr>
             <td>Capacidad</td>
@@ -142,11 +146,17 @@ function AirfryerComparisonTable({ infoClick }) {
             ))}
           </tr>
           <tr>
+
+          {/* Buttons */}
           <td></td>
             {airfryers.map((airfryer) => {
+              // Extract data for each airfryer
               const { id, thumbnails, name, price, quantity } = airfryer;
+
+              // Check if the airfryer is already in the cart
               const isInCart = cartItems.some((item) => item.id === airfryer.id);
-              console.log("table ", isInCart)
+
+              // Create an 'item' object for the AddToCartButton
               const item = {
                 id: id,
                 img: thumbnails[0],
@@ -154,6 +164,7 @@ function AirfryerComparisonTable({ infoClick }) {
                 price: price,
                 quantity: quantity,
               };
+
               return (
                 <td key={airfryer.id}>
                   <div className="row">
@@ -166,6 +177,7 @@ function AirfryerComparisonTable({ infoClick }) {
                         <button className="btn-orange"> + info</button>
                       </Link>
                     </div>
+                    {/* Display the AddToCartButton component */}
                     <div className="d-flex justify-content-end pe-4 col-5">
                       <AddToCartButton
                         item={item}

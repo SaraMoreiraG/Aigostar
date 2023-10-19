@@ -164,13 +164,14 @@ const initialState = {
   ],
   accessories: [
     {
-      id: 3,
+      id: 0,
       name: "Kit1",
       title: "Clothing And Accessory Boutiques For Sale",
       description:
         "Con un control manual de doble dial fácil de usar para que pueda realizarlas fácilmente y la comida siempre quede perfecta: Asar, pollo, patatas fritas, verduras y postres.",
       price: 15,
       thumbnails: [
+        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1.jpg",
         "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1.jpg",
       ],
       details: {
@@ -186,13 +187,14 @@ const initialState = {
       },
     },
     {
-      id: 4,
+      id: 1,
       name: "Bandeja",
       title: "Clothing And Accessory Boutiques For Sale",
       description:
         "Con un control manual de doble dial fácil de usar para que pueda realizarlas fácilmente y la comida siempre quede perfecta: Asar, pollo, patatas fritas, verduras y postres.",
       price: 15,
       thumbnails: [
+        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja1.jpg",
         "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja1.jpg",
       ],
       details: {
@@ -208,13 +210,14 @@ const initialState = {
       },
     },
     {
-      id: 5,
+      id: 2,
       name: "Kit2",
       title: "Clothing And Accessory Boutiques For Sale",
       description:
         "Con un control manual de doble dial fácil de usar para que pueda realizarlas fácilmente y la comida siempre quede perfecta: Asar, pollo, patatas fritas, verduras y postres.",
       price: 15,
       thumbnails: [
+        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2.jpg",
         "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2.jpg",
       ],
       details: {
@@ -230,13 +233,14 @@ const initialState = {
       },
     },
     {
-      id: 6,
+      id: 3,
       name: "Pulverizador",
       title: "Clothing And Accessory Boutiques For Sale",
       description:
         "Con un control manual de doble dial fácil de usar para que pueda realizarlas fácilmente y la comida siempre quede perfecta: Asar, pollo, patatas fritas, verduras y postres.",
       price: 15,
       thumbnails: [
+        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-pulverizador/pulverizador.jpg",
         "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-pulverizador/pulverizador.jpg",
       ],
       details: {
