@@ -16,6 +16,9 @@ function ProductDetails() {
   // Access accessories data from Redux store
   const accessories = useSelector((state) => state.accessories);
 
+  // Important info for accessories
+  const [isSmall, setIsSmall] = useState(true);
+
   // Determine the product based on the route parameter 'category'
   const categoryData = useSelector((state) => {
     if (category === "airfryers") {
@@ -102,46 +105,92 @@ function ProductDetails() {
           {category === "airfryers" ? (
             <>
               <p className="m-0">
-                {categoryData[id].details[0].name}: {categoryData[id].details[0].size}
+                {categoryData[id].details[0].name}:{" "}
+                {categoryData[id].details[0].size}
               </p>
               <p className="m-0">
-                {categoryData[id].details[1].name}: {categoryData[id].details[1].size} personas
+                {categoryData[id].details[1].name}:{" "}
+                {categoryData[id].details[1].size} personas
               </p>
-              <p className="m-0">{categoryData[id].details[3].name}: {categoryData[id].details[3].size}</p>
+              <p className="m-0">
+                {categoryData[id].details[3].name}:{" "}
+                {categoryData[id].details[3].size}
+              </p>
               <p>
-              {categoryData[id].details[6].name}: {categoryData[id].details[6].size}utos
+                {categoryData[id].details[6].name}:{" "}
+                {categoryData[id].details[6].size}utos
               </p>
             </>
           ) : (
-            categoryData[id].details.map((detail, index) => (
-              <p key={index} className="m-0">
-                {detail.name} : {detail.size}
-              </p>
-            ))
+            <div className="d-flex">
+              <div
+                className={`select-size p-2 col-4 ${isSmall ? "active" : ""}`}
+                onClick={() => setIsSmall(true)}
+              >
+                <div className="d-flex col-12">
+                  <img
+                    className="img-fluid col-6"
+                    src="https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-table.png"
+                  />
+                  <img
+                    className="img-fluid col-6"
+                    src="https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-table.png"
+                  />
+                </div>
+                <div className="d-flex justify-content-center">
+                  <div className="text-center mt-2 col-9">
+                    <span>Freidoras de aire de 3L, 4L y 5L</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                className={`select-size ms-3 p-2 col-4 ${
+                  !isSmall ? "active" : ""
+                }`}
+                onClick={() => setIsSmall(false)}
+              >
+                <div className="d-flex justify-content-center col-12">
+                  <img
+                    className="col-6"
+                    src="https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-table.png"
+                  />
+                </div>
+                <div className="d-flex justify-content-center">
+                  <div className="text-center mt-2 col-9">
+                    <span>Freidoras de aire de 6L y 7L</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           )}
           <h2 className="price my-3">{categoryData[id].price}€</h2>
-          <p className="fw-bold">Cantidad: {quantity}</p>
-          <div className="quantity d-flex mb-3 col-2">
-            <p
-              className="quantity-text"
-              onClick={() => handleQuantityChange(-1)}
-            >
-              -
-            </p>
-            <p>{quantity}</p>
-            <p
-              className="quantity-text"
-              onClick={() => handleQuantityChange(1)}
-            >
-              +
-            </p>
-          </div>
-          {/** CART BUTTON **/}
-          <div className="mb-3">
-            <AddToCartButton
-              item={item}
-              style="btn-orange icon-button moving"
-            />
+          <div className="d-flex align-items-end">
+            {/** QUANTITY **/}
+            <div className="col-4">
+              <p className="fw-bold">Cantidad: {quantity}</p>
+              <div className="quantity d-flex mb-3 col-8">
+                <p
+                  className="quantity-text"
+                  onClick={() => handleQuantityChange(-1)}
+                >
+                  -
+                </p>
+                <p>{quantity}</p>
+                <p
+                  className="quantity-text"
+                  onClick={() => handleQuantityChange(1)}
+                >
+                  +
+                </p>
+              </div>
+            </div>
+            {/** CART BUTTON **/}
+            <div className="mb-3">
+              <AddToCartButton
+                item={item}
+                style="btn-orange icon-button moving"
+              />
+            </div>
           </div>
           {/** BUY BUTTON **/}
           <div className="d-flex col-12">
@@ -216,24 +265,38 @@ function ProductDetails() {
         {activeDialog === 2 && (
           <div className="dialog px-5 mx-5">
             <div className="dialog-content p-3">
-                {categoryData[id].details.length <= 7 ? (
-                  // Si hay 7 o menos detalles, muestra la tabla completa
-                  <table className="col-6">
-                    <tbody>
-                      {categoryData[id].details.map((detail, index) => (
-                        <tr
-                          key={index}
-                          className={index % 2 === 0 ? "even" : "odd"}
-                        >
-                          <td className="col-8 p-2">{detail.name}</td>
-                          <td className="text-end p-2 col-4">{detail.size}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                ) : (
-                  // Si hay más de 7 detalles, divide la tabla en dos
-                  <>
+              {category === "accessories" ? (
+                // Si la categoria es accesorios, muestra la tabla completa
+                <table className="col-6">
+                  <tbody>
+                    {isSmall
+                      ? categoryData[id].detailsSmall.map((detail, index) => (
+                          <tr
+                            key={index}
+                            className={index % 2 === 0 ? "even" : "odd"}
+                          >
+                            <td className="col-8 p-2">{detail.name}</td>
+                            <td className="text-end p-2 col-4">
+                              {detail.size}
+                            </td>
+                          </tr>
+                        ))
+                      : categoryData[id].detailsBig.map((detail, index) => (
+                          <tr
+                            key={index}
+                            className={index % 2 === 0 ? "even" : "odd"}
+                          >
+                            <td className="col-8 p-2">{detail.name}</td>
+                            <td className="text-end p-2 col-4">
+                              {detail.size}
+                            </td>
+                          </tr>
+                        ))}
+                  </tbody>
+                </table>
+              ) : (
+                // Si la categoria es AIRFRYERS, muestra 2 tablas
+                <>
                   <div className="d-flex justify-content-end pe-3 col-6">
                     <table className="col-8">
                       <tbody>
@@ -252,8 +315,8 @@ function ProductDetails() {
                           ))}
                       </tbody>
                     </table>
-                    </div>
-                    <div className="d-flex justify-content-start ps-3 col-6">
+                  </div>
+                  <div className="d-flex justify-content-start ps-3 col-6">
                     <table className="col-8">
                       <tbody>
                         {categoryData[id].details
@@ -271,9 +334,9 @@ function ProductDetails() {
                           ))}
                       </tbody>
                     </table>
-                    </div>
-                  </>
-                )}
+                  </div>
+                </>
+              )}
             </div>
           </div>
         )}

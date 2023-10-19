@@ -74,6 +74,7 @@ const initialState = {
         "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-4.jpg",
         "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-5.jpg",
         "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-6.jpg",
+        "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-7.jpg"
       ],
       estadisticas: {
         puntuacion: 4.8,
@@ -171,6 +172,7 @@ const initialState = {
         "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-4.jpg",
         "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-5.jpg",
         "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-6.jpg",
+        "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-7.jpg"
       ],
       estadisticas: {
         puntuacion: 4.7,
@@ -268,6 +270,7 @@ const initialState = {
         "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-4.jpg",
         "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-5.jpg",
         "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-6.jpg",
+        "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-7.jpg"
       ],
       estadisticas: {
         puntuacion: 4.9,
@@ -294,36 +297,66 @@ const initialState = {
       name: "Kit1",
       title: "Kit de accesorios para freidora de aire",
       description:
-        "Incluye: 3 rejillas para vaporizar, tostar y un soporte para brochetas. 2 moldes para tartas y pizzas. 1 pinzas antioxidantes.",
+        "El kit de accesorios para freidoras de aire está compuesto por un molde para pizza, molde para repostería, pinzas, rejilla para asar con brochetas, soporte metálico y soporte para tostar pan. Libre de BPA, con revestimiento antiadherente y apto para lavavajillas. Estos accesorios facilitan la manera de cocinar con las freidoras de aire de Aigostar. Elige tu medida:",
       price: 15,
       thumbnails: [
-        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1.jpg",
-        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1.jpg",
+        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-1.jpg",
+        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-2.jpg",
+        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-3.jpg",
+        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-4.jpg",
+        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-5.jpg",
+        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-6.jpg",
       ],
-      details: [
+      detailsSmall: [
         {
           name: "1 Rejilla para asar",
-          size: "20 x 14.7 cm",
+          size: "17,5 x 3 cm",
         },
         {
           name: "1 Soporte para tostar rebanadas de pan",
-          size: "14.7 x 10.5 cm",
+          size: "15,5 x 8,5 cm",
         },
         {
           name: "1 Soporte metálico con pinchos para brochetas",
-          size: "19.5 x 2.5 cm",
+          size: "16 cm",
         },
         {
           name: "1 Pinzas con punta de silicona",
-          size: "21 cm",
+          size: "23 cm",
         },
         {
           name: "1 Molde para pizza",
-          size: "20 x 2.5 cm",
+          size: "18,1 x 2,3 cm",
         },
         {
           name: "1 Molde para repostería",
-          size: "20 x 7.2 cm",
+          size: "16,5 x 17,5 x 7 cm",
+        },
+      ],
+      detailsBig: [
+        {
+          name: "1 Rejilla para asar",
+          size: "19,5 x 3 cm",
+        },
+        {
+          name: "1 Soporte para tostar rebanadas de pan",
+          size: "15,5 x 8,5 cm",
+        },
+        {
+          name: "1 Soporte metálico con pinchos para brochetas",
+          size: "18 cm",
+        },
+        {
+          name: "1 Pinzas con punta de silicona",
+          size: "23 cm",
+        },
+        {
+          name: "1 Molde para pizza",
+          size: "20,3 x 2,6 cm",
+        },
+        {
+          name: "1 Molde para repostería",
+          size: "21 x 22 x 7 cm",
         },
       ],
       estadisticas: {

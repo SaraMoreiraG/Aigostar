@@ -303,6 +303,14 @@ hr {
 .fa-house{
 	font-size: 10px;
 }
+.select-size{
+	border: 1px solid #ebebeb;
+	border-radius: 10px;
+	cursor: pointer;
+}
+.select-size.active{
+	border-color: #e7ab3d;
+}
 .quantity{
 	display: flex;
 	justify-content: space-between;
@@ -347,3 +355,4 @@ input{
 	font-size: 12px;
 	color: #797979;
 }
+
