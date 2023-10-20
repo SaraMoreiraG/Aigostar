@@ -8,16 +8,20 @@ import ImageGallery from "./ImageGallery/ImageGallery";
 import AddToCartButton from "./AddToCartButton/AddToCartButton";
 import AirfryerComparisonTable from "./AirfryerComparisonTable";
 import ProductCard from "./ProductCard/ProductCard";
+import { unstable_renderSubtreeIntoContainer } from "react-dom";
 
 function ProductDetails() {
   // Get route parameters
   const { category, name, id } = useParams();
 
+  // Initialize states
+  const [quantity, setQuantity] = useState(1);
+  const [selectedColor, setSelectedColor] = useState("smallBlue");
+  const [isSmall, setIsSmall] = useState(true);
+  const [selectedSize, setSelectedSize] = useState('4L')
+
   // Access accessories data from Redux store
   const accessories = useSelector((state) => state.accessories);
-
-  // Important info for accessories
-  const [isSmall, setIsSmall] = useState(true);
 
   // Determine the product based on the route parameter 'category'
   const categoryData = useSelector((state) => {
@@ -28,9 +32,6 @@ function ProductDetails() {
     }
     return null; // Handle the case where the category is not found
   });
-
-  // Initialize quantity state and function to set it
-  const [quantity, setQuantity] = useState(1);
 
   // Create an item object for the cart
   const item = {
@@ -88,7 +89,10 @@ function ProductDetails() {
       {/************ GALLERY AND PRODUCT DETAILS **************/}
       <section className="row p-5" id="product">
         <section className="col-6">
-          <ImageGallery images={categoryData[id].thumbnails} />
+          <ImageGallery
+            images={categoryData[id].thumbnails}
+            selectedColor={selectedColor}
+          />
         </section>
         {/**** PRODUCT DETAILS ****/}
         <section className="col-5">
@@ -122,46 +126,72 @@ function ProductDetails() {
               </p>
             </>
           ) : (
-            <div className="d-flex">
-              <div
-                className={`select-size p-2 col-4 ${isSmall ? "active" : ""}`}
-                onClick={() => setIsSmall(true)}
-              >
-                <div className="d-flex col-12">
-                  <img
-                    className="img-fluid col-6"
-                    src="https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-table.png"
-                  />
-                  <img
-                    className="img-fluid col-6"
-                    src="https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-table.png"
-                  />
+            <>
+              {/* Set Size */}
+              <div className="d-flex">
+                <div
+                  className={`select-size p-2 col-4 ${selectedSize == '4L' ? "active" : ""}`}
+                  onClick={() => setSelectedSize('4L')}
+                >
+                  <div className="d-flex col-12">
+                    <img
+                      className="img-fluid col-6"
+                      src="https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-table.png"
+                    />
+                    <img
+                      className="img-fluid col-6"
+                      src="https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-table.png"
+                    />
+                  </div>
+                  <div className="d-flex justify-content-center">
+                    <div className="text-center mt-2 col-9">
+                      <span>Freidoras de aire de 3L, 4L y 5L</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="d-flex justify-content-center">
-                  <div className="text-center mt-2 col-9">
-                    <span>Freidoras de aire de 3L, 4L y 5L</span>
+                <div
+                  className={`select-size ms-3 p-2 col-4 ${
+                    selectedSize == '7L' ? "active" : ""
+                  }`}
+                  onClick={() => setSelectedSize('7L')}
+                >
+                  <div className="d-flex justify-content-center col-12">
+                    <img
+                      className="col-6"
+                      src="https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-table.png"
+                    />
+                  </div>
+                  <div className="d-flex justify-content-center">
+                    <div className="text-center mt-2 col-9">
+                      <span>Freidoras de aire de 6L y 7L</span>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div
-                className={`select-size ms-3 p-2 col-4 ${
-                  !isSmall ? "active" : ""
-                }`}
-                onClick={() => setIsSmall(false)}
-              >
-                <div className="d-flex justify-content-center col-12">
-                  <img
-                    className="col-6"
-                    src="https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-table.png"
-                  />
-                </div>
-                <div className="d-flex justify-content-center">
-                  <div className="text-center mt-2 col-9">
-                    <span>Freidoras de aire de 6L y 7L</span>
-                  </div>
-                </div>
+              {/* Set color */}
+              <div className="row d-flex">
+
+                {categoryData[id].thumbnails.colors.map((color, index) => (
+                  color.size === selectedSize &&
+                  (<div
+                    key={index}
+                    className={`select-size ms-3 p-2 col-4 ${
+                      selectedColor == color.name ? "active" : ""
+                    }`}
+                    onClick={() => setSelectedColor(color.name)}
+                  >
+                    <div className="d-flex justify-content-center col-12">
+                      <img className="col-6" src={color.url} />
+                    </div>
+                    <div className="d-flex justify-content-center">
+                      <div className="text-center mt-2 col-9">
+                        <span>{color.showName}</span>
+                      </div>
+                    </div>
+                  </div>)
+                ))}
               </div>
-            </div>
+            </>
           )}
           <h2 className="price my-3">{categoryData[id].price}€</h2>
           <div className="d-flex align-items-end">

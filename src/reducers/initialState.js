@@ -9,64 +9,64 @@ const initialState = {
         "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-table.png",
       description:
         "Freidora de Aire 4L, Circulación de Aire Rápido, Freidora Sin Aceite con Temporizador de 30 Minutos, Temperatura Ajustable, Cocina Baja en Grasa, Libre BPA, 1500W",
-        details: [
-          {
-            name: "Capacidad",
-            size: "4 L",
-          },
-          {
-            name: "Comensales",
-            size: "2-4",
-          },
-          {
-            name: "Bandeja Antihaderente",
-            size: "Si",
-          },
-          {
-            name: "Control",
-            size: "Dial",
-          },
-          {
-            name: "Funciones",
-            size: ["no"],
-          },
-          {
-            name: "Programas",
-            size: "0",
-          },
-          {
-            name: "Temporizador",
-            size: "30 Min",
-          },
-          {
-            name: "Temperatura Máx",
-            size: "200º",
-          },
-          {
-            name: "Temperatura Min",
-            size: "80º",
-          },
-          {
-            name: "Potencia",
-            size: "1500W",
-          },
-          {
-            name: "Ancho",
-            size: "318cm",
-          },
-          {
-            name: "Alto",
-            size: "306cm",
-          },
-          {
-            name: "Fondo",
-            size: "266cm",
-          },
-          {
-            name: "Peso",
-            size: "5,4Kg",
-          },
-        ],
+      details: [
+        {
+          name: "Capacidad",
+          size: "4 L",
+        },
+        {
+          name: "Comensales",
+          size: "2-4",
+        },
+        {
+          name: "Bandeja Antihaderente",
+          size: "Si",
+        },
+        {
+          name: "Control",
+          size: "Dial",
+        },
+        {
+          name: "Funciones",
+          size: ["no"],
+        },
+        {
+          name: "Programas",
+          size: "0",
+        },
+        {
+          name: "Temporizador",
+          size: "30 Min",
+        },
+        {
+          name: "Temperatura Máx",
+          size: "200º",
+        },
+        {
+          name: "Temperatura Min",
+          size: "80º",
+        },
+        {
+          name: "Potencia",
+          size: "1500W",
+        },
+        {
+          name: "Ancho",
+          size: "318cm",
+        },
+        {
+          name: "Alto",
+          size: "306cm",
+        },
+        {
+          name: "Fondo",
+          size: "266cm",
+        },
+        {
+          name: "Peso",
+          size: "5,4Kg",
+        },
+      ],
       thumbnails: [
         "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-1.jpg",
         "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-2.jpg",
@@ -74,7 +74,7 @@ const initialState = {
         "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-4.jpg",
         "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-5.jpg",
         "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-6.jpg",
-        "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-7.jpg"
+        "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-7.jpg",
       ],
       estadisticas: {
         puntuacion: 4.8,
@@ -172,7 +172,7 @@ const initialState = {
         "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-4.jpg",
         "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-5.jpg",
         "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-6.jpg",
-        "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-7.jpg"
+        "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-7.jpg",
       ],
       estadisticas: {
         puntuacion: 4.7,
@@ -270,7 +270,7 @@ const initialState = {
         "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-4.jpg",
         "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-5.jpg",
         "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-6.jpg",
-        "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-7.jpg"
+        "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-7.jpg",
       ],
       estadisticas: {
         puntuacion: 4.9,
@@ -295,6 +295,7 @@ const initialState = {
     {
       id: 0,
       name: "Kit1",
+      colors: [""],
       title: "Kit de accesorios para freidora de aire",
       description:
         "El kit de accesorios para freidoras de aire está compuesto por un molde para pizza, molde para repostería, pinzas, rejilla para asar con brochetas, soporte metálico y soporte para tostar pan. Libre de BPA, con revestimiento antiadherente y apto para lavavajillas. Estos accesorios facilitan la manera de cocinar con las freidoras de aire de Aigostar. Elige tu medida:",
@@ -380,29 +381,122 @@ const initialState = {
     {
       id: 1,
       name: "Bandeja",
-      title: "Clothing And Accessory Boutiques For Sale",
+      colors: ["blue", "grey"],
+      title:
+        "Cesta de silicona para freidora de aire, bandeja reutilizable para horno, accesorios para freidora de aire",
       description:
         "Con un control manual de doble dial fácil de usar para que pueda realizarlas fácilmente y la comida siempre quede perfecta: Asar, pollo, patatas fritas, verduras y postres.",
-      price: 15,
-      thumbnails: [
-        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja1.jpg",
-        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja1.jpg",
+      price: 10,
+      thumbnails: {
+        principals: [
+          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja1.jpg",
+          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja2.jpg",
+          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja3.jpg",
+          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja4.jpg",
+          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja5.jpg",
+        ],
+        colors: [
+          {
+            name: "smallBlue",
+            size: "4L",
+            showName: "Azul",
+            url: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja6-small-blue.jpg",
+          },
+          {
+            name: "smallGrey",
+            size: "4L",
+            showName: "Gris",
+            url:
+              "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja6-small-grey.jpg",
+          },
+          {
+            name: "bigBlue",
+            size: "7L",
+            showName: "Azul",
+            url: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja6-big-blue.jpg",
+          },
+          {
+            name: "bigGrey",
+            showName: "Gris",
+            size: "7L",
+            url: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja6-big-grey.jpg",
+          },
+        ],
+      },
+      detailsSmall: [
+        {
+          name: "1 Rejilla para asar",
+          size: "17,5 x 3 cm",
+        },
+        {
+          name: "1 Soporte para tostar rebanadas de pan",
+          size: "15,5 x 8,5 cm",
+        },
+        {
+          name: "1 Soporte metálico con pinchos para brochetas",
+          size: "16 cm",
+        },
+        {
+          name: "1 Pinzas con punta de silicona",
+          size: "23 cm",
+        },
+        {
+          name: "1 Molde para pizza",
+          size: "18,1 x 2,3 cm",
+        },
+        {
+          name: "1 Molde para repostería",
+          size: "16,5 x 17,5 x 7 cm",
+        },
       ],
-      details: {
-        capacidad: 4,
-        comensales: "2-4",
-        bandejaantihaderente: "Si",
-        control: "Dial",
-      },
+      detailsBig: [
+        {
+          name: "1 Rejilla para asar",
+          size: "19,5 x 3 cm",
+        },
+        {
+          name: "1 Soporte para tostar rebanadas de pan",
+          size: "15,5 x 8,5 cm",
+        },
+        {
+          name: "1 Soporte metálico con pinchos para brochetas",
+          size: "18 cm",
+        },
+        {
+          name: "1 Pinzas con punta de silicona",
+          size: "23 cm",
+        },
+        {
+          name: "1 Molde para pizza",
+          size: "20,3 x 2,6 cm",
+        },
+        {
+          name: "1 Molde para repostería",
+          size: "21 x 22 x 7 cm",
+        },
+      ],
       estadisticas: {
-        puntuacion: 4.9,
-        valoraciones: 779,
-        vendidos: +4000,
+        puntuacion: 4.5,
+        valoraciones: 102,
+        vendidos: +500,
       },
+      descriptionDetails: [
+        "* Cocina saludable con un sinfín de posibilidades *",
+        "Sácale el máximo partido a tu Aigostar con este completo pack de accesorios que te permitirá cocinar cientos de recetas de la forma más cómoda y eficaz. Elige el que más se adapte a tu receta, saca tu lado más creativo y disfruta de resultados únicos.",
+        "* Accesorios para carnes *",
+        "Cocina carne de la forma más eficaz con su rejilla para asar y sus pinchos para brochetas, que te permitirán conseguir el punto perfecto de la carne de la forma más saludable.",
+        "* Molde para pizzas *",
+        "No te compliques cocinando pizzas en el horno, métela en el molde, elige el menú preconfigurado y disfruta de resultados perfectos de la forma más cómoda.",
+        "* Molde para repostería *",
+        "Prepara un sinfín de postres sin manchar la cubeta y disfruta de recetas irresistibles.",
+        "* Máxima versatilidad y comodidad *",
+        "El kit de accesorios también cuenta con un soporte metálico, un soporte para tostar pan y pinzas con punta de silicona para que puedas cocinar siempre de la forma más cómoda y eficaz.",
+      ],
     },
     {
       id: 2,
       name: "Kit2",
+      colors: [""],
       title: "Clothing And Accessory Boutiques For Sale",
       description:
         "Con un control manual de doble dial fácil de usar para que pueda realizarlas fácilmente y la comida siempre quede perfecta: Asar, pollo, patatas fritas, verduras y postres.",
@@ -426,6 +520,7 @@ const initialState = {
     {
       id: 3,
       name: "Pulverizador",
+      colors: [""],
       title: "Clothing And Accessory Boutiques For Sale",
       description:
         "Con un control manual de doble dial fácil de usar para que pueda realizarlas fácilmente y la comida siempre quede perfecta: Asar, pollo, patatas fritas, verduras y postres.",
