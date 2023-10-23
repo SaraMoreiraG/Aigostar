@@ -18,7 +18,7 @@ function ProductDetails() {
   const [quantity, setQuantity] = useState(1);
   const [selectedColor, setSelectedColor] = useState("smallBlue");
   const [isSmall, setIsSmall] = useState(true);
-  const [selectedSize, setSelectedSize] = useState('4L')
+  const [selectedSize, setSelectedSize] = useState("4L");
 
   // Access accessories data from Redux store
   const accessories = useSelector((state) => state.accessories);
@@ -109,87 +109,93 @@ function ProductDetails() {
           {category === "airfryers" ? (
             <>
               <p className="m-0">
-                {categoryData[id].details[0].name}:{" "}
-                {categoryData[id].details[0].size}
+                {categoryData[id].detailsSmall[0].name}:{" "}
+                {categoryData[id].detailsSmall[0].size}
               </p>
               <p className="m-0">
-                {categoryData[id].details[1].name}:{" "}
-                {categoryData[id].details[1].size} personas
+                {categoryData[id].detailsSmall[1].name}:{" "}
+                {categoryData[id].detailsSmall[1].size} personas
               </p>
               <p className="m-0">
-                {categoryData[id].details[3].name}:{" "}
-                {categoryData[id].details[3].size}
+                {categoryData[id].detailsSmall[3].name}:{" "}
+                {categoryData[id].detailsSmall[3].size}
               </p>
               <p>
-                {categoryData[id].details[6].name}:{" "}
-                {categoryData[id].details[6].size}utos
+                {categoryData[id].detailsSmall[6].name}:{" "}
+                {categoryData[id].detailsSmall[6].size}utos
               </p>
             </>
           ) : (
             <>
               {/* Set Size */}
-              <div className="d-flex">
-                <div
-                  className={`select-size p-2 col-4 ${selectedSize == '4L' ? "active" : ""}`}
-                  onClick={() => setSelectedSize('4L')}
-                >
-                  <div className="d-flex col-12">
-                    <img
-                      className="img-fluid col-6"
-                      src="https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-table.png"
-                    />
-                    <img
-                      className="img-fluid col-6"
-                      src="https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-table.png"
-                    />
-                  </div>
-                  <div className="d-flex justify-content-center">
-                    <div className="text-center mt-2 col-9">
-                      <span>Freidoras de aire de 3L, 4L y 5L</span>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className={`select-size ms-3 p-2 col-4 ${
-                    selectedSize == '7L' ? "active" : ""
-                  }`}
-                  onClick={() => setSelectedSize('7L')}
-                >
-                  <div className="d-flex justify-content-center col-12">
-                    <img
-                      className="col-6"
-                      src="https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-table.png"
-                    />
-                  </div>
-                  <div className="d-flex justify-content-center">
-                    <div className="text-center mt-2 col-9">
-                      <span>Freidoras de aire de 6L y 7L</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* Set color */}
-              <div className="row d-flex">
-
-                {categoryData[id].thumbnails.colors.map((color, index) => (
-                  color.size === selectedSize &&
-                  (<div
-                    key={index}
-                    className={`select-size ms-3 p-2 col-4 ${
-                      selectedColor == color.name ? "active" : ""
+              {categoryData[id].thumbnails.colors && (
+                <div className="d-flex">
+                  <div
+                    className={`select-size p-2 col-4 ${
+                      selectedSize == "4L" ? "active" : ""
                     }`}
-                    onClick={() => setSelectedColor(color.name)}
+                    onClick={() => setSelectedSize("4L")}
                   >
-                    <div className="d-flex justify-content-center col-12">
-                      <img className="col-6" src={color.url} />
+                    <div className="d-flex col-12">
+                      <img
+                        className="img-fluid col-6"
+                        src="https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-table.png"
+                      />
+                      <img
+                        className="img-fluid col-6"
+                        src="https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-table.png"
+                      />
                     </div>
                     <div className="d-flex justify-content-center">
                       <div className="text-center mt-2 col-9">
-                        <span>{color.showName}</span>
+                        <span>Freidoras de aire de 3L, 4L y 5L</span>
                       </div>
                     </div>
-                  </div>)
-                ))}
+                  </div>
+                  <div
+                    className={`select-size ms-3 p-2 col-4 ${
+                      selectedSize == "7L" ? "active" : ""
+                    }`}
+                    onClick={() => setSelectedSize("7L")}
+                  >
+                    <div className="d-flex justify-content-center col-12">
+                      <img
+                        className="col-6"
+                        src="https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-table.png"
+                      />
+                    </div>
+                    <div className="d-flex justify-content-center">
+                      <div className="text-center mt-2 col-9">
+                        <span>Freidoras de aire de 6L y 7L</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+              {/* Set color */}
+              <div className="row d-flex">
+                {categoryData[id].thumbnails.colors &&
+                  categoryData[id].thumbnails.colors.map(
+                    (color, index) =>
+                      color.size === selectedSize && (
+                        <div
+                          key={index}
+                          className={`select-size ms-3 p-2 col-4 ${
+                            selectedColor == color.name ? "active" : ""
+                          }`}
+                          onClick={() => setSelectedColor(color.name)}
+                        >
+                          <div className="d-flex justify-content-center col-12">
+                            <img className="col-6" src={color.url} />
+                          </div>
+                          <div className="d-flex justify-content-center">
+                            <div className="text-center mt-2 col-9">
+                              <span>{color.showName}</span>
+                            </div>
+                          </div>
+                        </div>
+                      )
+                  )}
               </div>
             </>
           )}
@@ -262,7 +268,7 @@ function ProductDetails() {
             onClick={() => openDialog(4)}
             className={activeDialog === 4 ? "active" : ""}
           >
-            Sección 4
+            Freidoras de Aire
           </h5>
         </div>
         <div className="px-5 mx-5">
@@ -330,7 +336,7 @@ function ProductDetails() {
                   <div className="d-flex justify-content-end pe-3 col-6">
                     <table className="col-8">
                       <tbody>
-                        {categoryData[id].details
+                        {categoryData[id].detailsSmall
                           .slice(0, 7)
                           .map((detail, index) => (
                             <tr
@@ -349,7 +355,7 @@ function ProductDetails() {
                   <div className="d-flex justify-content-start ps-3 col-6">
                     <table className="col-8">
                       <tbody>
-                        {categoryData[id].details
+                        {categoryData[id].detailsSmall
                           .slice(7)
                           .map((detail, index) => (
                             <tr
@@ -373,19 +379,38 @@ function ProductDetails() {
 
         {activeDialog === 3 && (
           <div className="dialog px-5 mx-5">
-            <div className="dialog-content">
-              <p>Cuadro de diálogo de la Sección 3</p>
+            <div className="dialog-content p-3">
+              <div className="text-center col-4 px-5">
+                <img
+                  src={categoryData[id].estadisticas.img}
+                  className="img-fluid"
+                />
+                <span>
+                  Más de {categoryData[id].estadisticas.vendidos} productos
+                  vendidos y {categoryData[id].estadisticas.valoraciones}{" "}
+                  valoraciones en Amazon
+                </span>
+              </div>
+              <div className="col-6">
+                {categoryData[id].reviews.map((detail, index) => (
+                  <div key={index}>
+                    <div className="d-flex">
+                      <i className="fa-solid fa-star"></i>
+                      <i className="fa-solid fa-star"></i>
+                      <i className="fa-solid fa-star"></i>
+                      <i className="fa-solid fa-star"></i>
+                      <i className="fa-solid fa-star"></i>
+                      <h5 className="ms-2">{detail.title}</h5>
+                    </div>
+                    <p>{detail.comment}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         )}
 
-        {activeDialog === 4 && (
-          <div className="dialog px-5 mx-5">
-            <div className="dialog-content">
-              <p>Cuadro de diálogo de la Sección 4</p>
-            </div>
-          </div>
-        )}
+        {activeDialog === 4 && <div className="dialog px-5 mx-5"></div>}
       </div>
 
       {/************ COMPARATION TABLE **************/}
@@ -396,12 +421,19 @@ function ProductDetails() {
       </section>
 
       {/******** ACCESSORIES ********/}
-      <section id="accessories" className="row align-items-center p-5 pb-0">
+      <section
+        id="accessories"
+        className="row align-items-center text-center m-5 p-5 pb-0"
+      >
+        <h1 className="mb-0">Te puede interesar:</h1>
+        <div className="d-flex justify-content-center">
+          <hr></hr>
+        </div>
         <div className="d-flex">
           {accessories.map((accesory) => (
             <div
               key={accesory.id}
-              className="text-center px-3 col-3"
+              className="text-center p-3 col-3"
               onClick={() => scrollToSection("second-navbar")}
             >
               <Link

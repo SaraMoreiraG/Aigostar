@@ -10,7 +10,7 @@ function AirfryerComparisonTable({ infoClick }) {
   const cartItems = useSelector((state) => state.cart);
 
   // Get the names for the table
-  const detailNames = airfryers[0].details.map((detail) => detail.name);
+  const detailNames = airfryers[0].detailsSmall.map((detail) => detail.name);
 
   // Function to handle the "info" button click
   const handleInfoClick = () => {
@@ -18,7 +18,7 @@ function AirfryerComparisonTable({ infoClick }) {
   };
 
   return (
-    <div className="table-responsive">
+    <div className="table-responsive mx-5">
       <table className="table table-bordered">
         {/* Display the airfryer image */}
         <thead>
@@ -52,20 +52,20 @@ function AirfryerComparisonTable({ infoClick }) {
               <td>{name}</td>
               {airfryers.map((airfryer) => (
                 <td key={airfryer.name} className="text-center">
-                  {airfryer.details[index].name === "Funciones" ? (
-                    airfryer.details[index].size.length > 1 ? (
-                      airfryer.details[index].size.length
+                  {airfryer.detailsSmall[index].name === "Funciones" ? (
+                    airfryer.detailsSmall[index].size.length > 1 ? (
+                      airfryer.detailsSmall[index].size.length
                     ) : (
                       <i className="fa-solid fa-x"></i>
                     )
-                  ) : airfryer.details[index].name === "Programas" ? (
-                    airfryer.details[index].size != 0 ? (
-                      airfryer.details[index].size
+                  ) : airfryer.detailsSmall[index].name === "Programas" ? (
+                    airfryer.detailsSmall[index].size != 0 ? (
+                      airfryer.detailsSmall[index].size
                     ) : (
                       <i className="fa-solid fa-x"></i>
                     )
                   ) : (
-                    airfryer.details[index].size
+                    airfryer.detailsSmall[index].size
                   )}
                 </td>
               ))}

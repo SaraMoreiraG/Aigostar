@@ -9,7 +9,7 @@ const initialState = {
         "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-table.png",
       description:
         "Freidora de Aire 4L, Circulación de Aire Rápido, Freidora Sin Aceite con Temporizador de 30 Minutos, Temperatura Ajustable, Cocina Baja en Grasa, Libre BPA, 1500W",
-      details: [
+      detailsSmall: [
         {
           name: "Capacidad",
           size: "4 L",
@@ -67,19 +67,23 @@ const initialState = {
           size: "5,4Kg",
         },
       ],
-      thumbnails: [
-        "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-1.jpg",
-        "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-2.jpg",
-        "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-3.jpg",
-        "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-4.jpg",
-        "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-5.jpg",
-        "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-6.jpg",
-        "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-7.jpg",
-      ],
+      thumbnails: {
+        principals: [
+          "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-1.jpg",
+          "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-2.jpg",
+          "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-3.jpg",
+          "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-4.jpg",
+          "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-5.jpg",
+          "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-6.jpg",
+          "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-7.jpg",
+        ],
+        colors: [""],
+      },
       estadisticas: {
         puntuacion: 4.8,
-        valoraciones: 11,
+        valoraciones: 71,
         vendidos: 55,
+        img:"https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-reviews.png",
       },
       descriptionDetails: [
         "* Capacidad compacta de 4L *",
@@ -93,6 +97,20 @@ const initialState = {
         "* Parada con memoria *",
         "La freidora de aire dispone de una función que permite que cuando extraiga la cesta durante el cocinado para agitar los alimentos o revisarlos, se parará automáticamente y continuará cocinándolos en el mismo punto en que los sacó.",
       ],
+      reviews: [
+        {
+          title: "Muy buena compra muy contenta",
+          comment: "Me ha gustado todo en esta freidora es práctica la comida sale muy bien crujiente y me ha sorprendido estoy encantada con ella volvería comprarla",
+        },
+        {
+          title: "Buena calidad y fácil de utilizar",
+          comment: "Me ha gustado todo, facilísimo de utilizar, de limpiar y he flipado como hace la comida, recomendado",
+        },
+        {
+          title: "Rápido y eficiente",
+          comment: "Llevo par de semanas usándolo y me encanta. Es bastante rápido y hace el trabajo sin problemas. (La segunda foto es después de cocinar una pieza de pollo y como ven se ensucia muy poco) lo cual es genial porque tuve uno que para lavarlo era tedioso. Lo recomiendo.",
+        },
+      ]
     },
     {
       id: 1,
@@ -103,7 +121,7 @@ const initialState = {
         "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-table.png",
       description:
         "Freidora de Aire 9 en 1, Air Fryer 4L con Temporizador de 60 Minutos y Pantalla LED, Temperatura Ajustable de 40℃ a 200℃, Canasta Antiadherente, Menos Aceite y Sin Humo, 1500W",
-      details: [
+      detailsSmall: [
         {
           name: "Capacidad",
           size: "4 L",
@@ -165,7 +183,7 @@ const initialState = {
           size: "5,4Kg",
         },
       ],
-      thumbnails: [
+      thumbnails: { principals: [
         "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-1.jpg",
         "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-2.jpg",
         "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-3.jpg",
@@ -173,11 +191,12 @@ const initialState = {
         "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-5.jpg",
         "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-6.jpg",
         "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-7.jpg",
-      ],
+      ], colors: ['']},
       estadisticas: {
         puntuacion: 4.7,
-        valoraciones: 56,
+        valoraciones: 61,
         vendidos: 224,
+        img: ""
       },
       descriptionDetails: [
         "* Fácil de usar *",
@@ -191,6 +210,20 @@ const initialState = {
         "* Diseño práctico *",
         "El panel de la freidora de aire está inclinado en un ángulo de 25 ° para facilitar su uso y que se vea fácilmente; además cocina sin aceite o con una cantidad mínima lo que reduce el consumo de grasa y le permite comer de forma más saludable.",
       ],
+      reviews: [
+        {
+          title: "Buen producto",
+          comment: "Es mi primera freidora y está bien. Tras ver distintas reseñas escogí esta y la encuentro completa. Es poco ruidosa, rápida y bien acabada. Las patatas salen bastante aproximadas a las fritas, los empanados crujen y gratina genial.",
+        },
+        {
+          title: "Excelente! Muy práctica",
+          comment: "Me ha encantado esta airfryer! Tiene capacidad para cocinar entre 2 y 3 raciones, es muy sencilla de usar, fácil de limpiar y la comida queda muy buena :)",
+        },
+        {
+          title: "Freidora de aire",
+          comment: "Compre esta marca viendo reseñas en video de YouTube , por ahora estoy contenta es para 3 o 4 personas",
+        },
+      ]
     },
     {
       id: 2,
@@ -201,7 +234,7 @@ const initialState = {
         "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-table.png",
       description:
         "Freidora de Aire Inteligente Sin Aceite, 7L, Pantalla LED Táctil, 7 Funciones Preestablecidas + Mantener Caliente y Modo Manual, Cesta Antiadherente Extraíble, Conexión Wifi, Libre de BPA, 1900W",
-      details: [
+      detailsSmall: [
         {
           name: "Capacidad",
           size: "7 L",
@@ -263,7 +296,7 @@ const initialState = {
           size: "5,9Kg",
         },
       ],
-      thumbnails: [
+      thumbnails: { principals: [
         "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-1.jpg",
         "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-2.jpg",
         "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-3.jpg",
@@ -271,11 +304,12 @@ const initialState = {
         "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-5.jpg",
         "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-6.jpg",
         "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-7.jpg",
-      ],
+      ], colors: ['']},
       estadisticas: {
         puntuacion: 4.9,
-        valoraciones: 13,
-        vendidos: 47,
+        valoraciones: +500,
+        vendidos: 1.800,
+        img: ""
       },
       descriptionDetails: [
         "* Conexión Wifi *",
@@ -289,6 +323,20 @@ const initialState = {
         "* Funcional *",
         "La freidora es totalmente libre de BPA, la cesta es extraíble y se limpia fácilmente, además dispone de patas antideslizantes, hueco recoge-cables, asa de toque frío y función mantener caliente; además conectándola a la app AigoSmart tendrá funciones adicionales como añadir un menú y guardarlo para usarlo en el futuro o un aviso recordatorio para girar la cesta durante el cocinado.",
       ],
+      reviews: [
+        {
+          title: "Fácil de controlar y muy intuitiva",
+          comment: "La freidora funciona genial, además de que ahorras en aceite. Un punto fuerte que tiene esta freidora es que con la aplicación la puedes controlar fácilmente. Además, el panel táctil es muy intuitivo y responde muy bien al tacto.",
+        },
+        {
+          title: "Un gran producto",
+          comment: "El producto incluye una garantía, un manual de instrucciones y un libro de cocina. He comprado diferentes freidoras y de diferentes marcas. Este es sin duda el más potente de todos y también de gran capacidad.",
+        },
+        {
+          title: "Excelente",
+          comment: "Es el segundo Aigostar que compro después de dos años usando el anterior, idéntico a este, pero con menos wifi. Observo que el ventilador es más silencioso. La comida está cocinada a la perfección. ",
+        },
+      ],
     },
   ],
   accessories: [
@@ -300,14 +348,17 @@ const initialState = {
       description:
         "El kit de accesorios para freidoras de aire está compuesto por un molde para pizza, molde para repostería, pinzas, rejilla para asar con brochetas, soporte metálico y soporte para tostar pan. Libre de BPA, con revestimiento antiadherente y apto para lavavajillas. Estos accesorios facilitan la manera de cocinar con las freidoras de aire de Aigostar. Elige tu medida:",
       price: 15,
-      thumbnails: [
-        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-1.jpg",
-        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-2.jpg",
-        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-3.jpg",
-        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-4.jpg",
-        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-5.jpg",
-        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-6.jpg",
-      ],
+      thumbnails: {
+        principals: [
+          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-1.jpg",
+          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-2.jpg",
+          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-3.jpg",
+          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-4.jpg",
+          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-5.jpg",
+          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-6.jpg",
+        ],
+        colors: [""],
+      },
       detailsSmall: [
         {
           name: "1 Rejilla para asar",
@@ -364,6 +415,7 @@ const initialState = {
         puntuacion: 4.7,
         valoraciones: 95,
         vendidos: 317,
+        img: ""
       },
       descriptionDetails: [
         "* Cocina saludable con un sinfín de posibilidades *",
@@ -377,6 +429,20 @@ const initialState = {
         "* Máxima versatilidad y comodidad *",
         "El kit de accesorios también cuenta con un soporte metálico, un soporte para tostar pan y pinzas con punta de silicona para que puedas cocinar siempre de la forma más cómoda y eficaz.",
       ],
+      reviews: [
+        {
+          title: "",
+          comment: "",
+        },
+        {
+          title: "",
+          comment: "",
+        },
+        {
+          title: "",
+          comment: "",
+        },
+      ]
     },
     {
       id: 1,
@@ -406,8 +472,7 @@ const initialState = {
             name: "smallGrey",
             size: "4L",
             showName: "Gris",
-            url:
-              "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja6-small-grey.jpg",
+            url: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja6-small-grey.jpg",
           },
           {
             name: "bigBlue",
@@ -479,6 +544,7 @@ const initialState = {
         puntuacion: 4.5,
         valoraciones: 102,
         vendidos: +500,
+        img: ""
       },
       descriptionDetails: [
         "* Cocina saludable con un sinfín de posibilidades *",
@@ -492,20 +558,37 @@ const initialState = {
         "* Máxima versatilidad y comodidad *",
         "El kit de accesorios también cuenta con un soporte metálico, un soporte para tostar pan y pinzas con punta de silicona para que puedas cocinar siempre de la forma más cómoda y eficaz.",
       ],
+      reviews: [
+        {
+          title: "",
+          comment: "",
+        },
+        {
+          title: "",
+          comment: "",
+        },
+        {
+          title: "",
+          comment: "",
+        },
+      ]
     },
     {
       id: 2,
       name: "Kit2",
-      colors: [""],
+      colors: [],
       title: "Clothing And Accessory Boutiques For Sale",
       description:
         "Con un control manual de doble dial fácil de usar para que pueda realizarlas fácilmente y la comida siempre quede perfecta: Asar, pollo, patatas fritas, verduras y postres.",
       price: 15,
-      thumbnails: [
-        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2.jpg",
-        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2.jpg",
-      ],
-      details: {
+      thumbnails: {
+        principals: [
+          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2.jpg",
+          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2.jpg",
+        ],
+        colors: [],
+      },
+      detailsSmall: {
         capacidad: 4,
         comensales: "2-4",
         bandejaantihaderente: "Si",
@@ -515,7 +598,34 @@ const initialState = {
         puntuacion: 4.7,
         valoraciones: 95,
         vendidos: 317,
+        img: ""
       },
+      descriptionDetails: [
+        "* Cocina saludable con un sinfín de posibilidades *",
+        "Sácale el máximo partido a tu Aigostar con este completo pack de accesorios que te permitirá cocinar cientos de recetas de la forma más cómoda y eficaz. Elige el que más se adapte a tu receta, saca tu lado más creativo y disfruta de resultados únicos.",
+        "* Accesorios para carnes *",
+        "Cocina carne de la forma más eficaz con su rejilla para asar y sus pinchos para brochetas, que te permitirán conseguir el punto perfecto de la carne de la forma más saludable.",
+        "* Molde para pizzas *",
+        "No te compliques cocinando pizzas en el horno, métela en el molde, elige el menú preconfigurado y disfruta de resultados perfectos de la forma más cómoda.",
+        "* Molde para repostería *",
+        "Prepara un sinfín de postres sin manchar la cubeta y disfruta de recetas irresistibles.",
+        "* Máxima versatilidad y comodidad *",
+        "El kit de accesorios también cuenta con un soporte metálico, un soporte para tostar pan y pinzas con punta de silicona para que puedas cocinar siempre de la forma más cómoda y eficaz.",
+      ],
+      reviews: [
+        {
+          title: "",
+          comment: "",
+        },
+        {
+          title: "",
+          comment: "",
+        },
+        {
+          title: "",
+          comment: "",
+        },
+      ]
     },
     {
       id: 3,
@@ -525,11 +635,14 @@ const initialState = {
       description:
         "Con un control manual de doble dial fácil de usar para que pueda realizarlas fácilmente y la comida siempre quede perfecta: Asar, pollo, patatas fritas, verduras y postres.",
       price: 15,
-      thumbnails: [
-        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-pulverizador/pulverizador.jpg",
-        "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-pulverizador/pulverizador.jpg",
-      ],
-      details: {
+      thumbnails: {
+        principals: [
+          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-pulverizador/pulverizador.jpg",
+          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-pulverizador/pulverizador.jpg",
+        ],
+        colors: [],
+      },
+      detailsSmall: {
         capacidad: 4,
         comensales: "2-4",
         bandejaantihaderente: "Si",
@@ -539,7 +652,34 @@ const initialState = {
         puntuacion: 4.8,
         valoraciones: 5,
         vendidos: 54,
+        img: ""
       },
+      descriptionDetails: [
+        "* Cocina saludable con un sinfín de posibilidades *",
+        "Sácale el máximo partido a tu Aigostar con este completo pack de accesorios que te permitirá cocinar cientos de recetas de la forma más cómoda y eficaz. Elige el que más se adapte a tu receta, saca tu lado más creativo y disfruta de resultados únicos.",
+        "* Accesorios para carnes *",
+        "Cocina carne de la forma más eficaz con su rejilla para asar y sus pinchos para brochetas, que te permitirán conseguir el punto perfecto de la carne de la forma más saludable.",
+        "* Molde para pizzas *",
+        "No te compliques cocinando pizzas en el horno, métela en el molde, elige el menú preconfigurado y disfruta de resultados perfectos de la forma más cómoda.",
+        "* Molde para repostería *",
+        "Prepara un sinfín de postres sin manchar la cubeta y disfruta de recetas irresistibles.",
+        "* Máxima versatilidad y comodidad *",
+        "El kit de accesorios también cuenta con un soporte metálico, un soporte para tostar pan y pinzas con punta de silicona para que puedas cocinar siempre de la forma más cómoda y eficaz.",
+      ],
+      reviews: [
+        {
+          title: "",
+          comment: "",
+        },
+        {
+          title: "",
+          comment: "",
+        },
+        {
+          title: "",
+          comment: "",
+        },
+      ]
     },
   ],
   cart: [],

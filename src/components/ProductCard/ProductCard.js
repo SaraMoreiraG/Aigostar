@@ -5,7 +5,7 @@ function ProductCard({ product }) {
   // Create an 'item' object for the cart
   const item = {
     id: parseInt(product.id, 10),
-    img: product.thumbnails[0],
+    img: product.thumbnails.principals[0],
     name: product.name,
     price: product.price,
     quantity: 1,
@@ -16,7 +16,7 @@ function ProductCard({ product }) {
       <div className="magic-div">
         {/* Product Image */}
         <img
-          src={product.thumbnails[0]}
+          src={product.thumbnails.principals[0]}
           alt={`airfryer ${product.name}`}
           className="img-fluid zoom mb-2"
         />
