@@ -80,7 +80,7 @@ const initialState = {
         colors: [""],
       },
       estadisticas: {
-        puntuacion: 4.8,
+        puntuacion: 4.4,
         valoraciones: 71,
         vendidos: 55,
         img:"https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-reviews.png",
@@ -193,10 +193,10 @@ const initialState = {
         "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-7.jpg",
       ], colors: [""]},
       estadisticas: {
-        puntuacion: 4.7,
+        puntuacion: 4.2,
         valoraciones: 61,
-        vendidos: 224,
-        img: ""
+        vendidos: 200,
+        img: "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-reviews.jpg"
       },
       descriptionDetails: [
         "* Fácil de usar *",
@@ -306,10 +306,10 @@ const initialState = {
         "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-7.jpg",
       ], colors: [""]},
       estadisticas: {
-        puntuacion: 4.9,
-        valoraciones: +500,
-        vendidos: 1.800,
-        img: ""
+        puntuacion: 4.3,
+        valoraciones: 1867,
+        vendidos: 3000,
+        img: "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-reviews.jpg"
       },
       descriptionDetails: [
         "* Conexión Wifi *",
@@ -412,10 +412,10 @@ const initialState = {
         },
       ],
       estadisticas: {
-        puntuacion: 4.7,
-        valoraciones: 95,
-        vendidos: 317,
-        img: ""
+        puntuacion: 4.5,
+        valoraciones: 5.499,
+        vendidos: +6000,
+        img: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-reviews.jpg"
       },
       descriptionDetails: [
         "* Descubre un Mundo de Posibilidades *",
@@ -519,9 +519,9 @@ const initialState = {
       ],
       estadisticas: {
         puntuacion: 4.5,
-        valoraciones: 102,
-        vendidos: +500,
-        img: ""
+        valoraciones: 74,
+        vendidos: +100,
+        img: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja-review.jpg"
       },
       descriptionDetails: [
         "* Cocina sin Aceite *",
@@ -558,8 +558,12 @@ const initialState = {
       price: 15,
       thumbnails: {
         principals: [
-          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2.jpg",
-          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2.jpg",
+          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2-1.jpg",
+          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2-2.jpg",
+          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2-3.jpg",
+          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2-4-small.jpg",
+          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2-4-big.jpg",
+
         ],
         colors: [],
       },
@@ -608,10 +612,10 @@ const initialState = {
         },
       ],
       estadisticas: {
-        puntuacion: 4.7,
-        valoraciones: 95,
-        vendidos: 317,
-        img: ""
+        puntuacion: 4.6,
+        valoraciones: 197,
+        vendidos: +200,
+        img: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2-review.jpg"
       },
       descriptionDetails: [
         "* Cocina sin Aceite *",
@@ -648,7 +652,7 @@ const initialState = {
       thumbnails: {
         principals: [
           "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-pulverizador/pulverizador.jpg",
-          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-pulverizador/pulverizador.jpg",
+          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-pulverizador/pulverizador-2.jpg",
         ],
         colors: [""],
       },
@@ -659,10 +663,10 @@ const initialState = {
         },
       ],
       estadisticas: {
-        puntuacion: 4.8,
-        valoraciones: 5,
-        vendidos: 54,
-        img: ""
+        puntuacion: 4.3,
+        valoraciones: 166,
+        vendidos: +500,
+        img: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-pulverizador/pulverizador-reviews.jpg"
       },
       descriptionDetails: [
         "* Aplica Aceite de Forma Uniforme *",

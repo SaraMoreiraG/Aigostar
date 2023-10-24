@@ -86,6 +86,7 @@ const highlightKeywords = (text) => {
         ) : (
           <a
             className="second-navbar"
+            style={{cursor:"pointer"}}
             onClick={(event) => {
               event.preventDefault(); // Prevent the default navigation behavior
               scrollToSection("accessories");
@@ -140,6 +141,9 @@ const highlightKeywords = (text) => {
             <>
               {/* Set Size */}
               {categoryData[id].sizes && (
+                <>
+                  <p className="mb-0"><strong>Elige el tamaño de tu feridora:</strong></p>
+
                 <div className="d-flex">
                   <div
                     className={`select-size my-3 p-2 col-3 ${
@@ -185,6 +189,7 @@ const highlightKeywords = (text) => {
                     </div>
                   </div>
                 </div>
+                </>
               )}
               {/* Set color */}
               {categoryData[id].thumbnails.colors && (
