@@ -3,7 +3,7 @@ const initialState = {
     {
       id: 0,
       name: "HaydenA",
-      title: "Freidora sin aceite - Hayden A AIGOSTAR, 1500 W, Negro",
+      title: "Freidora sin aceite - Hayden A AIGOSTAR, 4L, 1500 W",
       price: 56,
       imgtable:
         "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-table.png",
@@ -115,7 +115,7 @@ const initialState = {
     {
       id: 1,
       name: "HaydenX",
-      title: "Freidora sin aceite - Hayden X AIGOSTAR, 1500 W, Negro",
+      title: "Freidora sin aceite - Hayden X AIGOSTAR, 4L, 1500 W",
       price: 60,
       imgtable:
         "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-table.png",
@@ -191,7 +191,7 @@ const initialState = {
         "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-5.jpg",
         "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-6.jpg",
         "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-7.jpg",
-      ], colors: ['']},
+      ], colors: [""]},
       estadisticas: {
         puntuacion: 4.7,
         valoraciones: 61,
@@ -228,7 +228,7 @@ const initialState = {
     {
       id: 2,
       name: "CubeSmart",
-      title: "Freidora sin aceite - Cube Smart AIGOSTAR, 1900 W, Negro",
+      title: "Freidora sin aceite - Cube Smart AIGOSTAR, 9L, 1900 W",
       price: 95,
       imgtable:
         "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-table.png",
@@ -304,7 +304,7 @@ const initialState = {
         "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-5.jpg",
         "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-6.jpg",
         "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-7.jpg",
-      ], colors: ['']},
+      ], colors: [""]},
       estadisticas: {
         puntuacion: 4.9,
         valoraciones: +500,
@@ -343,10 +343,10 @@ const initialState = {
     {
       id: 0,
       name: "Kit1",
-      colors: [""],
-      title: "Kit de accesorios para freidora de aire",
+      sizes: ["big", "small"],
+      title: "Kit de Accesorios para Freidoras de Aire: Tu Compañero Culinario Versátil",
       description:
-        "El kit de accesorios para freidoras de aire está compuesto por un molde para pizza, molde para repostería, pinzas, rejilla para asar con brochetas, soporte metálico y soporte para tostar pan. Libre de BPA, con revestimiento antiadherente y apto para lavavajillas. Estos accesorios facilitan la manera de cocinar con las freidoras de aire de Aigostar. Elige tu medida:",
+        "Este conjunto de utensilios de cocina te permitirá explorar un mundo de posibilidades culinarias saludables. Desde pizza perfectamente horneada hasta carnes asadas con precisión, este kit es tu boleto para cocinar de manera cómoda y efectiva con tu Aigostar. Además, disfruta de pollo crujiente, patatas fritas doradas y hasta castañas tostadas de manera saludable.",
       price: 15,
       thumbnails: {
         principals: [
@@ -357,7 +357,7 @@ const initialState = {
           "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-5.jpg",
           "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-6.jpg",
         ],
-        colors: [""],
+        colors: [],
       },
       detailsSmall: [
         {
@@ -418,40 +418,41 @@ const initialState = {
         img: ""
       },
       descriptionDetails: [
-        "* Cocina saludable con un sinfín de posibilidades *",
-        "Sácale el máximo partido a tu Aigostar con este completo pack de accesorios que te permitirá cocinar cientos de recetas de la forma más cómoda y eficaz. Elige el que más se adapte a tu receta, saca tu lado más creativo y disfruta de resultados únicos.",
-        "* Accesorios para carnes *",
-        "Cocina carne de la forma más eficaz con su rejilla para asar y sus pinchos para brochetas, que te permitirán conseguir el punto perfecto de la carne de la forma más saludable.",
-        "* Molde para pizzas *",
-        "No te compliques cocinando pizzas en el horno, métela en el molde, elige el menú preconfigurado y disfruta de resultados perfectos de la forma más cómoda.",
-        "* Molde para repostería *",
-        "Prepara un sinfín de postres sin manchar la cubeta y disfruta de recetas irresistibles.",
-        "* Máxima versatilidad y comodidad *",
-        "El kit de accesorios también cuenta con un soporte metálico, un soporte para tostar pan y pinzas con punta de silicona para que puedas cocinar siempre de la forma más cómoda y eficaz.",
+        "* Descubre un Mundo de Posibilidades *",
+        "Aprovecha al máximo tu Aigostar con este conjunto completo de accesorios que desbloquea un sinfín de recetas. Libera tu creatividad culinaria y disfruta de resultados excepcionales.",
+        "* Maestría en Carnes *",
+        "Logra la carne perfecta de manera saludable con nuestra rejilla para asar y pinchos para brochetas. Obtén el punto ideal en cada bocado.",
+        "* Pizza Sin Esfuerzo *",
+        "Olvídate de complicaciones al cocinar pizzas. Utiliza el molde preconfigurado y disfruta de resultados perfectos con la mayor comodidad.",
+        "* Dulces Sin Estrés *",
+        "repara postres irresistibles sin ensuciar tu freidora. Nuestro molde para repostería es tu aliado en la cocina.",
+        "* Versatilidad y Comodidad Máximas *",
+        "El kit también incluye un soporte metálico, soporte para tostar pan y pinzas con punta de silicona para que cocines con comodidad y eficacia en todo momento. Tu cocina nunca ha sido tan versátil.",
       ],
       reviews: [
         {
-          title: "",
-          comment: "",
+          title: "Todo lo que necesitaba",
+          comment: "Este kit de accesorios para freidoras de aire fue justo lo que necesitaba. Los diferentes componentes hacen que la freidora sea aún más versátil. La rejilla para asar es perfecta para carnes, y el molde para pizza hace que las cenas sean rápidas y deliciosas. La entrega fue puntual, lo cual fue un gran alivio.",
         },
         {
-          title: "",
-          comment: "",
+          title: "Sorprendentemente útil",
+          comment: "Este kit ha sido una sorpresa agradable. El molde para repostería ha sido una adición fabulosa, y las pinzas con punta de silicona son muy útiles. ",
         },
         {
-          title: "",
-          comment: "",
+          title: "Funcionales",
+          comment: "Los accesorios son funcionales y hacen que la freidora de aire sea más versátil.",
         },
       ]
     },
     {
       id: 1,
       name: "Bandeja",
+      sizes: ["big", "small"],
       colors: ["blue", "grey"],
       title:
-        "Cesta de silicona para freidora de aire, bandeja reutilizable para horno, accesorios para freidora de aire",
+        "Dúo de Bandejas de Silicona para Freidora de Aire y Horno: Cocina Saludable sin Aceite",
       description:
-        "Con un control manual de doble dial fácil de usar para que pueda realizarlas fácilmente y la comida siempre quede perfecta: Asar, pollo, patatas fritas, verduras y postres.",
+        "¿Quieres llevar tu experiencia de cocina al siguiente nivel? Nuestra cesta de silicona para Freidora de Aire y Horno es el accesorio esencial que estabas buscando. Esta bandeja reutilizable te permitirá preparar una amplia variedad de deliciosas recetas de forma saludable y sin aceite.",
       price: 10,
       thumbnails: {
         principals: [
@@ -463,81 +464,57 @@ const initialState = {
         ],
         colors: [
           {
-            name: "smallBlue",
-            size: "4L",
+            name: "blue",
+            size: "small",
             showName: "Azul",
             url: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja6-small-blue.jpg",
           },
           {
-            name: "smallGrey",
-            size: "4L",
+            name: "grey",
+            size: "small",
             showName: "Gris",
             url: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja6-small-grey.jpg",
           },
           {
-            name: "bigBlue",
-            size: "7L",
+            name: "blue",
+            size: "big",
             showName: "Azul",
             url: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja6-big-blue.jpg",
           },
           {
-            name: "bigGrey",
+            name: "grey",
+            size: "big",
             showName: "Gris",
-            size: "7L",
             url: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja6-big-grey.jpg",
           },
         ],
       },
       detailsSmall: [
         {
-          name: "1 Rejilla para asar",
-          size: "17,5 x 3 cm",
+          name: "Diametro de la base",
+          size: "14 cm",
         },
         {
-          name: "1 Soporte para tostar rebanadas de pan",
-          size: "15,5 x 8,5 cm",
-        },
-        {
-          name: "1 Soporte metálico con pinchos para brochetas",
+          name: "Diametro exterior",
           size: "16 cm",
         },
         {
-          name: "1 Pinzas con punta de silicona",
-          size: "23 cm",
-        },
-        {
-          name: "1 Molde para pizza",
-          size: "18,1 x 2,3 cm",
-        },
-        {
-          name: "1 Molde para repostería",
-          size: "16,5 x 17,5 x 7 cm",
+          name: "Profundidad",
+          size: "4,5 cm",
         },
       ],
       detailsBig: [
         {
-          name: "1 Rejilla para asar",
-          size: "19,5 x 3 cm",
+          name: "Diametro de la base",
+          size: "17 cm",
         },
         {
-          name: "1 Soporte para tostar rebanadas de pan",
-          size: "15,5 x 8,5 cm",
+          name: "Diametro exterior",
+          size: "20 cm",
         },
         {
-          name: "1 Soporte metálico con pinchos para brochetas",
-          size: "18 cm",
-        },
-        {
-          name: "1 Pinzas con punta de silicona",
-          size: "23 cm",
-        },
-        {
-          name: "1 Molde para pizza",
-          size: "20,3 x 2,6 cm",
-        },
-        {
-          name: "1 Molde para repostería",
-          size: "21 x 22 x 7 cm",
+          name: "Profundidad",
+          size: "6 cm",
         },
       ],
       estadisticas: {
@@ -547,39 +524,37 @@ const initialState = {
         img: ""
       },
       descriptionDetails: [
-        "* Cocina saludable con un sinfín de posibilidades *",
-        "Sácale el máximo partido a tu Aigostar con este completo pack de accesorios que te permitirá cocinar cientos de recetas de la forma más cómoda y eficaz. Elige el que más se adapte a tu receta, saca tu lado más creativo y disfruta de resultados únicos.",
-        "* Accesorios para carnes *",
-        "Cocina carne de la forma más eficaz con su rejilla para asar y sus pinchos para brochetas, que te permitirán conseguir el punto perfecto de la carne de la forma más saludable.",
-        "* Molde para pizzas *",
-        "No te compliques cocinando pizzas en el horno, métela en el molde, elige el menú preconfigurado y disfruta de resultados perfectos de la forma más cómoda.",
-        "* Molde para repostería *",
-        "Prepara un sinfín de postres sin manchar la cubeta y disfruta de recetas irresistibles.",
-        "* Máxima versatilidad y comodidad *",
-        "El kit de accesorios también cuenta con un soporte metálico, un soporte para tostar pan y pinzas con punta de silicona para que puedas cocinar siempre de la forma más cómoda y eficaz.",
+        "* Cocina sin Aceite *",
+        "Con esta cesta de silicona, puedes disfrutar de platos fritos, como pollo crujiente y patatas fritas, sin el exceso de aceite. Es una forma más saludable de cocinar tus comidas favoritas.",
+        "* Versatilidad *",
+        "Esta cesta es perfecta para preparar una variedad de platos, desde pizzas hasta platos de carne y mucho más. Tu creatividad culinaria no tendrá límites.",
+        "* Reutilizable *",
+        "La cesta de silicona es duradera y reutilizable, lo que la hace respetuosa con el medio ambiente y una inversión a largo plazo para tu cocina.",
+        "* Fácil de Limpiar *",
+        "Mantenerla en perfectas condiciones es sencillo, ya que es apta para lavavajillas.",
       ],
       reviews: [
         {
-          title: "",
-          comment: "",
+          title: "Entrega rápida",
+          comment: "llegó muy rápido y muy bien empacado recomiendo está tienda ya se probó y funciona bien",
         },
         {
-          title: "",
-          comment: "",
+          title: "Funcional",
+          comment: "Muy contentos con la entrega rápida. La forma en sí resultó no ser tan grande como pensaba, pero se mete en la freidora de aire y realiza sus funciones. ",
         },
         {
-          title: "",
-          comment: "",
+          title: "Calidad",
+          comment: "De buena calidad. ",
         },
       ]
     },
     {
       id: 2,
       name: "Kit2",
-      colors: [],
-      title: "Clothing And Accessory Boutiques For Sale",
+      sizes: ['big', 'small'],
+      title: "Accesorios de Silicona para Repostería: Facilita tus Creaciones Dulces",
       description:
-        "Con un control manual de doble dial fácil de usar para que pueda realizarlas fácilmente y la comida siempre quede perfecta: Asar, pollo, patatas fritas, verduras y postres.",
+        "Preparar postres deliciosos nunca ha sido tan sencillo. Nuestro set de Accesorios de Repostería incluye un molde para hornear magdalenas, 6 moldes de silicona para magdalenas, una espátula de silicona y unos guantes de silicona. Con estos accesorios, podrás crear magdalenas esponjosas y una variedad de delicias con facilidad y precisión.",
       price: 15,
       thumbnails: {
         principals: [
@@ -588,12 +563,50 @@ const initialState = {
         ],
         colors: [],
       },
-      detailsSmall: {
-        capacidad: 4,
-        comensales: "2-4",
-        bandejaantihaderente: "Si",
-        control: "Dial",
-      },
+      detailsSmall: [
+        {
+          name: "Molde magdalenas (diametro)",
+          size: "18 cm",
+        },
+        {
+          name: "Molde magdalenas (alto)",
+          size: "5 cm",
+        },
+        {
+          name: "Brocha (largo)",
+          size: "21 cm",
+        },
+        {
+          name: "Guantes (ancho)",
+          size: "11,5 cm",
+        },
+        {
+          name: "Guantes (alto)",
+          size: "8,5 cm",
+        },
+      ],
+      detailsBig: [
+        {
+          name: "Molde magdalenas (diametro)",
+          size: "20 cm",
+        },
+        {
+          name: "Molde magdalenas (alto)",
+          size: "5 cm",
+        },
+        {
+          name: "Brocha (largo)",
+          size: "21 cm",
+        },
+        {
+          name: "Guantes (ancho)",
+          size: "11,5 cm",
+        },
+        {
+          name: "Guantes (alto)",
+          size: "8,5 cm",
+        },
+      ],
       estadisticas: {
         puntuacion: 4.7,
         valoraciones: 95,
@@ -601,53 +614,50 @@ const initialState = {
         img: ""
       },
       descriptionDetails: [
-        "* Cocina saludable con un sinfín de posibilidades *",
-        "Sácale el máximo partido a tu Aigostar con este completo pack de accesorios que te permitirá cocinar cientos de recetas de la forma más cómoda y eficaz. Elige el que más se adapte a tu receta, saca tu lado más creativo y disfruta de resultados únicos.",
-        "* Accesorios para carnes *",
-        "Cocina carne de la forma más eficaz con su rejilla para asar y sus pinchos para brochetas, que te permitirán conseguir el punto perfecto de la carne de la forma más saludable.",
-        "* Molde para pizzas *",
-        "No te compliques cocinando pizzas en el horno, métela en el molde, elige el menú preconfigurado y disfruta de resultados perfectos de la forma más cómoda.",
-        "* Molde para repostería *",
-        "Prepara un sinfín de postres sin manchar la cubeta y disfruta de recetas irresistibles.",
-        "* Máxima versatilidad y comodidad *",
-        "El kit de accesorios también cuenta con un soporte metálico, un soporte para tostar pan y pinzas con punta de silicona para que puedas cocinar siempre de la forma más cómoda y eficaz.",
+        "* Cocina sin Aceite *",
+        "Con nuestra colección de accesorios de repostería, disfrutarás de la magia de la cocina sin aceite. Prepara postres y recetas saludables sin la necesidad de añadir grasas innecesarias.",
+        "* Versatilidad *",
+        "Estos accesorios son perfectos para una amplia variedad de platos. Desde magdalenas esponjosas hasta otros postres creativos y recetas de repostería, nuestra colección te permitirá explorar tu lado culinario sin límites.",
+        "* Reutilizable *",
+        "Los accesorios de silicona en este set son duraderos y reutilizables. Esto no solo es beneficioso para tu cocina, sino también para el medio ambiente. Invierte a largo plazo en accesorios respetuosos con la Tierra.",
+        "* Fácil de Limpiar *",
+        "Mantener estos accesorios en perfectas condiciones es una tarea sencilla, ya que son aptos para lavavajillas. Disfruta de tus creaciones culinarias sin preocuparte por la limpieza posterior.",
       ],
       reviews: [
         {
-          title: "",
-          comment: "",
+          title: "Esponjosidad Garantizada",
+          comment: "Increíble conjunto de accesorios de repostería. Hace que hornear sea sencillo y los resultados son siempre esponjosos.",
         },
         {
-          title: "",
-          comment: "",
+          title: "Fáciles de usar",
+          comment: "Accesorios para cocinar sin complicaciones. Fáciles de limpiar y respetuosos con el medio ambiente.",
         },
         {
-          title: "",
-          comment: "",
+          title: "Versatilidad en la Cocina",
+          comment: "Desde magdalenas esponjosas hasta recetas creativas, estos accesorios son versátiles. ",
         },
       ]
     },
     {
       id: 3,
       name: "Pulverizador",
-      colors: [""],
-      title: "Clothing And Accessory Boutiques For Sale",
+      title: "Kit de Pulverizador de Aceite y Brocha de Silicona: Sabor y Ahorro en tu Cocina",
       description:
-        "Con un control manual de doble dial fácil de usar para que pueda realizarlas fácilmente y la comida siempre quede perfecta: Asar, pollo, patatas fritas, verduras y postres.",
+        "Mejora tu experiencia culinaria con nuestro Kit de Pulverizador de Aceite y Brocha de Silicona. Este set es la solución perfecta para aplicar aceite de manera uniforme en tus platos favoritos, lo que no solo mejora su sabor, sino que también te ayuda a ahorrar en aceite. Si te preocupa la salud y el sabor de tus comidas, este kit es un imprescindible en tu cocina.",
       price: 15,
       thumbnails: {
         principals: [
           "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-pulverizador/pulverizador.jpg",
           "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-pulverizador/pulverizador.jpg",
         ],
-        colors: [],
+        colors: [""],
       },
-      detailsSmall: {
-        capacidad: 4,
-        comensales: "2-4",
-        bandejaantihaderente: "Si",
-        control: "Dial",
-      },
+      detailsSmall: [
+        {
+          name: "Pulverizador (capacidad)",
+          size: "500ml",
+        },
+      ],
       estadisticas: {
         puntuacion: 4.8,
         valoraciones: 5,
@@ -655,29 +665,30 @@ const initialState = {
         img: ""
       },
       descriptionDetails: [
-        "* Cocina saludable con un sinfín de posibilidades *",
-        "Sácale el máximo partido a tu Aigostar con este completo pack de accesorios que te permitirá cocinar cientos de recetas de la forma más cómoda y eficaz. Elige el que más se adapte a tu receta, saca tu lado más creativo y disfruta de resultados únicos.",
-        "* Accesorios para carnes *",
-        "Cocina carne de la forma más eficaz con su rejilla para asar y sus pinchos para brochetas, que te permitirán conseguir el punto perfecto de la carne de la forma más saludable.",
-        "* Molde para pizzas *",
-        "No te compliques cocinando pizzas en el horno, métela en el molde, elige el menú preconfigurado y disfruta de resultados perfectos de la forma más cómoda.",
-        "* Molde para repostería *",
-        "Prepara un sinfín de postres sin manchar la cubeta y disfruta de recetas irresistibles.",
-        "* Máxima versatilidad y comodidad *",
-        "El kit de accesorios también cuenta con un soporte metálico, un soporte para tostar pan y pinzas con punta de silicona para que puedas cocinar siempre de la forma más cómoda y eficaz.",
+        "* Aplica Aceite de Forma Uniforme *",
+        "Con el spray de aceite y la brocha de silicona, podrás distribuir el aceite de manera uniforme en tus platos, garantizando un sabor delicioso en cada bocado.",
+        "* Ahorra en Aceite *",
+        "Olvídate de desperdiciar aceite en tus preparaciones. Nuestro kit te permite utilizar la cantidad justa de aceite, lo que es amigable con tu bolsillo y tu salud.",
+        "* Versatilidad de Uso *",
+        "Este kit es ideal para aplicar aceite de oliva, aceite de cocina o cualquier otro aceite de tu elección. También es perfecto para barnizar tus bizcochos y recetas de airfryer.",
+        "* Fácil de Limpiar *",
+        "Tanto el pulverizador como la brocha de silicona son fáciles de limpiar, lo que simplifica la tarea después de cada uso.",
+        "****",
+        "Si buscas mejorar tus platos con un toque de sabor y al mismo tiempo cuidar tu presupuesto, el Kit de Pulverizador de Aceite y Brocha de Silicona es la elección perfecta. ¡Añádelo a tu cocina hoy mismo y descubre la diferencia en tus recetas!",
+        "****"
       ],
       reviews: [
         {
-          title: "",
-          comment: "",
+          title: "Aceite Justo en su Punto",
+          comment: "El kit de pulverizador y brocha ha cambiado mi juego en la cocina. Ahora, cada plato tiene el aceite justo, y los sabores son excepcionales.",
         },
         {
-          title: "",
-          comment: "",
+          title: "Sabor sin Culpa",
+          comment: "Este kit es un salvavidas para quienes aman la comida deliciosa pero se preocupan por la salud. Los resultados son sabrosos, y además, ahorro aceite.",
         },
         {
-          title: "",
-          comment: "",
+          title: "Imprescindible en mi Cocina",
+          comment: "Desde que tengo este kit, mis comidas son más saludables y deliciosas. La brocha de silicona hace que aplicar aceite sea preciso y uniforme, ¡y mis platos lo agradecen!",
         },
       ]
     },

@@ -303,13 +303,20 @@ hr {
 .fa-house{
 	font-size: 10px;
 }
-.select-size{
-	border: 1px solid #ebebeb;
+.select-size,
+.select-color{
 	border-radius: 10px;
 	cursor: pointer;
 }
-.select-size.active{
-	border-color: #e7ab3d;
+.select-size{
+	border: 1px solid #ebebeb;
+}
+.select-color{
+	border: 1px solid transparent;
+}
+.select-size.active,
+.select-color.active{
+	border-color:#e7ab3d;
 }
 .quantity{
 	display: flex;

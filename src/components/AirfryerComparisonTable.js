@@ -18,14 +18,15 @@ function AirfryerComparisonTable({ infoClick }) {
   };
 
   return (
-    <div className="table-responsive mx-5">
+    <div className="table-responsive">
       <table className="table table-bordered">
         {/* Display the airfryer image */}
         <thead>
           <tr className="text-center">
-            <th className="align-middle col-2">Modelo</th>
+            <th className="align-middle">Modelo</th>
             {airfryers.map((airfryer) => (
               <th key={airfryer.id} className="align-middle col-3">
+                <div className="d-flex justify-content-center">
                 <Link
                   to={`/airfryers/${airfryer.name}/${airfryer.id}`}
                   className="no-underline"
@@ -41,6 +42,14 @@ function AirfryerComparisonTable({ infoClick }) {
                     <p className="m-0 mt-2">{airfryer.name}</p>
                   </div>
                 </Link>
+                <AddToCartButton
+                    item={{id: airfryer.id,
+                          img: airfryer.thumbnails[0],
+                          name: airfryer.name,
+                          price: airfryer.price,
+                          quantity: 1}}
+                    style="table-btn" />
+                    </div>
               </th>
             ))}
           </tr>
@@ -71,31 +80,18 @@ function AirfryerComparisonTable({ infoClick }) {
               ))}
             </tr>
           ))}
+          <tr>
+            <td>Precio</td>
+            {airfryers.map((airfryer) => (
+              <td key={airfryer.id} className="text-center">{airfryer.price}€</td>
+            ))}
+          </tr>
           {/* Buttons */}
           <tr>
             <td></td>
-            {airfryers.map((airfryer) => {
-              // Extract data for each airfryer
-              const { id, thumbnails, name, price, quantity } = airfryer;
+            {airfryers.map((airfryer) =>(
+                <td key={airfryer.id} className="text-center">
 
-              // Check if the airfryer is already in the cart
-              const isInCart = cartItems.some(
-                (item) => item.id === airfryer.id
-              );
-
-              // Create an 'item' object for the AddToCartButton
-              const item = {
-                id: id,
-                img: thumbnails[0],
-                name: name,
-                price: price,
-                quantity: quantity,
-              };
-
-              return (
-                <td key={airfryer.id}>
-                  <div className="row">
-                    <div className="d-flex col-7 justify-content-end p-0">
                       <Link
                         to={`/airfryers/${airfryer.name}/${airfryer.id}`}
                         className="no-underline"
@@ -103,15 +99,10 @@ function AirfryerComparisonTable({ infoClick }) {
                       >
                         <button className="btn-orange"> + info</button>
                       </Link>
-                    </div>
-                    {/* Display the AddToCartButton component */}
-                    <div className="d-flex justify-content-end pe-4 col-5">
-                      <AddToCartButton item={item} style="table-btn" />
-                    </div>
-                  </div>
+
                 </td>
-              );
-            })}
+              )
+            )}
           </tr>
         </tbody>
       </table>

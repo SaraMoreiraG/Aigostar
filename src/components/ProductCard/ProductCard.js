@@ -1,5 +1,6 @@
 import React from "react";
 import AddToCartButton from "../AddToCartButton/AddToCartButton";
+import { scrollToSection } from "../../utils/scrollUtils";
 
 function ProductCard({ product }) {
   // Create an 'item' object for the cart
@@ -19,10 +20,11 @@ function ProductCard({ product }) {
           src={product.thumbnails.principals[0]}
           alt={`airfryer ${product.name}`}
           className="img-fluid zoom mb-2"
+          onClick={() => scrollToSection("second-navbar")}
         />
         {/* Button to show more information */}
         <div className="text-overlay up-opaccity-effect">
-          <button className="btn-orange">+ INFO</button>
+          <button className="btn-orange" onClick={() => scrollToSection("second-navbar")}>+ INFO</button>
         </div>
         {/* Button to add to cart Component */}
         <AddToCartButton
@@ -47,7 +49,7 @@ function ProductCard({ product }) {
         <span>{product.estadisticas.vendidos} vendidos</span>
       </div>
       {/* Product Capacity */}
-      <h5 className="mt-2 mb-1">Capacidad: {product.title}</h5>
+      <h5 className="mt-2 mb-1">{product.title}</h5>
       {/* Product Price */}
       <p className="price">{product.price}€</p>
     </>

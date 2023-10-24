@@ -8,7 +8,6 @@ import ImageGallery from "./ImageGallery/ImageGallery";
 import AddToCartButton from "./AddToCartButton/AddToCartButton";
 import AirfryerComparisonTable from "./AirfryerComparisonTable";
 import ProductCard from "./ProductCard/ProductCard";
-import { unstable_renderSubtreeIntoContainer } from "react-dom";
 
 function ProductDetails() {
   // Get route parameters
@@ -16,9 +15,8 @@ function ProductDetails() {
 
   // Initialize states
   const [quantity, setQuantity] = useState(1);
-  const [selectedColor, setSelectedColor] = useState("smallBlue");
-  const [isSmall, setIsSmall] = useState(true);
-  const [selectedSize, setSelectedSize] = useState("4L");
+  const [selectedColor, setSelectedColor] = useState("Azul");
+  const [selectedSize, setSelectedSize] = useState("small");
 
   // Access accessories data from Redux store
   const accessories = useSelector((state) => state.accessories);
@@ -62,12 +60,24 @@ function ProductDetails() {
     window.scrollTo(0, 0);
   }, []);
 
+
+    // Función para resaltar palabras clave
+const highlightKeywords = (text) => {
+  const keywords = ["freidora de aire y Horno", "bandeja reutilizable", "recetas de forma saludable y sin aceite."];
+
+  // Usamos expresiones regulares para encontrar y reemplazar las palabras clave
+  const regex = new RegExp(keywords.join("|"), "gi"); // "gi" significa global e insensible a mayúsculas y minúsculas
+
+  // Reemplazamos las palabras clave con etiquetas <strong> para aplicar la negrita
+  return text.replace(regex, (match) => `<strong>${match}</strong>`);
+};
+
   return (
     <>
       {/************ SECOND NAVBAR **************/}
       <section className="d-flex my-3 px-5 mx-5" id="second-navbar">
         <Link to="/#home" className="second-navbar">
-          Inicio &nbsp; {">"} &nbsp;
+        <i className="fa-solid fa-house me-1"></i> Inicio &nbsp; {">"} &nbsp;
         </Link>
         {category === "airfryers" ? (
           <Link to="/#airfryers" className="second-navbar">
@@ -92,6 +102,7 @@ function ProductDetails() {
           <ImageGallery
             images={categoryData[id].thumbnails}
             selectedColor={selectedColor}
+            selectedSize={selectedSize}
           />
         </section>
         {/**** PRODUCT DETAILS ****/}
@@ -105,7 +116,7 @@ function ProductDetails() {
             <i className="fa-solid fa-star"></i>
             <span> {categoryData[id].estadisticas.puntuacion}</span>
           </div>
-          <p>{categoryData[id].description}</p>
+          <p dangerouslySetInnerHTML={{ __html: highlightKeywords(categoryData[id].description) }}></p>
           {category === "airfryers" ? (
             <>
               <p className="m-0">
@@ -128,75 +139,78 @@ function ProductDetails() {
           ) : (
             <>
               {/* Set Size */}
-              {categoryData[id].thumbnails.colors && (
+              {categoryData[id].sizes && (
                 <div className="d-flex">
                   <div
-                    className={`select-size p-2 col-4 ${
-                      selectedSize == "4L" ? "active" : ""
+                    className={`select-size my-3 p-2 col-3 ${
+                      selectedSize == "small" ? "active" : ""
                     }`}
-                    onClick={() => setSelectedSize("4L")}
+                    onClick={() => setSelectedSize("small")}
                   >
                     <div className="d-flex col-12">
                       <img
                         className="img-fluid col-6"
                         src="https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-table.png"
+                        alt="Freidoras de aire de 3 y 4L"
                       />
                       <img
                         className="img-fluid col-6"
                         src="https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-table.png"
+                        alt="Freidora de aire de 5L"
                       />
                     </div>
                     <div className="d-flex justify-content-center">
                       <div className="text-center mt-2 col-9">
-                        <span>Freidoras de aire de 3L, 4L y 5L</span>
+                        <span>3L, 4L y 5L</span>
                       </div>
                     </div>
                   </div>
                   <div
-                    className={`select-size ms-3 p-2 col-4 ${
-                      selectedSize == "7L" ? "active" : ""
+                    className={`select-size my-3 ms-3 p-2 col-3 ${
+                      selectedSize === "big" ? "active" : ""
                     }`}
-                    onClick={() => setSelectedSize("7L")}
+                    onClick={() => setSelectedSize("big")}
                   >
                     <div className="d-flex justify-content-center col-12">
                       <img
                         className="col-6"
                         src="https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-table.png"
+                        alt="Freidoras de aire 6 y 7L"
                       />
                     </div>
                     <div className="d-flex justify-content-center">
                       <div className="text-center mt-2 col-9">
-                        <span>Freidoras de aire de 6L y 7L</span>
+                        <span>6L y 7L</span>
                       </div>
                     </div>
                   </div>
                 </div>
               )}
               {/* Set color */}
-              <div className="row d-flex">
-                {categoryData[id].thumbnails.colors &&
-                  categoryData[id].thumbnails.colors.map(
-                    (color, index) =>
-                      color.size === selectedSize && (
-                        <div
-                          key={index}
-                          className={`select-size ms-3 p-2 col-4 ${
-                            selectedColor == color.name ? "active" : ""
-                          }`}
-                          onClick={() => setSelectedColor(color.name)}
-                        >
-                          <div className="d-flex justify-content-center col-12">
-                            <img className="col-6" src={color.url} />
-                          </div>
-                          <div className="d-flex justify-content-center">
-                            <div className="text-center mt-2 col-9">
-                              <span>{color.showName}</span>
+              {categoryData[id].thumbnails.colors && (
+                <>
+                  <p className="mt-3 mb-0">Color: {selectedColor}</p>
+                  <div className="d-flex">
+                    {categoryData[id].thumbnails.colors &&
+                      categoryData[id].thumbnails.colors.map(
+                        (color, index) =>
+                          color.size === selectedSize && (
+                            <div
+                              key={index}
+                              className={`select-color my-3 p-2 col-3 ${
+                                selectedColor == color.showName ? "active" : ""
+                              }`}
+                              onClick={() => setSelectedColor(color.showName)}
+                            >
+                              <div className="d-flex justify-content-center col-12">
+                                <img className="col-6" src={color.url} />
+                              </div>
                             </div>
-                          </div>
-                        </div>
-                      )
-                  )}
-              </div>
+                          )
+                      )}
+                  </div>
+                </>
+              )}
             </>
           )}
           <h2 className="price my-3">{categoryData[id].price}€</h2>
@@ -243,7 +257,7 @@ function ProductDetails() {
         </section>
       </section>
 
-      {/************ ESPECIFICATIONS **************/}
+      {/************ DIALOG TITLE **************/}
       <div className="my-5">
         <div className="especifications px-5 mx-5">
           <h5
@@ -272,7 +286,9 @@ function ProductDetails() {
           </h5>
         </div>
         <div className="px-5 mx-5">
-          <hr className="grey-line m-2"></hr>
+          <div className="mx-5">
+          <hr className="grey-line"></hr>
+          </div>
         </div>
 
         {/**** CUADROS DE DIALOGO ****/}
@@ -305,7 +321,7 @@ function ProductDetails() {
                 // Si la categoria es accesorios, muestra la tabla completa
                 <table className="col-6">
                   <tbody>
-                    {isSmall
+                    {selectedSize === "small"
                       ? categoryData[id].detailsSmall.map((detail, index) => (
                           <tr
                             key={index}
@@ -410,31 +426,33 @@ function ProductDetails() {
           </div>
         )}
 
-        {activeDialog === 4 && <div className="dialog px-5 mx-5"></div>}
+        {activeDialog === 4 && (
+          <div className="dialog px-5 mx-5">
+            <div className="dialog-content p-3">
+              <div className="col-9">
+                <AirfryerComparisonTable
+                  infoClick={() => scrollToSection("second-navbar")}
+                />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
-
-      {/************ COMPARATION TABLE **************/}
-      <section className="row px-5 mx-5">
-        <AirfryerComparisonTable
-          infoClick={() => scrollToSection("second-navbar")}
-        />
-      </section>
 
       {/******** ACCESSORIES ********/}
       <section
         id="accessories"
-        className="row align-items-center text-center m-5 p-5 pb-0"
+        className="row align-items-center text-center mx-5 px-5"
       >
-        <h1 className="mb-0">Te puede interesar:</h1>
+        <h2 className="my-0">Accesorios</h2>
         <div className="d-flex justify-content-center">
           <hr></hr>
         </div>
-        <div className="d-flex">
+        <div className="d-flex px-5">
           {accessories.map((accesory) => (
             <div
               key={accesory.id}
               className="text-center p-3 col-3"
-              onClick={() => scrollToSection("second-navbar")}
             >
               <Link
                 to={`/accessories/${accesory.name}/${accesory.id}`}
