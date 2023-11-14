@@ -60,42 +60,38 @@ function ProductDetails() {
     window.scrollTo(0, 0);
   }, []);
 
+  // Función para resaltar palabras clave
+  const highlightKeywords = (text) => {
+    const keywords = [
+      "freidora de aire y Horno",
+      "bandeja reutilizable",
+      "recetas de forma saludable y sin aceite.",
+    ];
 
-    // Función para resaltar palabras clave
-const highlightKeywords = (text) => {
-  const keywords = ["freidora de aire y Horno", "bandeja reutilizable", "recetas de forma saludable y sin aceite."];
+    // Usamos expresiones regulares para encontrar y reemplazar las palabras clave
+    const regex = new RegExp(keywords.join("|"), "gi"); // "gi" significa global e insensible a mayúsculas y minúsculas
 
-  // Usamos expresiones regulares para encontrar y reemplazar las palabras clave
-  const regex = new RegExp(keywords.join("|"), "gi"); // "gi" significa global e insensible a mayúsculas y minúsculas
-
-  // Reemplazamos las palabras clave con etiquetas <strong> para aplicar la negrita
-  return text.replace(regex, (match) => `<strong>${match}</strong>`);
-};
+    // Reemplazamos las palabras clave con etiquetas <strong> para aplicar la negrita
+    return text.replace(regex, (match) => `<strong>${match}</strong>`);
+  };
 
   return (
     <>
       {/************ SECOND NAVBAR **************/}
       <section className="d-flex my-3 px-5 mx-5" id="second-navbar">
         <Link to="/#home" className="second-navbar">
-        <i className="fa-solid fa-house me-1"></i> Inicio &nbsp; {">"} &nbsp;
+          <i className="fa-solid fa-house me-1"></i> Inicio &nbsp; {">"} &nbsp;
         </Link>
         {category === "airfryers" ? (
-          <Link to="/#airfryers" className="second-navbar">
+          <Link to="/airfryers" className="second-navbar">
             Freidoras de aire &nbsp; {">"} &nbsp;
           </Link>
         ) : (
-          <a
-            className="second-navbar"
-            style={{cursor:"pointer"}}
-            onClick={(event) => {
-              event.preventDefault(); // Prevent the default navigation behavior
-              scrollToSection("accessories");
-            }}
-          >
+          <Link to="/accesorios" className="second-navbar">
             Accesorios &nbsp; {">"} &nbsp;
-          </a>
+          </Link>
         )}
-        <a className="second-navbar">{name}</a>
+        <span className="second-navbar" href="">{name}</span>
       </section>
       {/************ GALLERY AND PRODUCT DETAILS **************/}
       <section className="row p-5" id="product">
@@ -117,7 +113,11 @@ const highlightKeywords = (text) => {
             <i className="fa-solid fa-star"></i>
             <span> {categoryData[id].estadisticas.puntuacion}</span>
           </div>
-          <p dangerouslySetInnerHTML={{ __html: highlightKeywords(categoryData[id].description) }}></p>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: highlightKeywords(categoryData[id].description),
+            }}
+          ></p>
           {category === "airfryers" ? (
             <>
               <p className="m-0">
@@ -142,53 +142,54 @@ const highlightKeywords = (text) => {
               {/* Set Size */}
               {categoryData[id].sizes && (
                 <>
-                  <p className="mb-0"><strong>Elige el tamaño de tu feridora:</strong></p>
-
-                <div className="d-flex">
-                  <div
-                    className={`select-size my-3 p-2 col-3 ${
-                      selectedSize == "small" ? "active" : ""
-                    }`}
-                    onClick={() => setSelectedSize("small")}
-                  >
-                    <div className="d-flex col-12">
-                      <img
-                        className="img-fluid col-6"
-                        src="https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-table.png"
-                        alt="Freidoras de aire de 3 y 4L"
-                      />
-                      <img
-                        className="img-fluid col-6"
-                        src="https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-table.png"
-                        alt="Freidora de aire de 5L"
-                      />
+                  <p className="mb-0">
+                    <strong>Elige el tamaño de tu feridora:</strong>
+                  </p>
+                  <div className="d-flex">
+                    <div
+                      className={`select-size my-3 p-2 col-3 ${
+                        selectedSize === "small" ? "active" : ""
+                      }`}
+                      onClick={() => setSelectedSize("small")}
+                    >
+                      <div className="d-flex col-12">
+                        <img
+                          className="img-fluid col-6"
+                          src="https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-table.png"
+                          alt="Freidoras de aire de 3 y 4L"
+                        />
+                        <img
+                          className="img-fluid col-6"
+                          src="https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-table.png"
+                          alt="Freidora de aire de 5L"
+                        />
+                      </div>
+                      <div className="d-flex justify-content-center">
+                        <div className="text-center mt-2 col-9">
+                          <span>3L, 4L y 5L</span>
+                        </div>
+                      </div>
                     </div>
-                    <div className="d-flex justify-content-center">
-                      <div className="text-center mt-2 col-9">
-                        <span>3L, 4L y 5L</span>
+                    <div
+                      className={`select-size my-3 ms-3 p-2 col-3 ${
+                        selectedSize === "big" ? "active" : ""
+                      }`}
+                      onClick={() => setSelectedSize("big")}
+                    >
+                      <div className="d-flex justify-content-center col-12">
+                        <img
+                          className="col-6"
+                          src="https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-table.png"
+                          alt="Freidoras de aire 6 y 7L"
+                        />
+                      </div>
+                      <div className="d-flex justify-content-center">
+                        <div className="text-center mt-2 col-9">
+                          <span>6L y 7L</span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div
-                    className={`select-size my-3 ms-3 p-2 col-3 ${
-                      selectedSize === "big" ? "active" : ""
-                    }`}
-                    onClick={() => setSelectedSize("big")}
-                  >
-                    <div className="d-flex justify-content-center col-12">
-                      <img
-                        className="col-6"
-                        src="https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-table.png"
-                        alt="Freidoras de aire 6 y 7L"
-                      />
-                    </div>
-                    <div className="d-flex justify-content-center">
-                      <div className="text-center mt-2 col-9">
-                        <span>6L y 7L</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
                 </>
               )}
               {/* Set color */}
@@ -203,12 +204,12 @@ const highlightKeywords = (text) => {
                             <div
                               key={index}
                               className={`select-color my-3 p-2 col-3 ${
-                                selectedColor == color.showName ? "active" : ""
+                                selectedColor === color.showName ? "active" : ""
                               }`}
                               onClick={() => setSelectedColor(color.showName)}
                             >
                               <div className="d-flex justify-content-center col-12">
-                                <img className="col-6" src={color.url} />
+                                <img className="col-6" src={color.url} alt={color.showName}/>
                               </div>
                             </div>
                           )
@@ -243,7 +244,7 @@ const highlightKeywords = (text) => {
             <div className="mb-3">
               <AddToCartButton
                 item={item}
-                style="btn-orange icon-button moving"
+                type="btn-orange icon-button moving"
               />
             </div>
           </div>
@@ -292,7 +293,7 @@ const highlightKeywords = (text) => {
         </div>
         <div className="px-5 mx-5">
           <div className="mx-5">
-          <hr className="grey-line"></hr>
+            <hr className="grey-line"></hr>
           </div>
         </div>
 
@@ -405,6 +406,7 @@ const highlightKeywords = (text) => {
                 <img
                   src={categoryData[id].estadisticas.img}
                   className="img-fluid"
+                  alt="Opiniones de Amazon"
                 />
                 <span>
                   Más de {categoryData[id].estadisticas.vendidos} productos
@@ -455,10 +457,7 @@ const highlightKeywords = (text) => {
         </div>
         <div className="d-flex px-5">
           {accessories.map((accesory) => (
-            <div
-              key={accesory.id}
-              className="text-center p-3 col-3"
-            >
+            <div key={accesory.id} className="text-center p-3 col-3">
               <Link
                 to={`/accessories/${accesory.name}/${accesory.id}`}
                 className="no-underline"

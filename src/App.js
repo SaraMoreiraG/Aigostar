@@ -8,6 +8,9 @@ import { loadUserFromLocalStorage } from "./actions/userActions";
 
 import NavBar from "./components/NavBar/NavBar.js"
 import Home from "./components/home";
+import Airfryers from "./components/Airfryers.js";
+import Accesories from "./components/Accesories.js";
+import Recipes from "./components/Recipes.js";
 import ProductDetails from "./components/ProductDetails";
 import Register from "./components/Register";
 import Login from "./components/Login";
@@ -28,9 +31,8 @@ function InitialDataLoader() {
 
     // Cargar carrito desde el almacenamiento local
     const cartData = localStorage.getItem("cartData");
-    if (cartData) {
-      // Analizar y despachar una acción para establecer el carrito en Redux
-      dispatch(loadCartFromLocalStorage(JSON.parse(cartData)));
+    if (cartData !== null && cartData !== undefined) {
+        dispatch(loadCartFromLocalStorage(JSON.parse(cartData)));
     }
   }, [dispatch]);
 
@@ -44,7 +46,9 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/#airfryers" element={<Home />} />
+          <Route path="/airfryers" element={<Airfryers />} />
+          <Route path="/accesorios" element={<Accesories />} />
+          <Route path="/recetas" element={<Recipes />} />
           <Route path="/:category/:name/:id" element={<ProductDetails />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />

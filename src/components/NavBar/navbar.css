@@ -1,4 +1,4 @@
-.nav-bar{
+.nav-bar {
 	height: 60px;
 	background-color: #f4f1e9;
 	color: #ffffff;
@@ -6,6 +6,98 @@
 	font-weight: 700;
 	text-transform: uppercase;
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
 	padding: 10px 5em 10px 5em;
+}
+
+.nav-bar-small {
+	height: 45px;
+	padding: 0 10px;
+}
+
+.nav-links {
+	text-decoration: none;
+	margin-right: 20px;
+}
+
+.nav-text-links {
+	font-size: 12px;
+	color: #000;
+}
+
+.nav-buy-container {
+	height: 26px;
+	width: 26px;
+}
+
+.nav-buy {
+	cursor: pointer;
+	height: 24px;
+	color: red;
+	transition: height 0.3s;
+	/* Add smooth transition for height change */
+}
+
+.nav-buy:hover {
+	height: 26px;
+	transform: scale(1.1);
+	/* Scale up on hover */
+}
+
+.small-menu {
+	display: flex;
+	align-items: flex-end;
+}
+
+.small-menu span {
+	font-size: 10px;
+	margin-right: 5px;
+	color: #000;
+}
+
+.small-menu i {
+	font-size: 14px;
+	color: #f4f1e9;
+}
+
+.bars {
+	background-color: #e7ab3d;
+	border-radius: 5px;
+	height: 30px;
+	width: 30px;
+	margin-left: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.bars .fa-bars {
+	font-size: 14px;
+	transition: font-size 0.3s;
+
+}
+
+.bars:hover .fa-bars {
+	font-size: 16px;
+}
+
+.nav-buy-small-container {
+	height: 26px;
+	width: 26px;
+}
+
+.nav-buy-small {
+	cursor: pointer;
+	height: 20px;
+	color: red;
+	transition: height 0.3s;
+	/* Add smooth transition for height change */
+}
+
+.nav-buy-small:hover {
+	height: 22px;
+	transform: scale(1.1);
+	/* Scale up on hover */
 }

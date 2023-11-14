@@ -697,6 +697,7 @@ const initialState = {
       ]
     },
   ],
+
   cart: [],
   user: null,
 };

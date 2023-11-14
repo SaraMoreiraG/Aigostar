@@ -1,18 +1,22 @@
-// Acción para eliminar un artículo del carrito
+// src/actions/cartActions.js
+
 export const removeFromCart = (itemId) => {
+  console.log("Removing item with ID:", itemId);
   return (dispatch, getState) => {
     dispatch({
       type: "REMOVE_FROM_CART",
       payload: itemId,
     });
-
-    // Obtén el carrito actualizado del estado de Redux
-    const updatedCart = getState().cart;
-
-    // Guarda el carrito actualizado en localStorage
-    localStorage.setItem("cartData", JSON.stringify(updatedCart));
+    try {
+      const updatedCart = getState().cart;
+      localStorage.setItem("cartData", JSON.stringify(updatedCart));
+    } catch (error) {
+      console.error("Error updating cart in localStorage:", error);
+    }
   };
 };
+
+
 
 
 // Acción para agregar un artículo al carrito y actualizar el almacenamiento local
@@ -42,12 +46,12 @@ export const addToCart = (item) => {
 // Acción para cargar el carrito desde el almacenamiento local al inicio de la aplicación
 export const loadCartFromLocalStorage = () => {
   return (dispatch) => {
+    // Limpia el carrito actual
+    dispatch(clearCart());
+
     const storedCartData = localStorage.getItem("cartData");
     if (storedCartData) {
       const cartData = JSON.parse(storedCartData);
-
-      // Limpia el carrito actual antes de cargar desde el almacenamiento local
-      dispatch({ type: "CLEAR_CART" });
 
       // Agrega los elementos del almacenamiento local al carrito en Redux
       cartData.forEach((item) => {
@@ -57,3 +61,24 @@ export const loadCartFromLocalStorage = () => {
   };
 };
 
+export const clearCart = () => ({
+  type: "CLEAR_CART",
+});
+
+export const updateCartItem = (itemId, change) => {
+  return (dispatch, getState) => {
+    dispatch({
+      type: "UPDATE_ITEM",
+      payload: { itemId, change },
+    });
+
+    // Get the updated cart from the Redux state
+    const updatedCart = getState().cart;
+
+    // Check if updatedCart is defined before saving to localStorage
+    if (updatedCart !== undefined) {
+      // Save the updated cart to localStorage
+      localStorage.setItem("cartData", JSON.stringify(updatedCart));
+    }
+  };
+};

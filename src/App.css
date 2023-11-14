@@ -32,7 +32,8 @@ hr {
 	border: 1.5px solid #e7ab3d;
 	opacity: 100;
 }
-.grey-line{
+
+.grey-line {
 	color: #ebebeb;
 	border: 0.8px solid #ebebeb;
 	width: 100%;
@@ -111,10 +112,12 @@ hr {
 	color: #fff;
 	transition: background-color 1s, color 0.5s ease-in-out;
 }
-.btn-buy:hover .fa-credit-card{
+
+.btn-buy:hover .fa-credit-card {
 	color: #fff;
 	transition: color 0.5s ease-in-out;
 }
+
 .btn-in-cart {
 	background-image: url('https://aigostar-img.s3.amazonaws.com/icon-basket-full.png');
 	background-size: contain;
@@ -122,6 +125,7 @@ hr {
 	background-color: transparent;
 	border: none;
 }
+
 .btn-not-cart {
 	background-image: url('https://aigostar-img.s3.amazonaws.com/icon-basket-black.png');
 	background-size: contain;
@@ -134,11 +138,13 @@ hr {
 	width: 30px;
 	height: 30px;
 }
-.icon-button i{
+
+.icon-button i {
 	color: #fff;
 	font-size: 28px;
 	margin: 0 0 0 10px;
 }
+
 .moving img,
 .moving i {
 	transition: transform 0.7s, color 0.3s;
@@ -178,7 +184,7 @@ hr {
 }
 
 
-.btn-login{
+.btn-login {
 	color: #000;
 	letter-spacing: 2px;
 	text-decoration: underline;
@@ -255,10 +261,12 @@ hr {
 #footer {
 	background-color: #f4f1e9;
 }
+
 #register,
-#login{
+#login {
 	height: 100vh;
 }
+
 /*** CATEGORIES section ***/
 
 .btn-categories {
@@ -292,74 +300,153 @@ hr {
 }
 
 /********* PRODUCT DETAIL SECTIONS ***********/
-.second-navbar{
+.second-navbar {
 	text-decoration: none;
 	color: #808080;
 	font-size: 11px;
 }
-.fa-brands{
+
+.fa-brands {
 	color: #212529;
 }
-.fa-house{
+
+.fa-house {
 	font-size: 10px;
 }
+
 .select-size,
-.select-color{
+.select-color {
 	border-radius: 10px;
 	cursor: pointer;
 }
-.select-size{
+
+.select-size {
 	border: 1px solid #ebebeb;
 }
-.select-color{
+
+.select-color {
 	border: 1px solid transparent;
 }
+
 .select-size.active,
-.select-color.active{
-	border-color:#e7ab3d;
+.select-color.active {
+	border-color: #e7ab3d;
 }
-.quantity{
+
+.quantity {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 10px;
-	border: 1px solid #f4f1e9 ;
+	border: 1px solid #f4f1e9;
 }
-.quantity p{
+
+.quantity p {
 	margin: 0;
 }
-.quantity-text{
+
+.quantity-text {
 	cursor: pointer;
 	font-size: 20px;
 }
-.especifications{
+
+.quantity-text:hover {
+	font-size: 24px;
+}
+
+.total {
+	background-color: #f3f3f3;
+	border: 1px solid #ebebeb;
+	display: flex;
+	justify-content: space-between;
+}
+
+.start-buy {
+	background-color: #252525;
+	border: none;
+	color: #ffffff;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.total span {
+	font-weight: 700;
+	font-size: 20px;
+}
+
+.especifications {
 	display: flex;
 	justify-content: space-evenly;
 }
-.especifications h5{
+
+.especifications h5 {
 	cursor: pointer;
 }
-.especifications .active{
+
+.especifications .active {
 	text-decoration: underline;
 	text-underline-offset: 19px;
 	text-decoration-color: #c89230;
 }
- .dialog-content{
+
+.dialog-content {
 	display: flex;
 	justify-content: center;
 	align-items: center;
- }
-.even{
+}
+
+.even {
 	background-color: #f4f1e9;
 }
 
-input{
+input {
 	height: 50px;
 	border: 1px solid #ebebeb;
 }
 
-.forget-password{
+.forget-password {
 	font-size: 12px;
 	color: #797979;
 }
 
+/********* CART VIEW ***********/
+.cart-table {
+	border: 1px solid #ebebeb;
+}
+
+.cart-table-header {
+	border-bottom: 1px solid #ebebeb;
+
+}
+
+
+.gradient-custom {
+	background: -webkit-linear-gradient(left, #e7ab3d, #000);
+	margin-top: 25px;
+}
+
+.card-custom {
+	border-bottom-left-radius: 10% 50%;
+	border-top-left-radius: 10% 50%;
+	background-color: #f3f3f3;
+	border: 1px solid #ebebeb;
+}
+
+.input-custom {
+	background-color: white;
+}
+
+.white-text {
+	color: hsl(52, 0%, 98%);
+	font-weight: 100;
+	font-size: 14px;
+}
+
+.back-button {
+	background-color: hsl(52, 0%, 98%);
+	font-weight: 700;
+	color: black;
+	margin-top: 50px;
+}

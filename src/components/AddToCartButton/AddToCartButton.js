@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../actions/cartActions";
 import cart from "../../assets/images/icon-basket.png";
 
-function AddToCartButton({ item, style }) {
+function AddToCartButton({ item, type }) {
   // Get the Redux dispatch function
   const dispatch = useDispatch();
 
@@ -30,10 +30,10 @@ function AddToCartButton({ item, style }) {
   return (
     <>
       {/* Img & Text Effect Button*/}
-      {style === "btn-orange icon-button moving" && (
+      {type === "btn-orange icon-button moving" && (
         <button
           onClick={handleAddToCart}
-          className={isInCart ? `${style} is-in-cart` : style}
+          className={isInCart ? `${type} is-in-cart` : type}
         >
           {isInCart ? "Añadido al carrito" : "Añadir al carrito"}
           {isInCart ? (
@@ -44,20 +44,20 @@ function AddToCartButton({ item, style }) {
         </button>
       )}
       {/* Table Small Button */}
-      {style === "table-btn" && (
+      {type === "table-btn" && (
         <button
           onClick={handleAddToCart}
           className={
-            isInCart ? `${style} btn-in-cart` : `${style} btn-not-cart`
+            isInCart ? `${type} btn-in-cart` : `${type} btn-not-cart`
           }
         ></button>
       )}
       {/* Square moving button */}
-      {style === "btn-cart right-to-left margin product-card m-0" && (
+      {type === "btn-cart right-to-left margin product-card m-0" && (
         <button
           onClick={handleAddToCart}
           className={
-            isInCart ? `${style} btn-in-cart` : `${style} btn-not-cart`
+            isInCart ? `${type} btn-in-cart` : `${type} btn-not-cart`
           }
         ></button>
       )}
