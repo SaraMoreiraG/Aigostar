@@ -49,9 +49,11 @@ function ProductCard({ product }) {
         <span>{product.estadisticas.vendidos} vendidos</span>
       </div>
       {/* Product Capacity */}
+      <div className="row">
       <h5 className="mt-2 mb-1">{product.title}</h5>
       {/* Product Price */}
       <p className="price">{product.price}€</p>
+      </div>
     </>
   );
 }

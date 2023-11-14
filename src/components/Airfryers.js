@@ -12,16 +12,16 @@ function Airfryers() {
       id="airfryers"
       className="row align-items-center p-5 pb-0"
     >
-      <div className="col-3">
+      <div className="col-sm-3 col-3">
         <img
           src="https://aigostar-img.s3.amazonaws.com/woman.jpg"
           alt="aigostar airfryer"
           className="img-fluid"
         />
       </div>
-      <div className="d-flex col-9">
+      <div className="carrousel d-flex col-9">
         {airfryers.map((airfryer) => (
-          <div key={airfryer.id} className="text-center px-3 col-4">
+          <div key={airfryer.id} className="text-center px-3 col-md-4 col-sm-7 col-8">
             <Link
               to={`airfryers/${airfryer.name}/${airfryer.id}`}
               className="no-underline"

@@ -12,9 +12,9 @@ function Accesories() {
 	id="accessories"
 	className="row align-items-center p-5 pb-0"
   >
-	<div className="d-flex">
+	<div className="carrousel d-flex">
 	  {accessories.map((accesory) => (
-		<div key={accesory.id} className="text-center px-3 col-3">
+		<div key={accesory.id} className="text-center px-3 col-md-3 col-sm-5 col-8">
 		  <Link
 			to={`/accessories/${accesory.name}/${accesory.id}`}
 			className="no-underline"
