@@ -25,7 +25,7 @@ function NavBar() {
             </div>
             <div className="bars">
               <div>
-                <i class="fa-solid fa-bars"></i>
+                <i className="fa-solid fa-bars"></i>
               </div>
             </div>
           </div>

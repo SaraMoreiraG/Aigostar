@@ -115,15 +115,15 @@ function ShoppingCart() {
             <div className="d-flex justify-content-center">
             <div className="col-9">
             <div
-              class="gradient-custom row"
+              className="gradient-custom row"
             >
-              <div class="col-md-3 d-flex align-items-center">
+              <div className="col-md-3 d-flex align-items-center">
                 <div
                   style={{
                     "margin-top": "50px",
                     "margin-left": "10px",
                   }}
-                  class="text-center"
+                  className="text-center"
                 >
                   <i
                     id="animationDemo"
@@ -132,92 +132,92 @@ function ShoppingCart() {
                     data-mdb-animation-reset="true"
                     data-mdb-animation-start="onScroll"
                     data-mdb-animation-on-scroll="repeat"
-                    class="fas fa-3x fa-shipping-fast text-white"
+                    className="fas fa-3x fa-shipping-fast text-white"
                   ></i>
-                  <h3 class="mt-3 text-white">Entrega garantizada</h3>
+                  <h3 className="mt-3 text-white">Entrega garantizada</h3>
                 </div>
               </div>
-              <div class="col-md-9 p-3 justify-content-center">
-                <div class="card card-custom pb-4">
-                  <div class="card-body mt-0 mx-5">
-                    <div class="text-center mb-3 pb-2 mt-3">
+              <div className="col-md-9 p-3 justify-content-center">
+                <div className="card card-custom pb-4">
+                  <div className="card-body mt-0 mx-5">
+                    <div className="text-center mb-3 pb-2 mt-3">
                       <h4 style={{ color: "#495057", fontWeight: "700" }}>DATOS DE ENVIO</h4>
                     </div>
 
-                    <form class="mb-0">
-                      <div class="row mb-4">
-                        <div class="col">
-                          <div class="form-outline">
+                    <form className="mb-0">
+                      <div className="row mb-4">
+                        <div className="col">
+                          <div className="form-outline">
                             <input
                               type="text"
                               id="form9Example1"
-                              class="form-control input-custom"
+                              className="form-control input-custom"
                             />
-                            <label class="form-label" for="form9Example1">
+                            <label className="form-label" for="form9Example1">
                               Nombre
                             </label>
                           </div>
                         </div>
-                        <div class="col">
-                          <div class="form-outline">
+                        <div className="col">
+                          <div className="form-outline">
                             <input
                               type="text"
                               id="form9Example2"
-                              class="form-control input-custom"
+                              className="form-control input-custom"
                             />
-                            <label class="form-label" for="form9Example2">
+                            <label className="form-label" for="form9Example2">
                               Apellidos
                             </label>
                           </div>
                         </div>
                       </div>
-                      <div class="row mb-4">
-                        <div class="col">
-                          <div class="form-outline">
+                      <div className="row mb-4">
+                        <div className="col">
+                          <div className="form-outline">
                             <input
                               type="text"
                               id="form9Example3"
-                              class="form-control input-custom"
+                              className="form-control input-custom"
                             />
-                            <label class="form-label" for="form9Example3">
+                            <label className="form-label" for="form9Example3">
                               Dirección
                             </label>
                           </div>
                         </div>
-                        <div class="col">
-                          <div class="form-outline">
+                        <div className="col">
+                          <div className="form-outline">
                             <input
                               type="text"
                               id="form9Example4"
-                              class="form-control input-custom"
+                              className="form-control input-custom"
                             />
-                            <label class="form-label" for="form9Example4">
+                            <label className="form-label" for="form9Example4">
                               Código postal
                             </label>
                           </div>
                         </div>
                       </div>
-                      <div class="row mb-4">
-                        <div class="col">
-                          <div class="form-outline">
+                      <div className="row mb-4">
+                        <div className="col">
+                          <div className="form-outline">
                             <input
                               type="text"
                               id="form9Example6"
-                              class="form-control input-custom"
+                              className="form-control input-custom"
                             />
-                            <label class="form-label" for="form9Example6">
+                            <label className="form-label" for="form9Example6">
                               Ciudad
                             </label>
                           </div>
                         </div>
-                        <div class="col">
-                          <div class="form-outline">
+                        <div className="col">
+                          <div className="form-outline">
                             <input
                               type="email"
                               id="typeEmail"
-                              class="form-control input-custom"
+                              className="form-control input-custom"
                             />
-                            <label class="form-label" for="typeEmail">
+                            <label className="form-label" for="typeEmail">
                               Email
                             </label>
                             <span>*Seguimiento del pedido</span>
@@ -225,10 +225,10 @@ function ShoppingCart() {
                         </div>
                       </div>
 
-                      <div class="float-end ">
+                      <div className="float-end ">
                         <button
                           type="submit"
-                          class="start-buy p-3"
+                          className="start-buy p-3"
                         >
                           Confirmar
                         </button>
