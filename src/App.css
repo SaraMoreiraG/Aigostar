@@ -46,6 +46,7 @@ hr {
 
 
 .zoom {
+	border-radius: 10px;
 	transform: scale3d(1, 1, 1);
 	transition: transform 1s ease-in-out;
 }
@@ -71,6 +72,9 @@ hr {
 	transform: translate(-50%, -50%);
 }
 
+.fa-star{
+	font-size: 12px;
+}
 /********* BUTTONS ***********/
 
 .btn-orange,
@@ -88,7 +92,14 @@ hr {
 .btn-orange {
 	background-color: #e7ab3d;
 	color: #fff;
+	font-size: 16px;
 }
+
+@media (max-width: 576px) {
+	.btn-orange {
+	  font-size: 12px;
+	}
+  }
 
 .btn-buy {
 	background-color: #f4f1e9;
@@ -270,10 +281,8 @@ hr {
 /*** CATEGORIES section ***/
 
 .btn-categories {
-	font-size: 16px;
 	margin: 0;
 }
-
 .magic-div:hover .btn-categories {
 	transform: scale3d(1.1, 1.1, 1);
 	transition: transform 1s ease-in-out;
@@ -299,7 +308,20 @@ hr {
 	margin-right: 20px;
 }
 
-/********* PRODUCT DETAIL SECTIONS ***********/
+@supports (display: flex) {
+	@media (max-width: 576px) {
+		.shipping h5 {
+			font-size: 14px;
+		  }
+		.shipping p {
+		  font-size: 12px;
+		}
+		.shipping i {
+			font-size: 24px;
+		}
+	  }
+  }
+/********* PRODUCT DETAIL view ***********/
 .second-navbar {
 	text-decoration: none;
 	color: #808080;
@@ -465,9 +487,16 @@ input {
   }
 
   /* Optional: Add scrollbar styling */
-  .carrousel::-webkit-scrollbar {
-	height: 8px;
+  @supports (display: flex) {
+	@media (max-width: 768px) {
+		.carrousel::-webkit-scrollbar {
+			height: 8px;
+		  }
+	}
   }
+  /* .carrousel::-webkit-scrollbar {
+	height: 8px;
+  } */
 
   .carrousel::-webkit-scrollbar-thumb {
 	background-color: #e7ab3d;
@@ -483,3 +512,47 @@ input {
 	border: 1px solid #e7ab3d;
 	border-radius: 8px;
 }
+.carrousel img{
+	object-fit: fill;
+	max-width: 100%;
+	max-height: 100%;
+}
+.img-airfryer{
+	object-fit: contain
+}
+
+@supports (display: flex) {
+	@media (max-width: 992px) {
+		.product-card-container h5 {
+		  font-size: 14px;
+		}
+		.product-card-container span {
+		  font-size: 10px;
+		}
+	  }
+	@media (max-width: 768px) {
+	  .product-card-container h5 {
+		font-size: 16px;
+	  }
+	  .product-card-container span {
+		font-size: 12px;
+	  }
+	}
+  }
+  @supports (display: flex) {
+	@media (max-width: 992px) {
+		h2 {
+		  font-size: 22px;
+		}
+	  }
+	@media (max-width: 768px) {
+	  h2 {
+		font-size: 20px;
+	  }
+	}
+	@media (max-width: 576px) {
+		h2 {
+		  font-size: 18px;
+		}
+	  }
+  }

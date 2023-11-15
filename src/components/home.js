@@ -12,7 +12,8 @@ import "../App.css";
 const Home = () => {
   // Import necessary dependencies and hooks
   const airfryers = useSelector((state) => state.airfryers);
-  const accessorieKit = useSelector((state) => state.accessories[0].thumbnails.principals[0]);
+  const accessorieKit = useSelector((state) => state.accessories[0]);
+  const airfryerKit = useSelector((state) => state.airfryers[1])
 
   return (
     <>
@@ -29,7 +30,7 @@ const Home = () => {
       {/******** CATEGORIAS ********/}
       <section className="row justify-content-center g-3 p-5 py-5">
         <div
-          className="magic-div col-sm-4 col-8 p-2"
+          className="magic-div col-md-4 col-sm-6 col-8 p-2"
           onClick={() => scrollToSection("airfryers")}
         >
           <img
@@ -44,7 +45,7 @@ const Home = () => {
           </div>
         </div>
         <div
-          className="magic-div col-sm-4 col-8 p-3"
+          className="magic-div col-md-4 col-sm-6 col-8 p-3"
           onClick={() => scrollToSection("accessories")}
         >
           <img
@@ -57,7 +58,7 @@ const Home = () => {
           </div>
         </div>
         <div
-          className="magic-div col-sm-4 col-8 p-3"
+          className="magic-div col-md-4 col-sm-6 col-8 p-3"
           onClick={() => scrollToSection("recipes")}
         >
           <img
@@ -85,7 +86,7 @@ const Home = () => {
           <button className="btn-orange mt-4">Comprar ahora</button>
         </div>
         <div className="d-flex justify-content-center col-md-4 col-sm-6 col-8 p-5">
-          <Link to="/product/2">
+        <Link to={`airfryers/${airfryerKit.name}/${airfryerKit.id}`}>
             <img
               src={airfryers[2].imgtable}
               alt="freidorea de aire o airfryer en oferta"
@@ -113,7 +114,7 @@ const Home = () => {
         </div>
         <div className="col-12 d-flex justify-content-center ">
         <div className="col-md-3 col-sm-5 col-6 p-1">
-          <Link to="/product/2">
+          <Link to={`airfryers/${airfryerKit.name}/${airfryerKit.id}`}>
             <img
               src={airfryers[2].imgtable}
               alt="freidorea de aire o airfryer en oferta"
@@ -122,11 +123,14 @@ const Home = () => {
           </Link>
         </div>
         <div className="col-1"></div>
-        <div className="col-md-2 col-sm-4 col-4 p-1">
+        <div className="col-md-2 col-sm-3 col-4 p-1">
           <div className="accesorie-kit p-3">
-          <Link to="/product/2">
+          <Link
+              to={`accessories/${accessorieKit.name}/${accessorieKit.id}`}
+              className="no-underline"
+            >
             <img
-              src={accessorieKit}
+              src={accessorieKit.thumbnails.principals[0]}
               alt="freidorea de aire o airfryer en oferta"
               className="img-fluid zoom"
             />
@@ -144,26 +148,26 @@ const Home = () => {
       {/******** RECEIPES ********/}
       <Recipes />
       {/******** SHIPPING DETAILS ********/}
-      <section className="row mx-5 p-5">
-        <div className="shipping d-flex justify-content-center align-items-center py-4 col-4">
+      <section className="row  p-5">
+        <div className="shipping d-flex justify-content-center align-items-center py-4 col-md-4 col-12">
           <i className="fa-solid fa-truck-moving"></i>
           <div>
-            <h5 className="mb-0">FREE SHIPPING</h5>
-            <p className="mb-0">For all order over 99$</p>
+            <h5 className="mb-0">ENVIO GRATUITO</h5>
+            <p className="mb-0">Para todos nuestro productos</p>
           </div>
         </div>
-        <div className="shipping d-flex justify-content-center align-items-center py-4 col-4">
+        <div className="shipping d-flex justify-content-center align-items-center py-4 col-md-4 col-12">
           <i className="fa-regular fa-clock"></i>
           <div>
-            <h5 className="mb-0">DELIVERY ON TIME</h5>
-            <p className="mb-0">If good have prolems</p>
+            <h5 className="mb-0">ENTREGA A TIEMPO</h5>
+            <p className="mb-0">Recibe tu pedido en 10 días</p>
           </div>
         </div>
-        <div className="shipping d-flex justify-content-center align-items-center py-4 col-4">
+        <div className="shipping d-flex justify-content-center align-items-center py-4 col-md-4 col-12">
           <i className="fa-regular fa-credit-card"></i>
           <div>
-            <h5 className="mb-0">SECURE PAYMENT</h5>
-            <p className="mb-0">100% secure payment</p>
+            <h5 className="mb-0">PAGO SEGURO</h5>
+            <p className="mb-0">100% pago seguro</p>
           </div>
         </div>
       </section>

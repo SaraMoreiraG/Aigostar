@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import AddToCartButton from "../AddToCartButton/AddToCartButton";
 import { scrollToSection } from "../../utils/scrollUtils";
 
@@ -11,9 +11,10 @@ function ProductCard({ product }) {
     price: product.price,
     quantity: 1,
   };
+  const [isSmallScreen] = useState(window.innerWidth < 700);
 
   return (
-    <>
+    <div className="product-card-container">
       <div className="magic-div">
         {/* Product Image */}
         <img
@@ -29,7 +30,7 @@ function ProductCard({ product }) {
         {/* Button to add to cart Component */}
         <AddToCartButton
           item={item}
-          style="btn-cart right-to-left margin product-card m-0"
+          type="btn-cart right-to-left margin product-card m-0"
         />
       </div>
       {/* Product Name */}
@@ -44,17 +45,21 @@ function ProductCard({ product }) {
         <span> {product.estadisticas.puntuacion}</span>
       </div>
       {/* Ratings and Sold Count */}
+      {!isSmallScreen &&
       <div>
         <span>{product.estadisticas.valoraciones} valoraciones | </span>
         <span>{product.estadisticas.vendidos} vendidos</span>
       </div>
+      }
       {/* Product Capacity */}
-      <div className="row">
+      <div className="row justify-content-center">
+        <div className="col-md-12 col-9">
       <h5 className="mt-2 mb-1">{product.title}</h5>
+      </div>
       {/* Product Price */}
       <p className="price">{product.price}€</p>
       </div>
-    </>
+    </div>
   );
 }
 

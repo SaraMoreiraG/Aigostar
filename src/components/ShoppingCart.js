@@ -23,7 +23,7 @@ function ShoppingCart() {
   };
 
   return (
-    <div className="px-5 mx-5">
+    <div>
       {/************ SECOND NAVBAR **************/}
       <section className="d-flex my-3 px-5 mx-5" id="second-navbar">
         <Link to="/#home" className="second-navbar">
@@ -37,7 +37,6 @@ function ShoppingCart() {
       {/************ SHOPPING CART **************/}
       {shoppingCart.length > 0 ? (
         <div>
-          <div>
             <div className="table-responsive">
               <table className="cart-table m-5">
                 <thead className="cart-table-header">
@@ -99,7 +98,6 @@ function ShoppingCart() {
                 </tbody>
               </table>
             </div>
-          </div>
           <div className="d-flex justify-content-end mx-5 mb-5">
             <div className="col-4">
               <div className="total p-3">
@@ -243,7 +241,7 @@ function ShoppingCart() {
           )}
         </div>
       ) : (
-        <div className="text-center">
+        <div className="text-center ">
           <h2>Añade algún producto a tu carrito:</h2>
           <div>
             <Airfryers />

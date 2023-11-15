@@ -3,7 +3,7 @@ const initialState = {
     {
       id: 0,
       name: "HaydenA",
-      title: "Freidora sin aceite - Hayden A AIGOSTAR, 4L, 1500 W",
+      title: "Freidora sin aceite - AIGOSTAR - 1500W - 4L",
       price: 56,
       imgtable:
         "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-table.png",
@@ -83,7 +83,7 @@ const initialState = {
         puntuacion: 4.4,
         valoraciones: 71,
         vendidos: 55,
-        img:"https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-reviews.png",
+        img: "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-reviews.png",
       },
       descriptionDetails: [
         "* Capacidad compacta de 4L *",
@@ -100,22 +100,25 @@ const initialState = {
       reviews: [
         {
           title: "Muy buena compra muy contenta",
-          comment: "Me ha gustado todo en esta freidora es práctica la comida sale muy bien crujiente y me ha sorprendido estoy encantada con ella volvería comprarla",
+          comment:
+            "Me ha gustado todo en esta freidora es práctica la comida sale muy bien crujiente y me ha sorprendido estoy encantada con ella volvería comprarla",
         },
         {
           title: "Buena calidad y fácil de utilizar",
-          comment: "Me ha gustado todo, facilísimo de utilizar, de limpiar y he flipado como hace la comida, recomendado",
+          comment:
+            "Me ha gustado todo, facilísimo de utilizar, de limpiar y he flipado como hace la comida, recomendado",
         },
         {
           title: "Rápido y eficiente",
-          comment: "Llevo par de semanas usándolo y me encanta. Es bastante rápido y hace el trabajo sin problemas. (La segunda foto es después de cocinar una pieza de pollo y como ven se ensucia muy poco) lo cual es genial porque tuve uno que para lavarlo era tedioso. Lo recomiendo.",
+          comment:
+            "Llevo par de semanas usándolo y me encanta. Es bastante rápido y hace el trabajo sin problemas. (La segunda foto es después de cocinar una pieza de pollo y como ven se ensucia muy poco) lo cual es genial porque tuve uno que para lavarlo era tedioso. Lo recomiendo.",
         },
-      ]
+      ],
     },
     {
       id: 1,
       name: "HaydenX",
-      title: "Freidora sin aceite - Hayden X AIGOSTAR, 4L, 1500 W",
+      title: "Freidora sin aceite - AIGOSTAR - 1500W - 4L",
       price: 60,
       imgtable:
         "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-table.png",
@@ -183,20 +186,23 @@ const initialState = {
           size: "5,4Kg",
         },
       ],
-      thumbnails: { principals: [
-        "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-1.jpg",
-        "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-2.jpg",
-        "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-3.jpg",
-        "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-4.jpg",
-        "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-5.jpg",
-        "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-6.jpg",
-        "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-7.jpg",
-      ], colors: [""]},
+      thumbnails: {
+        principals: [
+          "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-1.jpg",
+          "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-2.jpg",
+          "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-3.jpg",
+          "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-4.jpg",
+          "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-5.jpg",
+          "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-6.jpg",
+          "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-7.jpg",
+        ],
+        colors: [""],
+      },
       estadisticas: {
         puntuacion: 4.2,
         valoraciones: 61,
         vendidos: 200,
-        img: "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-reviews.jpg"
+        img: "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-reviews.jpg",
       },
       descriptionDetails: [
         "* Fácil de usar *",
@@ -213,22 +219,25 @@ const initialState = {
       reviews: [
         {
           title: "Buen producto",
-          comment: "Es mi primera freidora y está bien. Tras ver distintas reseñas escogí esta y la encuentro completa. Es poco ruidosa, rápida y bien acabada. Las patatas salen bastante aproximadas a las fritas, los empanados crujen y gratina genial.",
+          comment:
+            "Es mi primera freidora y está bien. Tras ver distintas reseñas escogí esta y la encuentro completa. Es poco ruidosa, rápida y bien acabada. Las patatas salen bastante aproximadas a las fritas, los empanados crujen y gratina genial.",
         },
         {
           title: "Excelente! Muy práctica",
-          comment: "Me ha encantado esta airfryer! Tiene capacidad para cocinar entre 2 y 3 raciones, es muy sencilla de usar, fácil de limpiar y la comida queda muy buena :)",
+          comment:
+            "Me ha encantado esta airfryer! Tiene capacidad para cocinar entre 2 y 3 raciones, es muy sencilla de usar, fácil de limpiar y la comida queda muy buena :)",
         },
         {
           title: "Freidora de aire",
-          comment: "Compre esta marca viendo reseñas en video de YouTube , por ahora estoy contenta es para 3 o 4 personas",
+          comment:
+            "Compre esta marca viendo reseñas en video de YouTube , por ahora estoy contenta es para 3 o 4 personas",
         },
-      ]
+      ],
     },
     {
       id: 2,
       name: "CubeSmart",
-      title: "Freidora sin aceite - Cube Smart AIGOSTAR, 9L, 1900 W",
+      title: "Freidora sin aceite - AIGOSTAR - 1900W - 7L",
       price: 95,
       imgtable:
         "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-table.png",
@@ -296,20 +305,23 @@ const initialState = {
           size: "5,9Kg",
         },
       ],
-      thumbnails: { principals: [
-        "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-1.jpg",
-        "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-2.jpg",
-        "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-3.jpg",
-        "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-4.jpg",
-        "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-5.jpg",
-        "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-6.jpg",
-        "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-7.jpg",
-      ], colors: [""]},
+      thumbnails: {
+        principals: [
+          "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-1.jpg",
+          "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-2.jpg",
+          "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-3.jpg",
+          "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-4.jpg",
+          "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-5.jpg",
+          "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-6.jpg",
+          "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-7.jpg",
+        ],
+        colors: [""],
+      },
       estadisticas: {
         puntuacion: 4.3,
-        valoraciones: 1867,
-        vendidos: 3000,
-        img: "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-reviews.jpg"
+        valoraciones: 86,
+        vendidos: 500,
+        img: "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-reviews.jpg",
       },
       descriptionDetails: [
         "* Conexión Wifi *",
@@ -326,25 +338,31 @@ const initialState = {
       reviews: [
         {
           title: "Fácil de controlar y muy intuitiva",
-          comment: "La freidora funciona genial, además de que ahorras en aceite. Un punto fuerte que tiene esta freidora es que con la aplicación la puedes controlar fácilmente. Además, el panel táctil es muy intuitivo y responde muy bien al tacto.",
+          comment:
+            "La freidora funciona genial, además de que ahorras en aceite. Un punto fuerte que tiene esta freidora es que con la aplicación la puedes controlar fácilmente. Además, el panel táctil es muy intuitivo y responde muy bien al tacto.",
         },
         {
           title: "Un gran producto",
-          comment: "El producto incluye una garantía, un manual de instrucciones y un libro de cocina. He comprado diferentes freidoras y de diferentes marcas. Este es sin duda el más potente de todos y también de gran capacidad.",
+          comment:
+            "El producto incluye una garantía, un manual de instrucciones y un libro de cocina. He comprado diferentes freidoras y de diferentes marcas. Este es sin duda el más potente de todos y también de gran capacidad.",
         },
         {
           title: "Excelente",
-          comment: "Es el segundo Aigostar que compro después de dos años usando el anterior, idéntico a este, pero con menos wifi. Observo que el ventilador es más silencioso. La comida está cocinada a la perfección. ",
+          comment:
+            "Es el segundo Aigostar que compro después de dos años usando el anterior, idéntico a este, pero con menos wifi. Observo que el ventilador es más silencioso. La comida está cocinada a la perfección. ",
         },
       ],
     },
   ],
+
   accessories: [
     {
       id: 0,
       name: "Kit1",
       sizes: ["big", "small"],
-      title: "Kit de Accesorios para Freidoras de Aire: Tu Compañero Culinario Versátil",
+      title: "Kit de Accesorios de Acero Inoxidable para Freidoras de Aire",
+      bigTitle:
+        "Kit de Accesorios para Freidoras de Aire: Tu Compañero Culinario Versátil",
       description:
         "Este conjunto de utensilios de cocina te permitirá explorar un mundo de posibilidades culinarias saludables. Desde pizza perfectamente horneada hasta carnes asadas con precisión, este kit es tu boleto para cocinar de manera cómoda y efectiva con tu Aigostar. Además, disfruta de pollo crujiente, patatas fritas doradas y hasta castañas tostadas de manera saludable.",
       price: 15,
@@ -415,7 +433,7 @@ const initialState = {
         puntuacion: 4.5,
         valoraciones: 5.499,
         vendidos: +6000,
-        img: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-reviews.jpg"
+        img: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-reviews.jpg",
       },
       descriptionDetails: [
         "* Descubre un Mundo de Posibilidades *",
@@ -432,24 +450,28 @@ const initialState = {
       reviews: [
         {
           title: "Todo lo que necesitaba",
-          comment: "Este kit de accesorios para freidoras de aire fue justo lo que necesitaba. Los diferentes componentes hacen que la freidora sea aún más versátil. La rejilla para asar es perfecta para carnes, y el molde para pizza hace que las cenas sean rápidas y deliciosas. La entrega fue puntual, lo cual fue un gran alivio.",
+          comment:
+            "Este kit de accesorios para freidoras de aire fue justo lo que necesitaba. Los diferentes componentes hacen que la freidora sea aún más versátil. La rejilla para asar es perfecta para carnes, y el molde para pizza hace que las cenas sean rápidas y deliciosas. La entrega fue puntual, lo cual fue un gran alivio.",
         },
         {
           title: "Sorprendentemente útil",
-          comment: "Este kit ha sido una sorpresa agradable. El molde para repostería ha sido una adición fabulosa, y las pinzas con punta de silicona son muy útiles. ",
+          comment:
+            "Este kit ha sido una sorpresa agradable. El molde para repostería ha sido una adición fabulosa, y las pinzas con punta de silicona son muy útiles. ",
         },
         {
           title: "Funcionales",
-          comment: "Los accesorios son funcionales y hacen que la freidora de aire sea más versátil.",
+          comment:
+            "Los accesorios son funcionales y hacen que la freidora de aire sea más versátil.",
         },
-      ]
+      ],
     },
     {
       id: 1,
       name: "Bandeja",
       sizes: ["big", "small"],
       colors: ["blue", "grey"],
-      title:
+      title: "Dúo de Bandejas de Silicona para Freidora de Aire y Horno",
+      bigTitle:
         "Dúo de Bandejas de Silicona para Freidora de Aire y Horno: Cocina Saludable sin Aceite",
       description:
         "¿Quieres llevar tu experiencia de cocina al siguiente nivel? Nuestra cesta de silicona para Freidora de Aire y Horno es el accesorio esencial que estabas buscando. Esta bandeja reutilizable te permitirá preparar una amplia variedad de deliciosas recetas de forma saludable y sin aceite.",
@@ -521,7 +543,7 @@ const initialState = {
         puntuacion: 4.5,
         valoraciones: 74,
         vendidos: +100,
-        img: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja-review.jpg"
+        img: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja-review.jpg",
       },
       descriptionDetails: [
         "* Cocina sin Aceite *",
@@ -536,23 +558,27 @@ const initialState = {
       reviews: [
         {
           title: "Entrega rápida",
-          comment: "llegó muy rápido y muy bien empacado recomiendo está tienda ya se probó y funciona bien",
+          comment:
+            "llegó muy rápido y muy bien empacado recomiendo está tienda ya se probó y funciona bien",
         },
         {
           title: "Funcional",
-          comment: "Muy contentos con la entrega rápida. La forma en sí resultó no ser tan grande como pensaba, pero se mete en la freidora de aire y realiza sus funciones. ",
+          comment:
+            "Muy contentos con la entrega rápida. La forma en sí resultó no ser tan grande como pensaba, pero se mete en la freidora de aire y realiza sus funciones. ",
         },
         {
           title: "Calidad",
           comment: "De buena calidad. ",
         },
-      ]
+      ],
     },
     {
       id: 2,
       name: "Kit2",
-      sizes: ['big', 'small'],
-      title: "Accesorios de Silicona para Repostería: Facilita tus Creaciones Dulces",
+      sizes: ["big", "small"],
+      title: "Accesorios de Silicona para Repostería",
+      bigTitle:
+        "Accesorios de Silicona para Repostería: Facilita tus Creaciones Dulces",
       description:
         "Preparar postres deliciosos nunca ha sido tan sencillo. Nuestro set de Accesorios de Repostería incluye un molde para hornear magdalenas, 6 moldes de silicona para magdalenas, una espátula de silicona y unos guantes de silicona. Con estos accesorios, podrás crear magdalenas esponjosas y una variedad de delicias con facilidad y precisión.",
       price: 15,
@@ -563,7 +589,6 @@ const initialState = {
           "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2-3.jpg",
           "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2-4-small.jpg",
           "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2-4-big.jpg",
-
         ],
         colors: [],
       },
@@ -615,7 +640,7 @@ const initialState = {
         puntuacion: 4.6,
         valoraciones: 197,
         vendidos: +200,
-        img: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2-review.jpg"
+        img: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2-review.jpg",
       },
       descriptionDetails: [
         "* Cocina sin Aceite *",
@@ -630,22 +655,27 @@ const initialState = {
       reviews: [
         {
           title: "Esponjosidad Garantizada",
-          comment: "Increíble conjunto de accesorios de repostería. Hace que hornear sea sencillo y los resultados son siempre esponjosos.",
+          comment:
+            "Increíble conjunto de accesorios de repostería. Hace que hornear sea sencillo y los resultados son siempre esponjosos.",
         },
         {
           title: "Fáciles de usar",
-          comment: "Accesorios para cocinar sin complicaciones. Fáciles de limpiar y respetuosos con el medio ambiente.",
+          comment:
+            "Accesorios para cocinar sin complicaciones. Fáciles de limpiar y respetuosos con el medio ambiente.",
         },
         {
           title: "Versatilidad en la Cocina",
-          comment: "Desde magdalenas esponjosas hasta recetas creativas, estos accesorios son versátiles. ",
+          comment:
+            "Desde magdalenas esponjosas hasta recetas creativas, estos accesorios son versátiles. ",
         },
-      ]
+      ],
     },
     {
       id: 3,
       name: "Pulverizador",
-      title: "Kit de Pulverizador de Aceite y Brocha de Silicona: Sabor y Ahorro en tu Cocina",
+      title: "Kit de Pulverizador de Aceite y Brocha de Silicona",
+      bigTitle:
+        "Kit de Pulverizador de Aceite y Brocha de Silicona: Sabor y Ahorro en tu Cocina",
       description:
         "Mejora tu experiencia culinaria con nuestro Kit de Pulverizador de Aceite y Brocha de Silicona. Este set es la solución perfecta para aplicar aceite de manera uniforme en tus platos favoritos, lo que no solo mejora su sabor, sino que también te ayuda a ahorrar en aceite. Si te preocupa la salud y el sabor de tus comidas, este kit es un imprescindible en tu cocina.",
       price: 15,
@@ -666,7 +696,7 @@ const initialState = {
         puntuacion: 4.3,
         valoraciones: 166,
         vendidos: +500,
-        img: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-pulverizador/pulverizador-reviews.jpg"
+        img: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-pulverizador/pulverizador-reviews.jpg",
       },
       descriptionDetails: [
         "* Aplica Aceite de Forma Uniforme *",
@@ -679,24 +709,93 @@ const initialState = {
         "Tanto el pulverizador como la brocha de silicona son fáciles de limpiar, lo que simplifica la tarea después de cada uso.",
         "****",
         "Si buscas mejorar tus platos con un toque de sabor y al mismo tiempo cuidar tu presupuesto, el Kit de Pulverizador de Aceite y Brocha de Silicona es la elección perfecta. ¡Añádelo a tu cocina hoy mismo y descubre la diferencia en tus recetas!",
-        "****"
+        "****",
       ],
       reviews: [
         {
           title: "Aceite Justo en su Punto",
-          comment: "El kit de pulverizador y brocha ha cambiado mi juego en la cocina. Ahora, cada plato tiene el aceite justo, y los sabores son excepcionales.",
+          comment:
+            "El kit de pulverizador y brocha ha cambiado mi juego en la cocina. Ahora, cada plato tiene el aceite justo, y los sabores son excepcionales.",
         },
         {
           title: "Sabor sin Culpa",
-          comment: "Este kit es un salvavidas para quienes aman la comida deliciosa pero se preocupan por la salud. Los resultados son sabrosos, y además, ahorro aceite.",
+          comment:
+            "Este kit es un salvavidas para quienes aman la comida deliciosa pero se preocupan por la salud. Los resultados son sabrosos, y además, ahorro aceite.",
         },
         {
           title: "Imprescindible en mi Cocina",
-          comment: "Desde que tengo este kit, mis comidas son más saludables y deliciosas. La brocha de silicona hace que aplicar aceite sea preciso y uniforme, ¡y mis platos lo agradecen!",
+          comment:
+            "Desde que tengo este kit, mis comidas son más saludables y deliciosas. La brocha de silicona hace que aplicar aceite sea preciso y uniforme, ¡y mis platos lo agradecen!",
         },
-      ]
+      ],
     },
   ],
+
+  recipes: [
+    {
+      name: 'pollo-freidora-aire',
+      img: 'https://www.justspices.es/media/recipe/pollo-frito-airfryer-freidora-aire.jpg',
+      title: 'Crujiente y Saludable Fantasía de Pollo',
+      description: 'Receta Freidora de Aire: Una experiencia crujiente y deliciosa que hará que el pollo sea tu nueva opción favorita. ¡Prepárate para conquistar el paladar!',
+      keywords: 'Recetas freidora de aire, Pollo en freidora de aire, Comida saludable',
+      ingredients: [
+        'Muslos de pollo (4 unidades)',
+        'Aceite de oliva (1 cucharada)',
+        'Pimentón, sal y pimienta al gusto',
+        'Pan rallado (1 taza)',
+      ],
+      instructions: [
+        'Sazona los muslos de pollo con pimentón, sal y pimienta.',
+        'Pasa cada muslo por aceite de oliva y luego por pan rallado, asegurándote de cubrir bien cada pieza.',
+        'Coloca los muslos en la cesta de la freidora de aire.',
+        'Cocina a 180 grados Celsius durante 20 minutos, volteando a la mitad del tiempo.',
+        '¡Disfruta de unos deliciosos muslos de pollo crujientes y saludables!'
+      ],
+      tiempoPreparacion: '30min',
+      numComensales: 4,
+    },
+    {
+      name: 'patatas-fritas-freidora-aire',
+      img: 'https://hips.hearstapps.com/hmg-prod/images/gettyimages-1674833247.jpg?crop=0.888888888888889xw:1xh;center,top&resize=1200:*',
+      title: 'Delirio Crujiente: Patatas Fritas Saludables en la Freidora de Aire',
+      description: 'Sumérgete en el placer de unas patatas fritas irresistiblemente crujientes. ¡Una opción deliciosa y saludable para satisfacer tus antojos!',
+      keywords: 'Recetas freidora de aire, Patatas fritas en freidora de aire, Snacks saludables',
+      ingredients: [
+        'Patatas (2 grandes)',
+        'Aceite de oliva en aerosol',
+        'Sal y condimentos al gusto',
+      ],
+      instructions: [
+        'Pela y corta las patatas en tiras delgadas.',
+        'En un tazón, rocía las patatas con aceite de oliva y agrega sal y condimentos al gusto.',
+        'Coloca las patatas en la cesta de la freidora de aire.',
+        'Cocina a 200 grados Celsius durante 15 minutos, agitando ocasionalmente para asegurar una cocción pareja.',
+        '¡Disfruta de unas patatas fritas crujientes sin la culpa de la fritura tradicional!'
+      ],
+      tiempoPreparacion: '25min',
+      numComensales: 2,
+    },
+    {
+      name: 'croquetas-freidora-aire',
+      img: "https://www.divinacocina.es/wp-content/uploads/2023/05/croquetas-congeladas-freidora-de-aire.jpg",
+      title: 'Crocantes Tesoros: Croquetas Doradas en la Freidora de Aire',
+      description: 'Descubre la perfección en cada bocado con estas croquetas doradas por fuera y suaves por dentro. ¡Una delicia para compartir!',
+      keywords: 'Recetas freidora de aire, Croquetas en freidora de aire, Aperitivos saludables',
+      ingredients: [
+        'Croquetas congeladas (cantidad según preferencia)',
+        'Aceite en aerosol',
+      ],
+      instructions: [
+        'Coloca las croquetas congeladas en la cesta de la freidora de aire, asegurándote de que no estén amontonadas.',
+        'Rocía ligeramente con aceite en aerosol para obtener una textura dorada.',
+        'Cocina a 180 grados Celsius durante 10-12 minutos, volteando a la mitad del tiempo.',
+        '¡Disfruta de unas croquetas doradas por fuera y deliciosamente suaves por dentro!'
+      ],
+      tiempoPreparacion: "15min",
+      numComensales: 6,
+    },
+  ],
+
 
   cart: [],
   user: null,
