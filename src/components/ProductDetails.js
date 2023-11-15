@@ -7,7 +7,8 @@ import { scrollToSection } from "../utils/scrollUtils";
 import ImageGallery from "./ImageGallery/ImageGallery";
 import AddToCartButton from "./AddToCartButton/AddToCartButton";
 import AirfryerComparisonTable from "./AirfryerComparisonTable";
-import ProductCard from "./ProductCard/ProductCard";
+import Accesories from "./Accesories";
+import Recipes from "./Recipes"
 
 function ProductDetails() {
   // Get route parameters
@@ -78,7 +79,7 @@ function ProductDetails() {
   return (
     <>
       {/************ SECOND NAVBAR **************/}
-      <section className="d-flex my-3 px-5 mx-5" id="second-navbar">
+      <section className="d-flex my-3 px-3 mx-3" id="second-navbar">
         <Link to="/#home" className="second-navbar">
           <i className="fa-solid fa-house me-1"></i> Inicio &nbsp; {">"} &nbsp;
         </Link>
@@ -91,11 +92,13 @@ function ProductDetails() {
             Accesorios &nbsp; {">"} &nbsp;
           </Link>
         )}
-        <span className="second-navbar" href="">{name}</span>
+        <span className="second-navbar" href="">
+          {name}
+        </span>
       </section>
       {/************ GALLERY AND PRODUCT DETAILS **************/}
-      <section className="row p-5" id="product">
-        <section className="col-6">
+      <section className="row align-items-center p-5" id="product">
+        <section className="col-lg-6 col-md-12">
           <ImageGallery
             images={categoryData[id].thumbnails}
             selectedColor={selectedColor}
@@ -103,7 +106,7 @@ function ProductDetails() {
           />
         </section>
         {/**** PRODUCT DETAILS ****/}
-        <section className="col-5">
+        <section className="col-lg-5 col-md-12">
           <h2>{categoryData[id].title}</h2>
           <div className="my-3">
             <i className="fa-solid fa-star"></i>
@@ -209,7 +212,11 @@ function ProductDetails() {
                               onClick={() => setSelectedColor(color.showName)}
                             >
                               <div className="d-flex justify-content-center col-12">
-                                <img className="col-6" src={color.url} alt={color.showName}/>
+                                <img
+                                  className="col-6"
+                                  src={color.url}
+                                  alt={color.showName}
+                                />
                               </div>
                             </div>
                           )
@@ -220,11 +227,11 @@ function ProductDetails() {
             </>
           )}
           <h2 className="price my-3">{categoryData[id].price}€</h2>
-          <div className="d-flex align-items-end">
+          <div className="row align-items-end">
             {/** QUANTITY **/}
-            <div className="col-4">
+            <div className="col-3">
               <p className="fw-bold">Cantidad: {quantity}</p>
-              <div className="quantity d-flex mb-3 col-8">
+              <div className="quantity d-flex mb-3">
                 <p
                   className="quantity-text"
                   onClick={() => handleQuantityChange(-1)}
@@ -241,7 +248,7 @@ function ProductDetails() {
               </div>
             </div>
             {/** CART BUTTON **/}
-            <div className="mb-3">
+            <div className="mb-3 col-8">
               <AddToCartButton
                 item={item}
                 type="btn-orange icon-button moving"
@@ -249,12 +256,14 @@ function ProductDetails() {
             </div>
           </div>
           {/** BUY BUTTON **/}
-          <div className="d-flex col-12">
-            <button className="btn-buy icon-button w-100">
-              <i className="fa-regular fa-credit-card"></i>
-              Comprar ahora
-            </button>
-            <div className="d-flex align-items-center ps-2">
+          <div className="row">
+            <div className="col-lg-8 col-md-6 col-sm-6 col-11">
+              <button className="btn-buy icon-button w-100">
+                <i className="fa-regular fa-credit-card"></i>
+                Comprar ahora
+              </button>
+            </div>
+            <div className="d-flex align-items-center ps-2 ms-1 mt-1 col-sm-3 col-12">
               <i className="fa-brands fa-cc-visa me-1"></i>
               <i className="fa-brands fa-cc-mastercard me-1"></i>
               <i className="fa-brands fa-cc-amex"></i>
@@ -265,31 +274,39 @@ function ProductDetails() {
 
       {/************ DIALOG TITLE **************/}
       <div className="my-5">
-        <div className="especifications px-5 mx-5">
-          <h5
-            onClick={() => openDialog(1)}
-            className={activeDialog === 1 ? "active" : ""}
-          >
-            Descripción
-          </h5>
-          <h5
-            onClick={() => openDialog(2)}
-            className={activeDialog === 2 ? "active" : ""}
-          >
-            Detalles
-          </h5>
-          <h5
-            onClick={() => openDialog(3)}
-            className={activeDialog === 3 ? "active" : ""}
-          >
-            Valoraciones
-          </h5>
-          <h5
-            onClick={() => openDialog(4)}
-            className={activeDialog === 4 ? "active" : ""}
-          >
-            Freidoras de Aire
-          </h5>
+        <div className="especifications row g-3 px-5 mx-5">
+          <div className="d-flex justify-content-center col-md-3 col-sm-12">
+            <h5
+              onClick={() => openDialog(1)}
+              className={activeDialog === 1 ? "active" : ""}
+            >
+              Descripción
+            </h5>
+          </div>
+          <div className="d-flex justify-content-center col-md-3 col-sm-12">
+            <h5
+              onClick={() => openDialog(2)}
+              className={activeDialog === 2 ? "active" : ""}
+            >
+              Detalles
+            </h5>
+          </div>
+          <div className="d-flex justify-content-center col-md-3 col-sm-12">
+            <h5
+              onClick={() => openDialog(3)}
+              className={activeDialog === 3 ? "active" : ""}
+            >
+              Valoraciones
+            </h5>
+          </div>
+          <div className="d-flex justify-content-center col-md-3 col-sm-12">
+            <h5
+              onClick={() => openDialog(4)}
+              className={activeDialog === 4 ? "active" : ""}
+            >
+              Freidoras de Aire
+            </h5>
+          </div>
         </div>
         <div className="px-5 mx-5">
           <div className="mx-5">
@@ -299,8 +316,8 @@ function ProductDetails() {
 
         {/**** CUADROS DE DIALOGO ****/}
         {activeDialog === 1 && (
-          <div className="dialog d-flex justify-content-center pt-3 px-5 mx-5">
-            <div className="dialog-content col-8 px-3">
+          <div className="dialog d-flex justify-content-center pt-3">
+            <div className="dialog-content col-12 px-3">
               <ul>
                 {categoryData[id].descriptionDetails.map((item, index) => {
                   if (index % 2 === 0) {
@@ -321,8 +338,8 @@ function ProductDetails() {
         )}
 
         {activeDialog === 2 && (
-          <div className="dialog px-5 mx-5">
-            <div className="dialog-content p-3">
+          <div className="dialog">
+            <div className="dialog-content row g-2 pt-3">
               {category === "accessories" ? (
                 // Si la categoria es accesorios, muestra la tabla completa
                 <table className="col-6">
@@ -355,8 +372,8 @@ function ProductDetails() {
               ) : (
                 // Si la categoria es AIRFRYERS, muestra 2 tablas
                 <>
-                  <div className="d-flex justify-content-end pe-3 col-6">
-                    <table className="col-8">
+                  <div className="d-flex justify-content-center col-sm-6 col-12">
+                    <table className="col-10">
                       <tbody>
                         {categoryData[id].detailsSmall
                           .slice(0, 7)
@@ -374,8 +391,8 @@ function ProductDetails() {
                       </tbody>
                     </table>
                   </div>
-                  <div className="d-flex justify-content-start ps-3 col-6">
-                    <table className="col-8">
+                  <div className="d-flex justify-content-center col-sm-6 col-12">
+                    <table className="col-10">
                       <tbody>
                         {categoryData[id].detailsSmall
                           .slice(7)
@@ -400,9 +417,9 @@ function ProductDetails() {
         )}
 
         {activeDialog === 3 && (
-          <div className="dialog px-5 mx-5">
-            <div className="dialog-content p-3">
-              <div className="text-center col-4 px-5">
+          <div className="dialog">
+            <div className="dialog-content row g-2 p-3">
+              <div className="text-center col-lg-3 col-md-5 col-sm-6">
                 <img
                   src={categoryData[id].estadisticas.img}
                   className="img-fluid"
@@ -414,7 +431,7 @@ function ProductDetails() {
                   valoraciones en Amazon
                 </span>
               </div>
-              <div className="col-6">
+              <div className="col-md-5 col-sm-11">
                 {categoryData[id].reviews.map((detail, index) => (
                   <div key={index}>
                     <div className="d-flex">
@@ -434,8 +451,8 @@ function ProductDetails() {
         )}
 
         {activeDialog === 4 && (
-          <div className="dialog px-5 mx-5">
-            <div className="dialog-content p-3">
+          <div className="dialog">
+            <div className="dialog-content py-3">
               <div className="col-9">
                 <AirfryerComparisonTable
                   infoClick={() => scrollToSection("second-navbar")}
@@ -447,79 +464,10 @@ function ProductDetails() {
       </div>
 
       {/******** ACCESSORIES ********/}
-      <section
-        id="accessories"
-        className="row align-items-center text-center mx-5 px-5"
-      >
-        <h2 className="my-0">Accesorios</h2>
-        <div className="d-flex justify-content-center">
-          <hr></hr>
-        </div>
-        <div className="d-flex px-5">
-          {accessories.map((accesory) => (
-            <div key={accesory.id} className="text-center p-3 col-3">
-              <Link
-                to={`/accessories/${accesory.name}/${accesory.id}`}
-                className="no-underline"
-              >
-                <ProductCard product={accesory} />
-              </Link>
-            </div>
-          ))}
-        </div>
-      </section>
+      <Accesories />
 
       {/******** RECEIPES ********/}
-      <section id="recipes" className="row text-center p-5 pb-0">
-        <h1 className="mb-0">Recetas</h1>
-        <div className="d-flex justify-content-center">
-          <hr></hr>
-        </div>
-        <div className="row px-5">
-          <div className="col-4 text-start p-3">
-            {/* <img src={receip1} alt="receta" className="img-fluid mb-4" /> */}
-            <div className="d-flex align-items-center mb-3">
-              <i className="fa-regular fa-clock me-2"></i>
-              <span className="icon-text me-3">5'</span>
-              <i className="fa-regular fa-user me-2"></i>
-              <span className="icon-text">2</span>
-            </div>
-            <h2>The Best Street Style From London Fashion Week</h2>
-            <p>
-              Sed quia non numquam modi tempora indunt ut labore et dolore
-              magnam aliquam quaerat
-            </p>
-          </div>
-          <div className="col-4 text-start p-3">
-            {/* <img src={receip1} alt="receta" className="img-fluid mb-4" /> */}
-            <div className="d-flex align-items-center mb-3">
-              <i className="fa-regular fa-clock me-2"></i>
-              <span className="icon-text me-3">5'</span>
-              <i className="fa-regular fa-user me-2"></i>
-              <span className="icon-text">2</span>
-            </div>
-            <h2>The Best Street Style From London Fashion Week</h2>
-            <p>
-              Sed quia non numquam modi tempora indunt ut labore et dolore
-              magnam aliquam quaerat
-            </p>
-          </div>
-          <div className="col-4 text-start p-3">
-            {/* <img src={receip1} alt="receta" className="img-fluid mb-4" /> */}
-            <div className="d-flex align-items-center mb-3">
-              <i className="fa-regular fa-clock me-2"></i>
-              <span className="icon-text me-3">5'</span>
-              <i className="fa-regular fa-user me-2"></i>
-              <span className="icon-text">2</span>
-            </div>
-            <h2>The Best Street Style From London Fashion Week</h2>
-            <p>
-              Sed quia non numquam modi tempora indunt ut labore et dolore
-              magnam aliquam quaerat
-            </p>
-          </div>
-        </div>
-      </section>
+      <Recipes />
     </>
   );
 }

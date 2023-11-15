@@ -1,3 +1,12 @@
+.thumbnails-container{
+	overflow-x: auto;
+	scroll-behavior: smooth;
+	white-space: nowrap;
+
+}
+.thumbnails {
+	display: inline-flex;
+  }
 .thumbnail{
 	cursor: pointer;
 }

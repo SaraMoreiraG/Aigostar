@@ -52,35 +52,37 @@ const ImageGallery = ({ images, selectedColor, selectedSize }) => {
           />
         </div>
       </div>
-      <div className="thumbnails row d-flex justify-content-center gap-2 py-3">
-        {/* Render principal thumbnails */}
-        {images.principals.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={`Miniatura ${index + 1}`}
-            className={`thumbnail col-1 m-0 p-1 ${
-              selectedImage === image ? "selected" : ""
-            }`}
-            onMouseOver={() => handleThumbnailClick(image)}
-          />
-        ))}
-        {/* Render selected color img */}
-        {images.colors.map(
-          (color, index) =>
-            color.showName === selectedColor &&
-            color.size === selectedSize && (
-              <img
-                key={index}
-                src={color.url}
-                alt={`Miniatura ${color.name + 1}`}
-                className={`thumbnail col-1 m-0 p-1 ${
-                  selectedImage === color.url ? "selected" : ""
-                }`}
-                onMouseOver={() => handleThumbnailClick(color.url)}
-              />
-            )
-        )}
+      <div className="thumbnails-container">
+        <div className="thumbnails d-flex justify-content-center px-5 py-3">
+          {/* Render principal thumbnails */}
+          {images.principals.map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt={`Miniatura ${index + 1}`}
+              className={`thumbnail col-lg-2 col-md-1 col-sm-2 col-2 m-0 p-1 ${
+                selectedImage === image ? "selected" : ""
+              }`}
+              onMouseOver={() => handleThumbnailClick(image)}
+            />
+          ))}
+          {/* Render selected color img */}
+          {images.colors.map(
+            (color, index) =>
+              color.showName === selectedColor &&
+              color.size === selectedSize && (
+                <img
+                  key={index}
+                  src={color.url}
+                  alt={`Miniatura ${color.name + 1}`}
+                  className={`thumbnail col-1 m-0 p-1 ${
+                    selectedImage === color.url ? "selected" : ""
+                  }`}
+                  onMouseOver={() => handleThumbnailClick(color.url)}
+                />
+              )
+          )}
+        </div>
       </div>
     </div>
   );

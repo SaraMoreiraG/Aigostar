@@ -3,12 +3,31 @@
 .App {
 	font-family: 'Mulish', sans-serif;
 }
+.main-margin{
 
+}
 /********* FONTS ***********/
 
 h5 {
 	color: #212529;
 }
+
+@supports (display: flex) {
+	@media (max-width: 992px) {
+		h5 {
+			font-size: 16px;
+		  }
+	  }
+
+@media (max-width: 576px) {
+	h5 {
+	  font-size: 14px;
+	}
+	p {
+		font-size: 12px;
+	}
+  }
+  }
 
 span {
 	color: #b2b2b2;
@@ -43,7 +62,6 @@ hr {
 	text-decoration: none;
 	color: #000;
 }
-
 
 .zoom {
 	border-radius: 10px;
@@ -92,14 +110,25 @@ hr {
 .btn-orange {
 	background-color: #e7ab3d;
 	color: #fff;
-	font-size: 16px;
+	font-size: 15px;
 }
 
+@supports (display: flex) {
+	@media (max-width: 992px) {
+		.btn-orange,
+		.btn-buy {
+			font-size: 14px;
+		  }
+	  }
+
 @media (max-width: 576px) {
-	.btn-orange {
+	.btn-orange,
+	.btn-buy {
 	  font-size: 12px;
 	}
   }
+  }
+
 
 .btn-buy {
 	background-color: #f4f1e9;
@@ -153,9 +182,21 @@ hr {
 .icon-button i {
 	color: #fff;
 	font-size: 28px;
-	margin: 0 0 0 10px;
+	margin: 0 10px 0 10px;
 }
+@supports (display: flex) {
+	@media (max-width: 992px) {
+		.icon-button i {
+			font-size: 24px;
+		  }
+	  }
 
+@media (max-width: 576px) {
+	.icon-button i {
+	  font-size: 20px;
+	}
+  }
+  }
 .moving img,
 .moving i {
 	transition: transform 0.7s, color 0.3s;
@@ -165,6 +206,13 @@ hr {
 	transition: transform 0.7s, color 0.3s;
 	width: 260px;
 }
+@supports (display: flex) {
+	@media (max-width: 576px) {
+		.moving {
+			width: 210px;
+		  }
+	  }
+  }
 
 .moving:hover img,
 .moving:hover i {
