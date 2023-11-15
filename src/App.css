@@ -556,3 +556,11 @@ input {
 		}
 	  }
   }
+
+  .footer-link{
+	text-decoration: none;
+	color: #000;
+  }
+.footer-link:hover{
+	color: #e7ab3d;
+}

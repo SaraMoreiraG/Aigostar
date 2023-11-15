@@ -20,17 +20,25 @@ function Footer() {
           </div>
         </div>
         <div className="col-lg-2 col-md-3">
+          <Link to="/airfryers" className="footer-link">
           <p>Freidoras de aire</p>
+          </Link>
+          <Link to="/accesorios" className="footer-link">
           <p>Accesorios</p>
+          </Link>
+          <Link to="/recetas" className="footer-link">
           <p>Recetas</p>
+          </Link>
         </div>
         <div className="col-lg-2 col-md-3">
           <p>Mi cuenta</p>
           <p>Pedidos</p>
+          <Link to="/shopping-cart" className="footer-link">
           <p>Favoritos</p>
+          </Link>
         </div>
         <div className="col-lg-2 col-md-11">
-          <p>Get E-mail updates about our latest shop and special offers.</p>
+        <p>Recibe las últimas noticias y ofertas en tu E-mail.</p>
           <div>
             <input type="email" />
             <button className="btn-orange">Suscribete</button>

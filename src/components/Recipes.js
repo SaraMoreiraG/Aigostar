@@ -1,8 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import RecipePhoto from "../assets/images/pollo-freidora-aire.jpeg"
-
 function Recipes() {
 	const recipes = useSelector((state) => state.recipes);
 
@@ -14,7 +12,7 @@ function Recipes() {
       </div>
       <div className="row px-5">
       {recipes.map((recipe) => (
-        <div className="col-md-4 col-12 text-start p-3">
+        <div key={recipe.name} className="col-md-4 col-12 text-start p-3">
           <img src={recipe.img} alt="receta" className="img-fluid mb-4" />
           <div className="d-flex align-items-center mb-3">
             <i className="fa-regular fa-clock me-2"></i>
