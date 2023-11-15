@@ -27,7 +27,7 @@ const ImageGallery = ({ images, selectedColor, selectedSize }) => {
     } else {
       isInitialMount.current = false; // Set to false after initial mount
     }
-  }, [selectedColor, selectedSize]);
+  }, [selectedColor, selectedSize, images.colors]);
 
   const handleThumbnailClick = (image) => {
     setSelectedImage(image);

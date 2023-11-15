@@ -3,6 +3,7 @@ const initialState = {
     {
       id: 0,
       name: "HaydenA",
+      category: "airfryers",
       title: "Freidora sin aceite - AIGOSTAR - 1500W - 4L",
       price: 56,
       imgtable:
@@ -118,6 +119,7 @@ const initialState = {
     {
       id: 1,
       name: "HaydenX",
+      category: "airfryers",
       title: "Freidora sin aceite - AIGOSTAR - 1500W - 4L",
       price: 60,
       imgtable:
@@ -237,6 +239,7 @@ const initialState = {
     {
       id: 2,
       name: "CubeSmart",
+      category: "airfryers",
       title: "Freidora sin aceite - AIGOSTAR - 1900W - 7L",
       price: 95,
       imgtable:
@@ -359,6 +362,7 @@ const initialState = {
     {
       id: 0,
       name: "Kit1",
+      category: "accessories",
       sizes: ["big", "small"],
       title: "Kit de Accesorios de Acero Inoxidable para Freidoras de Aire",
       bigTitle:
@@ -468,6 +472,7 @@ const initialState = {
     {
       id: 1,
       name: "Bandeja",
+      category: "accessories",
       sizes: ["big", "small"],
       colors: ["blue", "grey"],
       title: "Dúo de Bandejas de Silicona para Freidora de Aire y Horno",
@@ -575,6 +580,7 @@ const initialState = {
     {
       id: 2,
       name: "Kit2",
+      category: "accessories",
       sizes: ["big", "small"],
       title: "Accesorios de Silicona para Repostería",
       bigTitle:
@@ -673,6 +679,7 @@ const initialState = {
     {
       id: 3,
       name: "Pulverizador",
+      category: "accessories",
       title: "Kit de Pulverizador de Aceite y Brocha de Silicona",
       bigTitle:
         "Kit de Pulverizador de Aceite y Brocha de Silicona: Sabor y Ahorro en tu Cocina",

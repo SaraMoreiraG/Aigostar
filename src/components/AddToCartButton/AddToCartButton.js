@@ -25,6 +25,8 @@ function AddToCartButton({ item, type }) {
     e.preventDefault();
     // Dispatch the addToCart action with the item
     dispatch(addToCart(item));
+  console.log(item)
+
   };
 
   return (

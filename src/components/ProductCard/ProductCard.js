@@ -10,6 +10,7 @@ function ProductCard({ product }) {
     name: product.name,
     price: product.price,
     quantity: 1,
+    category: product.category
   };
   const [isSmallScreen] = useState(window.innerWidth < 700);
 

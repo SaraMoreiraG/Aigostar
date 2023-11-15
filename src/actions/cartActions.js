@@ -1,7 +1,6 @@
 // src/actions/cartActions.js
 
 export const removeFromCart = (itemId) => {
-  console.log("Removing item with ID:", itemId);
   return (dispatch, getState) => {
     dispatch({
       type: "REMOVE_FROM_CART",
@@ -15,9 +14,6 @@ export const removeFromCart = (itemId) => {
     }
   };
 };
-
-
-
 
 // Acción para agregar un artículo al carrito y actualizar el almacenamiento local
 export const addToCart = (item) => {

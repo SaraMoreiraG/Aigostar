@@ -3,9 +3,6 @@
 .App {
 	font-family: 'Mulish', sans-serif;
 }
-.main-margin{
-
-}
 /********* FONTS ***********/
 
 h5 {
@@ -83,7 +80,18 @@ hr {
 	font-size: 24px;
 	margin-bottom: 0;
 }
-
+@supports (display: flex) {
+	@media (max-width: 992px) {
+		.price {
+			font-size: 20px;
+		  }
+	  }
+	  @media (max-width: 576px) {
+		.price {
+			font-size: 18px;
+		  }
+	  }
+  }
 .text-overlay {
 	position: absolute;
 	left: 50%;
@@ -370,6 +378,26 @@ hr {
 	  }
   }
 /********* PRODUCT DETAIL view ***********/
+.second-nav-bar-container{
+	margin: 0 100px;
+}
+@supports (display: flex) {
+	@media (max-width: 992px) {
+		.second-nav-bar-container {
+			margin: 10px 80px;
+		  }
+	}
+	@media (max-width: 768px) {
+		.second-nav-bar-container {
+			margin: 10px 60px;
+		  }
+	}
+	@media (max-width: 576px) {
+		.second-nav-bar-container {
+			margin: 10px 40px;
+		  }
+	}
+  }
 .second-navbar {
 	text-decoration: none;
 	color: #808080;
@@ -423,7 +451,11 @@ hr {
 .quantity-text:hover {
 	font-size: 24px;
 }
-
+.total-container {
+	margin: 20px 150px;
+	display: flex;
+	justify-content: flex-end;
+}
 .total {
 	background-color: #f3f3f3;
 	border: 1px solid #ebebeb;
@@ -445,16 +477,27 @@ hr {
 	font-weight: 700;
 	font-size: 20px;
 }
+@supports (display: flex) {
+	@media (max-width: 576px) {
+		.total span,
+		.start-buy {
+			font-size: 14px;
+		}
+	}
+  }
 
 .especifications {
 	display: flex;
 	justify-content: space-evenly;
 }
 
-.especifications h5 {
+.especifications h5,
+.pointer {
 	cursor: pointer;
 }
-
+.pointer:hover{
+	color: red;
+}
 .especifications .active {
 	text-decoration: underline;
 	text-underline-offset: 19px;
@@ -484,11 +527,55 @@ input {
 /********* CART VIEW ***********/
 .cart-table {
 	border: 1px solid #ebebeb;
+	margin: 0 150px;
 }
-
+.send-details{
+	margin: 0 150px;
+}
+@supports (display: flex) {
+	@media (max-width: 992px) {
+		.cart-table,
+		.total-container,
+		.send-details {
+			margin: 10px 100px;
+		  }
+	}
+	@media (max-width: 768px) {
+		.cart-table,
+		.total-container,
+		.send-details {
+			margin: 10px 80px;
+		  }
+	}
+	@media (max-width: 576px) {
+		.cart-table,
+		.total-container,
+		.send-details {
+			margin: 10px 20px;
+		  }
+	}
+  }
+.table-box{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 0;
+}
+@supports (display: flex) {
+	@media (max-width: 576px) {
+		.table-box h5,
+		.table-box:not(.price) {
+			font-size: 10px;
+		}
+		.table-box.price{
+			font-size: 14px;
+		}
+	}
+  }
 .cart-table-header {
 	border-bottom: 1px solid #ebebeb;
-
+	overflow-x: auto;
+	max-width: 100%;
 }
 
 
