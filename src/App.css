@@ -42,6 +42,10 @@ i {
 
 /********* ELEMENTS ***********/
 
+.super-small span{
+	line-height: 1.5;
+}
+
 hr {
 	color: #e7ab3d;
 	width: 75px;
@@ -329,6 +333,10 @@ hr {
 	background-color: #f4f1e9;
 }
 
+#footer {
+	margin-top: 50px;
+}
+
 #register,
 #login {
 	height: 100vh;
@@ -514,11 +522,6 @@ hr {
 	background-color: #f4f1e9;
 }
 
-input {
-	height: 50px;
-	border: 1px solid #ebebeb;
-}
-
 .forget-password {
 	font-size: 12px;
 	color: #797979;
@@ -587,14 +590,37 @@ input {
 .card-custom {
 	border-bottom-left-radius: 10% 50%;
 	border-top-left-radius: 10% 50%;
-	background-color: #f3f3f3;
-	border: 1px solid #ebebeb;
+	background-color: #f4f1e9;
+	/* border: 1px solid #ebebeb; */
 }
-
+/* .form-outline {
+	padding: 0 20px;
+} */
 .input-custom {
 	background-color: white;
 }
 
+input {
+	height: 40px;
+	border: 1px solid #ebebeb;
+	width: 100%;
+	padding-left: 10px;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 .white-text {
 	color: hsl(52, 0%, 98%);
 	font-weight: 100;

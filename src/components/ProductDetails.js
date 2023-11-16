@@ -33,14 +33,27 @@ function ProductDetails() {
   });
 
   // Create an item object for the cart
-  const item = {
+  const [item, setItem] = useState({
     id: parseInt(id, 10),
-    img: categoryData[id]?.thumbnails[0],
+    img: categoryData[id]?.thumbnails.principals[0],
     name: name,
     price: categoryData[id]?.price,
     quantity: quantity,
-  };
+    category: categoryData[id]?.category,
+    color: '',
+    size: ''
+  });
+  console.log("product detail item: ", item)
 
+  useEffect(() => {
+    if(item.category === 'accessories'){
+      setItem((prevItem) => ({
+        ...prevItem,
+        color: selectedColor,
+        size: selectedSize
+      }))
+    }
+  }, [selectedColor, selectedSize, item.category])
   // Function to handle changes in the quantity
   const handleQuantityChange = (change) => {
     if (quantity + change >= 1) {
