@@ -9,7 +9,9 @@ function Register() {
         <Link to="/#home" className="second-navbar">
           <i className="fa-solid fa-house me-1"></i> Inicio &nbsp; {">"} &nbsp;
         </Link>
-        <a className="second-navbar">Registro</a>
+        <Link to="/" className="second-navbar">
+          <i className="fa-solid fa-house me-1"></i> Acceso
+        </Link>
       </section>
       <div className="px-5 mx-5 w-80">
         <hr className="grey-line"></hr>
@@ -39,7 +41,7 @@ function Register() {
           <button className="btn-orange mb-4">Regístrate</button>
           <div className="text-center">
             <Link to="/login" className="btn-login">
-              <a>O ACCEDE</a>
+              <span>O spanCCEDE</span>
             </Link>
           </div>
         </div>

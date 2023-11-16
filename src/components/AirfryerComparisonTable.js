@@ -7,7 +7,6 @@ import AddToCartButton from "./AddToCartButton/AddToCartButton";
 function AirfryerComparisonTable({ infoClick }) {
   // Get the list of airfryers and cart items from the Redux store
   const airfryers = useSelector((state) => state.airfryers);
-  const cartItems = useSelector((state) => state.cart);
 
   // Get the names for the table
   const detailNames = airfryers[0].detailsSmall.map((detail) => detail.name);
@@ -48,7 +47,7 @@ function AirfryerComparisonTable({ infoClick }) {
                           name: airfryer.name,
                           price: airfryer.price,
                           quantity: 1}}
-                    style="table-btn" />
+                    type="table-btn" />
                     </div>
               </th>
             ))}
@@ -68,7 +67,7 @@ function AirfryerComparisonTable({ infoClick }) {
                       <i className="fa-solid fa-x"></i>
                     )
                   ) : airfryer.detailsSmall[index].name === "Programas" ? (
-                    airfryer.detailsSmall[index].size != 0 ? (
+                    airfryer.detailsSmall[index].size !== 0 ? (
                       airfryer.detailsSmall[index].size
                     ) : (
                       <i className="fa-solid fa-x"></i>

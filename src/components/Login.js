@@ -9,7 +9,9 @@ function Login() {
         <Link to="/#home" className="second-navbar">
           <i className="fa-solid fa-house me-1"></i> Inicio &nbsp; {">"} &nbsp;
         </Link>
-        <a className="second-navbar">Acceso</a>
+        <Link to="/" className="second-navbar">
+          <i className="fa-solid fa-house me-1"></i> Acceso
+        </Link>
       </section>
       <div className="px-5 mx-5 w-80">
         <hr className="grey-line"></hr>
@@ -39,7 +41,7 @@ function Login() {
           <button className="btn-orange mb-4">Accede</button>
           <div className="text-center">
             <Link to="/register" className="btn-login">
-              <a>O REGISTRATE</a>
+              <span>O REGISTRATE</span>
             </Link>
           </div>
         </div>

@@ -15,7 +15,7 @@ import ProductDetails from "./components/ProductDetails";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import ShoppingCart from "./components/ShoppingCart";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer.js"
 
 // Nuevo componente funcional para cargar datos iniciales
 function InitialDataLoader() {
