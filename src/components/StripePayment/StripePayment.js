@@ -71,7 +71,7 @@ const StripePayment = ({ paymentInfo, setNewOrder }) => {
     <form onSubmit={handleSubmit}>
       <div className="row">
         <div className="payment-container p-3 col-10">
-          <CardElement />
+          <CardElement options={{ hidePostalCode: true }}/>
         </div>
         <div className="d-flex justify-content-center col-2">
           <button type="submit" disabled={!stripe} className="start-buy p-3">
