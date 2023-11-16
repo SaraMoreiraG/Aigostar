@@ -8,7 +8,7 @@ import Airfryers from "./Airfryers";
 import Accesories from "./Accesories";
 import StripePayment from "./StripePayment/StripePayment";
 
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_TEST_KEY);
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 function ShoppingCart() {
   const shoppingCart = useSelector((state) => state.cart);

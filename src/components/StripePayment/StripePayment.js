@@ -7,7 +7,7 @@ const StripePayment = ({ paymentInfo, setNewOrder }) => {
 	const [paymentError, setPaymentError] = useState(null);
 	console.log(
 	  "STRIPE_PUBLIC_TEST_KEY:",
-	  process.env.REACT_APP_STRIPE_PUBLIC_TEST_KEY
+	  process.env.REACT_APP_STRIPE_KEY
 	);
 
 	const handleSubmit = async (event) => {
@@ -27,7 +27,7 @@ const StripePayment = ({ paymentInfo, setNewOrder }) => {
 			method: "POST",
 			headers: {
 			  "Content-Type": "application/json",
-			  Authorization: `Bearer ${process.env.REACT_APP_STRIPE_PUBLIC_TEST_KEY}`,
+			  Authorization: `Bearer ${process.env.REACT_APP_STRIPE_KEY}`,
 			},
 			body: JSON.stringify({ paymentInfo }),
 		  }
