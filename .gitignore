@@ -10,6 +10,7 @@
 /security
 .env
 /api/.env
+/api/node_modules
 # testing
 /coverage
 
