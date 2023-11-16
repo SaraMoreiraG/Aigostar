@@ -8,7 +8,8 @@
 /.pnp
 .pnp.js
 /security
-/src/.env
+.env
+/api/.env
 # testing
 /coverage
 

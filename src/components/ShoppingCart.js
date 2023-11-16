@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { removeFromCart, updateCartItem } from "../actions/cartActions";
 import Airfryers from "./Airfryers";
 import Accesories from "./Accesories";
+import StripePayment from "./StripePayment/StripePayment";
+
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_TEST_KEY);
 
 function ShoppingCart() {
   const shoppingCart = useSelector((state) => state.cart);
@@ -19,6 +24,7 @@ function ShoppingCart() {
     total: 0,
     color: "",
     size: "",
+    stripeId: "",
   });
   const dispatch = useDispatch();
   const [isBuying, setIsBuying] = useState(false);
@@ -308,7 +314,7 @@ function ShoppingCart() {
                       <div className="mb-0">
                         <div className="row mb-4">
                           {newOrder.products.map((product) => (
-                            <div className="row">
+                            <div key={product.name} className="row">
                               <div className="col-2">
                                 <img
                                   src={product.img}
@@ -338,13 +344,10 @@ function ShoppingCart() {
                           DATOS DE LA TARJETA
                         </h5>
                       </div>
-                      <div className="col-sm-6 col-11 mb-3 d-flex justify-content-end">
-                        <button
-                          className="start-buy p-3"
-                          onClick={handleConfirmButton}
-                        >
-                          Pagar
-                        </button>
+                      <div className="ps-5">
+                      <Elements stripe={stripePromise}>
+                        <StripePayment paymentInfo={{email: newOrder.email, total: newOrder.total}} setNewOrder={setNewOrder} />
+                      </Elements>
                       </div>
                     </div>
                   </div>
