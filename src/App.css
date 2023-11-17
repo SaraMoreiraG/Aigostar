@@ -48,6 +48,10 @@ i {
 	line-height: 1.5;
 }
 
+.border-orange {
+	border: 5px solid #f3f3f3;
+border-radius: 5px;
+}
 hr {
 	color: #e7ab3d;
 	width: 75px;
@@ -784,4 +788,7 @@ input[type=number] {
 .payment-container {
 	background-color: #f3f3f3;
 	border: 1px solid #ebebeb;
+}
+.order-details{
+	border: 1px solid #e7ab3d;
 }

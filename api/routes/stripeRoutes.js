@@ -6,7 +6,6 @@ const dotenv = require("dotenv");
 dotenv.config(); // Load environment variables
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_TEST_KEY);
-console.log('STRIPE_SECRET_TEST_KEY:', process.env.STRIPE_SECRET_TEST_KEY);
 
 const router = express.Router();
 
