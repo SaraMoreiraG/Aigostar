@@ -146,17 +146,49 @@
 .nav-buy {
 	cursor: pointer;
 	height: 24px;
-	color: red;
 	transition: height 0.3s;
 	/* Add smooth transition for height change */
 }
 
-.nav-buy:hover {
-	height: 26px;
-	transform: scale(1.1);
-	/* Scale up on hover */
+.nav-buy:hover,
+.cart-items-circle:hover .nav-buy {
+  height: 26px;
+  transform: scale(1.1);
+  /* Scale up on hover */
 }
 
+.cart-items-wrapper{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	height: 18px;
+}
+.cart-items-count{
+	background-color: #e7ab3d;
+	border-radius: 100%;
+	z-index: 1;
+	color: #fff;
+	font-weight: 700;
+	text-decoration: none;
+
+	font-size: 12px;
+	padding: 3px 6px
+}
+.cart-items-circle{
+text-decoration: none;
+
+}
+/* NEW                            */
+
+
+
+
+
+
+
+
+
+/* SMALL *********************/
   .nav-buy-small-container {
 	height: 26px;
 	width: 26px;

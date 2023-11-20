@@ -1,6 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../actions/cartActions";
 
 import Airfryers from "./Airfryers";
 import Accesories from "./Accesories";
@@ -10,10 +11,33 @@ import { scrollToSection } from "../utils/scrollUtils";
 import "../App.css";
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   // Import necessary dependencies and hooks
   const airfryers = useSelector((state) => state.airfryers);
   const accessorieKit = useSelector((state) => state.accessories[0]);
-  const airfryerKit = useSelector((state) => state.airfryers[1])
+  const airfryerKit = useSelector((state) => state.airfryers[1]);
+  const cartItems = useSelector((state) => state.cart);
+
+  const handleBuyNow = (...items) => {
+    items.forEach(item => {
+      if (!cartItems.some(cartItem => cartItem.name === item.name)) {
+        const newItem = {
+          id: parseInt(item.id, 10),
+          img: item.thumbnails.principals[0],
+          name: item.name,
+          price: item.price,
+          quantity: 1,
+          category: item.category,
+          size: "",
+          color: "",
+        };
+        dispatch(addToCart(newItem));
+      }
+    });
+
+    navigate('/shopping-cart');
+  };
 
   return (
     <>
@@ -83,10 +107,15 @@ const Home = () => {
           </div>
           <p>{airfryers[2].description}</p>
           <p className="price">{airfryers[2].price}€</p>
-          <button className="btn-orange mt-4">Comprar ahora</button>
+          <button
+            className="btn-orange mt-4"
+            onClick={() => handleBuyNow(airfryers[2])}
+          >
+            Comprar ahora
+          </button>
         </div>
         <div className="d-flex justify-content-center col-md-4 col-sm-6 col-8 p-5">
-        <Link to={`airfryers/${airfryerKit.name}/${airfryerKit.id}`}>
+          <Link to={`airfryers/${airfryers[2].name}/${airfryers[2].id}`}>
             <img
               src={airfryers[2].imgtable}
               alt="freidorea de aire o airfryer en oferta"
@@ -113,34 +142,34 @@ const Home = () => {
           </p>
         </div>
         <div className="col-12 d-flex justify-content-center ">
-        <div className="col-md-3 col-sm-5 col-6 p-1">
-          <Link to={`airfryers/${airfryerKit.name}/${airfryerKit.id}`}>
-            <img
-              src={airfryers[2].imgtable}
-              alt="freidorea de aire o airfryer en oferta"
-              className="img-fluid zoom"
-            />
-          </Link>
-        </div>
-        <div className="col-1"></div>
-        <div className="col-md-2 col-sm-3 col-4 p-1">
-          <div className="accesorie-kit p-3">
-          <Link
-              to={`accessories/${accessorieKit.name}/${accessorieKit.id}`}
-              className="no-underline"
-            >
-            <img
-              src={accessorieKit.thumbnails.principals[0]}
-              alt="freidorea de aire o airfryer en oferta"
-              className="img-fluid zoom"
-            />
-          </Link>
+          <div className="col-md-3 col-sm-5 col-6 p-1">
+            <Link to={`airfryers/${airfryerKit.name}/${airfryerKit.id}`}>
+              <img
+                src={airfryerKit.imgtable}
+                alt="freidorea de aire o airfryer en oferta"
+                className="img-fluid zoom"
+              />
+            </Link>
           </div>
-        </div>
+          <div className="col-1"></div>
+          <div className="col-md-2 col-sm-3 col-4 p-1">
+            <div className="accesorie-kit p-3">
+              <Link
+                to={`accessories/${accessorieKit.name}/${accessorieKit.id}`}
+                className="no-underline"
+              >
+                <img
+                  src={accessorieKit.thumbnails.principals[0]}
+                  alt="freidorea de aire o airfryer en oferta"
+                  className="img-fluid zoom"
+                />
+              </Link>
+            </div>
+          </div>
         </div>
         <div className="text-center col-md-6 col-sm-5 col-12">
           <p className="price">110€</p>
-          <button className="btn-orange mt-4">Comprar ahora</button>
+          <button className="btn-orange mt-4" onClick={() => handleBuyNow(airfryerKit, accessorieKit )}>Comprar ahora</button>
         </div>
       </section>
       {/******** ACCESSORIES ********/}
