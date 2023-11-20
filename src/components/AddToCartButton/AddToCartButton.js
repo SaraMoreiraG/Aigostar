@@ -17,7 +17,7 @@ function AddToCartButton({ item, type }) {
   useEffect(() => {
     const inCart = cartItems.some((cartItem) => cartItem.name === item.name);
     setIsInCart(inCart);
-  }, [cartItems, item.id]);
+  }, [cartItems, item.name]);
 
   // Function to handle adding the item to the cart
   const handleAddToCart = (e) => {

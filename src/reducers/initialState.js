@@ -741,7 +741,7 @@ const initialState = {
   recipes: [
     {
       name: 'pollo-freidora-aire',
-      img: 'https://www.justspices.es/media/recipe/pollo-frito-airfryer-freidora-aire.jpg',
+      img: 'https://aigostar-img.s3.amazonaws.com/recetas/receta-freidora-aire-pollo2.jpg',
       title: 'Crujiente y Saludable Fantasía de Pollo',
       description: 'Receta Freidora de Aire: Una experiencia crujiente y deliciosa que hará que el pollo sea tu nueva opción favorita. ¡Prepárate para conquistar el paladar!',
       keywords: 'Recetas freidora de aire, Pollo en freidora de aire, Comida saludable',
@@ -763,7 +763,7 @@ const initialState = {
     },
     {
       name: 'patatas-fritas-freidora-aire',
-      img: 'https://hips.hearstapps.com/hmg-prod/images/gettyimages-1674833247.jpg?crop=0.888888888888889xw:1xh;center,top&resize=1200:*',
+      img: 'https://aigostar-img.s3.amazonaws.com/recetas/receta-freidora-aire-patatas-fritas.jpg',
       title: 'Delirio Crujiente: Patatas Fritas Saludables en la Freidora de Aire',
       description: 'Sumérgete en el placer de unas patatas fritas irresistiblemente crujientes. ¡Una opción deliciosa y saludable para satisfacer tus antojos!',
       keywords: 'Recetas freidora de aire, Patatas fritas en freidora de aire, Snacks saludables',
@@ -784,7 +784,7 @@ const initialState = {
     },
     {
       name: 'croquetas-freidora-aire',
-      img: "https://www.divinacocina.es/wp-content/uploads/2023/05/croquetas-congeladas-freidora-de-aire.jpg",
+      img: "https://aigostar-img.s3.amazonaws.com/recetas/receta-freidora-aire-croquetas.jpg",
       title: 'Crocantes Tesoros: Croquetas Doradas en la Freidora de Aire',
       description: 'Descubre la perfección en cada bocado con estas croquetas doradas por fuera y suaves por dentro. ¡Una delicia para compartir!',
       keywords: 'Recetas freidora de aire, Croquetas en freidora de aire, Aperitivos saludables',

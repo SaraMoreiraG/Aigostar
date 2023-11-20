@@ -40,8 +40,8 @@ function ProductDetails() {
     price: categoryData[id]?.price,
     quantity: quantity,
     category: categoryData[id]?.category,
-    color: '',
-    size: ''
+    color: selectedColor,
+    size: selectedSize
   });
   console.log("product detail item: ", item)
 

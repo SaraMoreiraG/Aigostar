@@ -44,6 +44,11 @@ function ShoppingCart() {
   }, 0);
 
   useEffect(() => {
+    // Scroll to the top of the page on mount
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     setNewOrder((prevOrder) => ({
       ...prevOrder,
       products: shoppingCart,
@@ -172,7 +177,13 @@ function ShoppingCart() {
                           />
                         </Link>
                       </div>
-                      <div className="table-box col-3">{item.name} {item.color} {item.size}</div>
+                      <div className="table-box col-3">
+                        {item.name}
+                        {item.color}
+                        {item.size === 'small' ? " 3-5L":''}
+                        {item.size === 'big' ? " 7-9L":''}
+                        {(item.name === 'Bandeja' || item.name === 'Kit1') && item.size === '' ? ' 3-5L' : '' }
+                      </div>
                       <div className="table-box col-2 price">{item.price}€</div>
                       <div className="table-box col-2">
                         <div className="quantity d-flex col-sm-9 col-12">
