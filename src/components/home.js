@@ -86,7 +86,7 @@ const Home = () => {
           <button className="btn-orange mt-4">Comprar ahora</button>
         </div>
         <div className="d-flex justify-content-center col-md-4 col-sm-6 col-8 p-5">
-        <Link to={`airfryers/${airfryerKit.name}/${airfryerKit.id}`}>
+        <Link to={`airfryers/${airfryers[2].name}/${airfryers[2].id}`}>
             <img
               src={airfryers[2].imgtable}
               alt="freidorea de aire o airfryer en oferta"
@@ -116,7 +116,7 @@ const Home = () => {
         <div className="col-md-3 col-sm-5 col-6 p-1">
           <Link to={`airfryers/${airfryerKit.name}/${airfryerKit.id}`}>
             <img
-              src={airfryers[2].imgtable}
+              src={airfryerKit.imgtable}
               alt="freidorea de aire o airfryer en oferta"
               className="img-fluid zoom"
             />

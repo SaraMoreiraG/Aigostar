@@ -172,7 +172,7 @@ function ShoppingCart() {
                           />
                         </Link>
                       </div>
-                      <div className="table-box col-3">{item.name}</div>
+                      <div className="table-box col-3">{item.name} {item.color} {item.size}</div>
                       <div className="table-box col-2 price">{item.price}€</div>
                       <div className="table-box col-2">
                         <div className="quantity d-flex col-sm-9 col-12">
