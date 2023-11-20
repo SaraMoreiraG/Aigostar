@@ -16,7 +16,7 @@ router.use(bodyParser.json());
 router.post('/create-payment', async (req, res) => {
   try {
     // Retrieve the payment information from the request
-    const { email, total } = req.body.paymentInfo;
+    const { email, total } = req.body;
 
     // Create a PaymentIntent with the amount and currency
     const paymentIntent = await stripe.paymentIntents.create({

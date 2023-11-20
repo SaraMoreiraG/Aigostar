@@ -177,54 +177,68 @@ router.delete("/delete/:itemId", (req, res) => {
 
 // Create Item
 router.post("/add", async (req, res) => {
-  const newTeam = req.body;
+  const newOrder = req.body;
 
-  if (!newTeam) {
-    return res.status(400).json({ error: "El partido no ha sido añadido" });
+  if (!newOrder) {
+    return res.status(400).json({ error: "No hay datos para la nueva orden" });
   }
 
   try {
-    // Generate a random unique ID
-    const uniqueId = Date.now() + Math.floor(Math.random() * 1000);
-
-    const newTeamParams = {
-      TableName: "matches",
+    const newOrderParams = {
+      TableName: "orders",
       Item: {
-        id: { N: uniqueId.toString() },
+        id: { S: newOrder.stripeId },
+        nombre: { S: newOrder.nombre },
+        apellidos: { S: newOrder.apellidos },
+        email: { S: newOrder.email },
+        direccion: { S: newOrder.direccion },
+        cp: { S: newOrder.cp.toString() },
+        ciudad: { S: newOrder.ciudad },
+        status: { S: newOrder.status },
+        total: { S: newOrder.total.toString() },
+        products: { L: [] },
       },
     };
 
-    // Optional attributes
-    // Format date "weekday, dd/MM/yyyy"
-    if (newTeam.date) {
-        newTeamParams.Item.date = { S: newTeam.date };
-    }
-    if (newTeam.hour) {
-      newTeamParams.Item.hour = { S: newTeam.hour.toString() };
-    }
-    if (newTeam.place) {
-      newTeamParams.Item.place = { S: newTeam.place.toString() };
-    }
-    if (newTeam.homeTeam) {
-      newTeamParams.Item.homeTeam = { S: newTeam.homeTeam.toString() };
-    }
-    if (newTeam.visitorTeam) {
-      newTeamParams.Item.visitorTeam = { S: newTeam.visitorTeam.toString() };
-    }
+        // Add products to the products array
+        newOrder.products.forEach((product, index) => {
+          const productItem = {
+            M: {
+              id: { N: product.id.toString() },
+              name: { S: product.name },
+              img: { S: product.img },
+              category: { S: product.category },
+              quantity: { S: product.quantity.toString() },
+              price: { S: product.price.toString() },
+            },
+          };
 
+          // Optional parameters
+          if (product.size) {
+            productItem.M.size = { S: product.size };
+          }
+
+          if (product.color) {
+            productItem.M.color = { S: product.color };
+          }
+
+          newOrderParams.Item.products.L.push(productItem);
+        });
+
+    console.log("newOrderParams", newOrderParams);
     // Use DynamoDBClient to send the PutItemCommand
     dynamodbClient
-      .send(new PutItemCommand(newTeamParams))
+      .send(new PutItemCommand(newOrderParams))
       .then(() => {
         res.status(201).json({
-          message: "New team created successfully",
+          message: "New order created successfully",
         });
       })
       .catch((err) => {
-        console.error("Error adding new team:", err);
+        console.error("Error adding new order:", err);
         res
           .status(500)
-          .json({ error: "An error occurred while creating the team" });
+          .json({ error: "An error occurred while creating the order" });
       });
   } catch (error) {
     console.error("Error adding item:", error);
