@@ -175,7 +175,6 @@ function ShoppingCart() {
                       <div className="table-box col-3">{item.name}</div>
                       <div className="table-box col-2 price">{item.price}€</div>
                       <div className="table-box col-2">
-                        {/* <div className="row justify-content-center"> */}
                         <div className="quantity d-flex col-sm-9 col-12">
                           <p
                             className="quantity-text"
@@ -195,7 +194,6 @@ function ShoppingCart() {
                             +
                           </p>
                         </div>
-                        {/* </div> */}
                       </div>
                       <div className="table-box col-2 price">
                         {item.price * item.quantity}€
@@ -211,7 +209,7 @@ function ShoppingCart() {
                 </div>
               </div>
               <div className="total-container">
-                <div className="col-sm-4 col-6">
+                <div className="col-lg-2 col-md-3 col-sm-5 col-6">
                   <div className="total p-3">
                     <span>TOTAL</span>
                     <span className="price">{totalPrice}€</span>
@@ -228,7 +226,8 @@ function ShoppingCart() {
           )}
           {/************ SEND DETAILS **************/}
           {detailsView && (
-            <div className="send-details">
+            <div className="send-details ">
+              <div className="col-9">
               <div className="gradient-custom row">
                 <div className="col-md-3 d-flex justify-content-center align-items-center pt-4 ps-2">
                   <div className="text-center">
@@ -318,6 +317,7 @@ function ShoppingCart() {
                   </div>
                 </div>
               </div>
+            </div>
             </div>
           )}
           {/************ PAYMENT **************/}

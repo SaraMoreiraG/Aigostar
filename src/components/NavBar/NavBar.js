@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation  } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import logo from "../../assets/images/logo-black.png";
 import "./navbar.css";
@@ -11,6 +12,7 @@ function NavBar() {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 582);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolling, setScrolling] = useState(false);
+  const cartItemsCount = useSelector((state) => state.cart.length);
 
   // Handle scrolling and update the state
   const handleScroll = () => {
@@ -57,12 +59,12 @@ function NavBar() {
     <div className="navbar">
       <div className={`navbar-color ${scrolling ? "scrolling" : ""}`}>
         <nav
-          className={`row navbar-margin justify-content-between ${
+          className={`row navbar-margin justify-content-between${
             isMenuOpen ? "open" : ""
           }`}
         >
           {/***** Logo ******/}
-          <div className={`px-0 py-2 ${isSmallScreen ? "col-9" : "col-5"}`}>
+          <div className={`px-0 py-2 ${isSmallScreen ? "col-9" : "col-4"}`}>
             <Link to="/" className="logo d-flex" onClick={closeMenu}>
               <img src={logo} alt="Logo" className="navbar-logo" />
             </Link>
@@ -76,7 +78,7 @@ function NavBar() {
                     <img src={cart} alt="Icon" className="nav-buy-small" />
                   </Link>
                 </div>
-              {/***** Small Menu Button ******/}
+                {/***** Small Menu Button ******/}
                 <div
                   className={`dropdown-button ${isMenuOpen ? "open" : ""}`}
                   onClick={toggleMenu}
@@ -91,9 +93,11 @@ function NavBar() {
                 onMouseLeave={() => setIsMenuOpen(false)}
               >
                 <ul className="dropdown-list">
-                <Link
+                  <Link
                     to="/"
-                    className={`nav-link dropdown-link ${location.pathname === '/' ? 'selected' : ''}`}
+                    className={`nav-link dropdown-link ${
+                      location.pathname === "/" ? "selected" : ""
+                    }`}
                     onClick={() => {
                       closeMenu();
                     }}
@@ -102,7 +106,9 @@ function NavBar() {
                   </Link>
                   <Link
                     to="/airfryers"
-                    className={`nav-link dropdown-link ${location.pathname === '/airfryers' ? 'selected' : ''}`}
+                    className={`nav-link dropdown-link ${
+                      location.pathname === "/airfryers" ? "selected" : ""
+                    }`}
                     onClick={() => {
                       closeMenu();
                     }}
@@ -111,14 +117,18 @@ function NavBar() {
                   </Link>
                   <Link
                     to="/accesorios"
-                    className={`nav-link dropdown-link ${location.pathname === '/accesorios' ? 'selected' : ''}`}
+                    className={`nav-link dropdown-link ${
+                      location.pathname === "/accesorios" ? "selected" : ""
+                    }`}
                     onClick={closeMenu}
                   >
                     <li>Accesorios</li>
                   </Link>
                   <Link
                     to="/recetas"
-                    className={`nav-link dropdown-link ${location.pathname === '/recetas' ? 'selected' : ''}`}
+                    className={`nav-link dropdown-link ${
+                      location.pathname === "/recetas" ? "selected" : ""
+                    }`}
                     onClick={closeMenu}
                   >
                     <li>Recetas</li>
@@ -128,30 +138,61 @@ function NavBar() {
             </>
           ) : (
             //***** Big Menu *********
-            <div className="col-7 d-flex align-items-center justify-content-end p-0">
-              <div className="me-3">
-                <Link to="/" className={`nav-link ${location.pathname === '/' ? 'selected' : ''}`}>
-                  <span>Inicio</span>
+            <div className="col-8 p-0">
+              <div className="cart-items-wrapper mt-2">
+              <Link to="/shopping-cart" className="no-underline">
+                <div className="cart-items-circle">
+                  {cartItemsCount > 0 && (
+                    <span className="cart-items-count">{cartItemsCount}</span>
+                  )}
+                </div>
                 </Link>
               </div>
-              <div className="me-3">
-                <Link to="/airfryers" className={`nav-link ${location.pathname === '/airfryers' ? 'selected' : ''}`}>
-                  <span>Freidoras de Aire</span>
-                </Link>
-              </div>
-              <div className="me-3">
-                <Link to="/accesorios" className={`nav-link ${location.pathname === '/accesorios' ? 'selected' : ''}`}>
-                  <span>Accesorios</span>
-                </Link>
-              </div>
-              <div className="me-3">
-                <Link to="/recetas" className={`nav-link ${location.pathname === '/recetas' ? 'selected' : ''}`}>
-                  <span>Recetas</span>
-                </Link>
-              </div>
-              <div className="nav-buy-container">
+              <div className="d-flex align-items-center justify-content-end p-0 pe-2">
+                <div className="me-3">
+                  <Link
+                    to="/"
+                    className={`nav-link ${
+                      location.pathname === "/" ? "selected" : ""
+                    }`}
+                  >
+                    <span>Inicio</span>
+                  </Link>
+                </div>
+                <div className="me-3">
+                  <Link
+                    to="/airfryers"
+                    className={`nav-link ${
+                      location.pathname === "/airfryers" ? "selected" : ""
+                    }`}
+                  >
+                    <span>Freidoras de Aire</span>
+                  </Link>
+                </div>
+                <div className="me-3">
+                  <Link
+                    to="/accesorios"
+                    className={`nav-link ${
+                      location.pathname === "/accesorios" ? "selected" : ""
+                    }`}
+                  >
+                    <span>Accesorios</span>
+                  </Link>
+                </div>
+                <div className="me-3">
+                  <Link
+                    to="/recetas"
+                    className={`nav-link ${
+                      location.pathname === "/recetas" ? "selected" : ""
+                    }`}
+                  >
+                    <span>Recetas</span>
+                  </Link>
+                </div>
                 <Link to="/shopping-cart">
-                  <img src={cart} alt="Icon" className="nav-buy" />
+                  <div className="nav-buy-container d-flex">
+                    <img src={cart} alt="Icon" className="nav-buy" />
+                  </div>
                 </Link>
               </div>
             </div>

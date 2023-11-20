@@ -568,6 +568,8 @@ hr {
 
 .send-details {
 	margin: 0 150px;
+	display: flex;
+	justify-content: center;
 }
 
 @supports (display: flex) {

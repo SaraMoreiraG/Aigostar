@@ -94,6 +94,7 @@ const StripePayment = ({
 		setNewOrder((prevOrder) => ({
 		  ...prevOrder,
 		  stripeId: paymentIntent.id,
+		  status: 'paid'
 		}));
 		setPaymentConfirmed(true);
 	  }
