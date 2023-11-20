@@ -23,7 +23,7 @@ const rootReducer = (state = initialState, action) => {
     case "CLEAR_CART":
       return {
         ...state,
-        items: [],
+        cart: [],
       };
     case "UPDATE_ITEM":
       const { itemId, change } = action.payload;

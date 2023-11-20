@@ -6,7 +6,6 @@ const dotenv = require("dotenv");
 dotenv.config(); // Load environment variables
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_TEST_KEY);
-console.log('STRIPE_SECRET_TEST_KEY:', process.env.STRIPE_SECRET_TEST_KEY);
 
 const router = express.Router();
 
@@ -17,7 +16,7 @@ router.use(bodyParser.json());
 router.post('/create-payment', async (req, res) => {
   try {
     // Retrieve the payment information from the request
-    const { email, total } = req.body.paymentInfo;
+    const { email, total } = req.body;
 
     // Create a PaymentIntent with the amount and currency
     const paymentIntent = await stripe.paymentIntents.create({

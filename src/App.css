@@ -48,6 +48,10 @@ i {
 	line-height: 1.5;
 }
 
+.border-orange {
+	border: 5px solid #f3f3f3;
+border-radius: 5px;
+}
 hr {
 	color: #e7ab3d;
 	width: 75px;
@@ -500,8 +504,12 @@ hr {
 	text-align: center;
 	font-weight: 700;
 	cursor: pointer;
+	transition: background-color 0.5s;
 }
 
+.start-buy:hover{
+	background-color: #e7ab3d;
+}
 .total span {
 	font-weight: 700;
 	font-size: 20px;
@@ -784,4 +792,7 @@ input[type=number] {
 .payment-container {
 	background-color: #f3f3f3;
 	border: 1px solid #ebebeb;
+}
+.order-details{
+	border: 1px solid #e7ab3d;
 }
