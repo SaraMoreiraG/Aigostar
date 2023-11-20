@@ -17,7 +17,7 @@ const StripePayment = ({
 	const updateOrderInDatabase = async () => {
 		try {
 		  const response = await fetch(
-			process.env.REACT_APP_LOCAL_HOST + "/awsRoutes/add",
+			process.env.REACT_APP_API_URL + "/awsRoutes/add",
 			{
 			  method: "POST",
 			  headers: {
@@ -51,7 +51,7 @@ const StripePayment = ({
   const createPaymentIntent = async () => {
 	try {
 	  const response = await fetch(
-		process.env.REACT_APP_LOCAL_HOST + "/stripeRoutes/create-payment",
+		process.env.REACT_APP_API_URL + "/stripeRoutes/create-payment",
 		{
 		  method: "POST",
 		  headers: {
