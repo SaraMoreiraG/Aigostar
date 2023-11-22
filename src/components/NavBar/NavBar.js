@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import logo from "../../assets/images/logo-black.png";
 import "./navbar.css";
-import cart from "../../assets/images/icon-basket-full.png";
 
 function NavBar() {
   // const { isAuthenticated } = useAuth();
@@ -66,7 +64,7 @@ function NavBar() {
           {/***** Logo ******/}
           <div className={`px-0 py-2 ${isSmallScreen ? "col-9" : "col-4"}`}>
             <Link to="/" className="logo d-flex" onClick={closeMenu}>
-              <img src={logo} alt="Logo" className="navbar-logo" />
+              <img src='https://images-aigostar-cooking.s3.amazonaws.com/logo-black.png' alt="Logo" className="navbar-logo" />
             </Link>
           </div>
           {/***** Small Menu ******/}
@@ -75,7 +73,7 @@ function NavBar() {
               <div className="col-3 d-flex align-items-center justify-content-end">
                 <div className="nav-buy-small-container">
                   <Link to="/shopping-cart">
-                    <img src={cart} alt="Icon" className="nav-buy-small" />
+                    <img src='https://images-aigostar-cooking.s3.amazonaws.com/icon-basket-full.png' alt="Icon" className="nav-buy-small" />
                   </Link>
                 </div>
                 {/***** Small Menu Button ******/}
@@ -191,7 +189,7 @@ function NavBar() {
                 </div>
                 <Link to="/shopping-cart">
                   <div className="nav-buy-container d-flex">
-                    <img src={cart} alt="Icon" className="nav-buy" />
+                    <img src='https://images-aigostar-cooking.s3.amazonaws.com/icon-basket-full.png' alt="Icon" className="nav-buy" />
                   </div>
                 </Link>
               </div>

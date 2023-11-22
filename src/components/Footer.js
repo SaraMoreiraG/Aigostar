@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/logo-black.png";
 
 function Footer() {
   return (
@@ -9,7 +8,7 @@ function Footer() {
         <div className="row">
         <div className="col-md-8 col-sm-5 col-8 p-3">
         <Link to="/">
-          <img src={logo} alt="aigostar logo" className="img-fluid" />
+          <img src='https://images-aigostar-cooking.s3.amazonaws.com/logo-black.png' alt="aigostar logo" className="img-fluid" />
         </Link>
       </div>
         </div>

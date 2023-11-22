@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../actions/cartActions";
-import cart from "../../assets/images/icon-basket.png";
 
 function AddToCartButton({ item, type }) {
   // Get the Redux dispatch function
@@ -39,7 +38,7 @@ function AddToCartButton({ item, type }) {
           {isInCart ? (
             <i className="fa-solid fa-check"></i>
           ) : (
-            <img src={cart} alt="Icon" />
+            <img src='https://images-aigostar-cooking.s3.amazonaws.com/icon-basket.png' alt="Icon" />
           )}
         </button>
       )}
