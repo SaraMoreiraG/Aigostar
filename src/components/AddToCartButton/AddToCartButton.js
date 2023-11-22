@@ -15,9 +15,9 @@ function AddToCartButton({ item, type }) {
 
   // Check if the item is in the cart
   useEffect(() => {
-    const inCart = cartItems.some((cartItem) => cartItem.id === item.id);
+    const inCart = cartItems.some((cartItem) => cartItem.name === item.name);
     setIsInCart(inCart);
-  }, [cartItems, item.id]);
+  }, [cartItems, item.name]);
 
   // Function to handle adding the item to the cart
   const handleAddToCart = (e) => {

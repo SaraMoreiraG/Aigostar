@@ -94,6 +94,7 @@ const StripePayment = ({
 		setNewOrder((prevOrder) => ({
 		  ...prevOrder,
 		  stripeId: paymentIntent.id,
+		  status: 'paid'
 		}));
 		setPaymentConfirmed(true);
 	  }
@@ -134,7 +135,7 @@ const StripePayment = ({
         <div className="payment-container p-3 col-md-9 col-12">
           <CardElement options={{ hidePostalCode: true }} />
         </div>
-        <div className="d-flex justify-content-center col-md-3 col-12 ps-3 bg-danger">
+        <div className="d-flex justify-content-center col-md-3 col-12 ps-3">
           <button type="submit" disabled={!stripe} className="start-buy p-3">
             Pagar
           </button>
