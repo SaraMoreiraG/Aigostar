@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { addToCart } from "../actions/cartActions";
 
 import { scrollToSection } from "../utils/scrollUtils";
 import ImageGallery from "./ImageGallery/ImageGallery";
@@ -11,6 +12,8 @@ import Accesories from "./Accesories";
 import Recipes from "./Recipes"
 
 function ProductDetails() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   // Get route parameters
   const { category, name, id } = useParams();
 
@@ -87,6 +90,11 @@ function ProductDetails() {
 
     // Reemplazamos las palabras clave con etiquetas <strong> para aplicar la negrita
     return text.replace(regex, (match) => `<strong>${match}</strong>`);
+  };
+
+  const handleBuyNow = () => {
+    dispatch(addToCart(item));
+    navigate('/shopping-cart');
   };
 
   return (
@@ -271,7 +279,7 @@ function ProductDetails() {
           {/** BUY BUTTON **/}
           <div className="row">
             <div className="col-lg-8 col-md-6 col-sm-6 col-11">
-              <button className="btn-buy icon-button w-100">
+              <button className="btn-buy icon-button w-100" onClick={() => handleBuyNow()}>
                 <i className="fa-regular fa-credit-card"></i>
                 Comprar ahora
               </button>
