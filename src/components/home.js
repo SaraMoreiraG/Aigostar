@@ -45,7 +45,7 @@ const Home = () => {
       <section>
         <div>
           <img
-            src="https://aigostar-img.s3.amazonaws.com/banner1.jpg"
+            src="https://images-aigostar-cooking.s3.amazonaws.com/banner1.jpg"
             alt="airfryer o freidora de aire"
             className="img-fluid"
           />
@@ -58,7 +58,7 @@ const Home = () => {
           onClick={() => scrollToSection("airfryers")}
         >
           <img
-            src="https://aigostar-img.s3.amazonaws.com/freidora-aire-airfryer-cat1.png"
+            src="https://images-aigostar-cooking.s3.amazonaws.com/freidora-aire-airfryer-cat1.png"
             alt="airfryer o freidora de aire barata"
             className="img-fluid zoom"
           />
@@ -73,7 +73,7 @@ const Home = () => {
           onClick={() => scrollToSection("accessories")}
         >
           <img
-            src="https://aigostar-img.s3.amazonaws.com/accesorios-freidora-de-aire-cat2.jpg"
+            src="https://images-aigostar-cooking.s3.amazonaws.com/accesorios-freidora-de-aire-cat2.jpg"
             alt="accesorios para airfryer o freidora de aire"
             className="img-fluid zoom"
           />
@@ -86,7 +86,7 @@ const Home = () => {
           onClick={() => scrollToSection("recipes")}
         >
           <img
-            src="https://aigostar-img.s3.amazonaws.com/recetas-freidora-aire-cat3.jpg"
+            src="https://images-aigostar-cooking.s3.amazonaws.com/recetas-freidora-aire-cat3.jpg"
             alt="recetas para airfryer o freidora de aire"
             className="img-fluid zoom"
           />
