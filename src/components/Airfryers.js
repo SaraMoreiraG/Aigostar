@@ -20,7 +20,7 @@ function Airfryers() {
 
       <div className="col-md-3 col-sm-7 col-8 me-2">
         <img
-          src="https://aigostar-img.s3.amazonaws.com/woman.jpg"
+          src="https://images-aigostar-cooking.s3.amazonaws.com/woman.jpg"
           alt="aigostar airfryer"
         />
       </div>

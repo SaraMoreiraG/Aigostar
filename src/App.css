@@ -182,7 +182,7 @@ hr {
 }
 
 .btn-in-cart {
-	background-image: url('https://aigostar-img.s3.amazonaws.com/icon-basket-full.png');
+	background-image: url('https://images-aigostar-cooking.s3.amazonaws.com/icon-basket-full.png');
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-color: transparent;
@@ -190,7 +190,7 @@ hr {
 }
 
 .btn-not-cart {
-	background-image: url('https://aigostar-img.s3.amazonaws.com/icon-basket-black.png');
+	background-image: url('https://images-aigostar-cooking.s3.amazonaws.com/icon-basket-black.png');
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-color: transparent;

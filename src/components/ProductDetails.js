@@ -179,12 +179,12 @@ function ProductDetails() {
                       <div className="d-flex col-12">
                         <img
                           className="img-fluid col-6"
-                          src="https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-table.png"
+                          src="https://images-aigostar-cooking.s3.amazonaws.com/hayden-A/haydenA-table.png"
                           alt="Freidoras de aire de 3 y 4L"
                         />
                         <img
                           className="img-fluid col-6"
-                          src="https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-table.png"
+                          src="https://images-aigostar-cooking.s3.amazonaws.com/hayden-x/haydenX-table.png"
                           alt="Freidora de aire de 5L"
                         />
                       </div>
@@ -203,7 +203,7 @@ function ProductDetails() {
                       <div className="d-flex justify-content-center col-12">
                         <img
                           className="col-6"
-                          src="https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-table.png"
+                          src="https://images-aigostar-cooking.s3.amazonaws.com/cube-smart/cube-smart-table.png"
                           alt="Freidoras de aire 6 y 7L"
                         />
                       </div>

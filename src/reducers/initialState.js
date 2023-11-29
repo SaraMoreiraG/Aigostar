@@ -7,7 +7,7 @@ const initialState = {
       title: "Freidora sin aceite - AIGOSTAR - 1500W - 4L",
       price: 56,
       imgtable:
-        "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-table.png",
+        "https://images-aigostar-cooking.s3.amazonaws.com/hayden-A/haydenA-table.png",
       description:
         "Freidora de Aire 4L, Circulación de Aire Rápido, Freidora Sin Aceite con Temporizador de 30 Minutos, Temperatura Ajustable, Cocina Baja en Grasa, Libre BPA, 1500W",
       detailsSmall: [
@@ -70,13 +70,13 @@ const initialState = {
       ],
       thumbnails: {
         principals: [
-          "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-1.jpg",
-          "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-2.jpg",
-          "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-3.jpg",
-          "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-4.jpg",
-          "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-5.jpg",
-          "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-6.jpg",
-          "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-7.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/hayden-A/haydenA-1.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/hayden-A/haydenA-2.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/hayden-A/haydenA-3.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/hayden-A/haydenA-4.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/hayden-A/haydenA-5.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/hayden-A/haydenA-6.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/hayden-A/haydenA-7.jpg",
         ],
         colors: [""],
       },
@@ -84,7 +84,7 @@ const initialState = {
         puntuacion: 4.4,
         valoraciones: 71,
         vendidos: 55,
-        img: "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-reviews.png",
+        img: "https://images-aigostar-cooking.s3.amazonaws.com/hayden-A/haydenA-reviews.png",
       },
       descriptionDetails: [
         "* Capacidad compacta de 4L *",
@@ -123,7 +123,7 @@ const initialState = {
       title: "Freidora sin aceite - AIGOSTAR - 1500W - 4L",
       price: 60,
       imgtable:
-        "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-table.png",
+        "https://images-aigostar-cooking.s3.amazonaws.com/hayden-x/haydenX-table.png",
       description:
         "Freidora de Aire 9 en 1, Air Fryer 4L con Temporizador de 60 Minutos y Pantalla LED, Temperatura Ajustable de 40℃ a 200℃, Canasta Antiadherente, Menos Aceite y Sin Humo, 1500W",
       detailsSmall: [
@@ -190,13 +190,13 @@ const initialState = {
       ],
       thumbnails: {
         principals: [
-          "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-1.jpg",
-          "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-2.jpg",
-          "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-3.jpg",
-          "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-4.jpg",
-          "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-5.jpg",
-          "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-6.jpg",
-          "https://aigostar-img.s3.amazonaws.com/hayden-A/haydenA-7.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/hayden-x/haydenX-1.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/hayden-x/haydenX-2.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/hayden-x/haydenX-3.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/hayden-x/haydenX-4.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/hayden-x/haydenX-5.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/hayden-x/haydenX-6.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/hayden-A/haydenA-7.jpg",
         ],
         colors: [""],
       },
@@ -204,7 +204,7 @@ const initialState = {
         puntuacion: 4.2,
         valoraciones: 61,
         vendidos: 200,
-        img: "https://aigostar-img.s3.amazonaws.com/hayden-x/haydenX-reviews.jpg",
+        img: "https://images-aigostar-cooking.s3.amazonaws.com/hayden-x/haydenX-reviews.jpg",
       },
       descriptionDetails: [
         "* Fácil de usar *",
@@ -243,7 +243,7 @@ const initialState = {
       title: "Freidora sin aceite - AIGOSTAR - 1900W - 7L",
       price: 95,
       imgtable:
-        "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-table.png",
+        "https://images-aigostar-cooking.s3.amazonaws.com/cube-smart/cube-smart-table.png",
       description:
         "Freidora de Aire Inteligente Sin Aceite, 7L, Pantalla LED Táctil, 7 Funciones Preestablecidas + Mantener Caliente y Modo Manual, Cesta Antiadherente Extraíble, Conexión Wifi, Libre de BPA, 1900W",
       detailsSmall: [
@@ -310,13 +310,13 @@ const initialState = {
       ],
       thumbnails: {
         principals: [
-          "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-1.jpg",
-          "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-2.jpg",
-          "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-3.jpg",
-          "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-4.jpg",
-          "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-5.jpg",
-          "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-6.jpg",
-          "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-7.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/cube-smart/cube-smart-1.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/cube-smart/cube-smart-2.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/cube-smart/cube-smart-3.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/cube-smart/cube-smart-4.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/cube-smart/cube-smart-5.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/cube-smart/cube-smart-6.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/cube-smart/cube-smart-7.jpg",
         ],
         colors: [""],
       },
@@ -324,7 +324,7 @@ const initialState = {
         puntuacion: 4.3,
         valoraciones: 86,
         vendidos: 500,
-        img: "https://aigostar-img.s3.amazonaws.com/cube-smart/cube-smart-reviews.jpg",
+        img: "https://images-aigostar-cooking.s3.amazonaws.com/cube-smart/cube-smart-reviews.jpg",
       },
       descriptionDetails: [
         "* Conexión Wifi *",
@@ -372,12 +372,12 @@ const initialState = {
       price: 15,
       thumbnails: {
         principals: [
-          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-1.jpg",
-          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-2.jpg",
-          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-3.jpg",
-          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-4.jpg",
-          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-5.jpg",
-          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-6.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-1.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-2.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-3.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-4.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-5.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-6.jpg",
         ],
         colors: [],
       },
@@ -437,7 +437,7 @@ const initialState = {
         puntuacion: 4.5,
         valoraciones: 5.499,
         vendidos: +6000,
-        img: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-reviews.jpg",
+        img: "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-kit1/kit1-reviews.jpg",
       },
       descriptionDetails: [
         "* Descubre un Mundo de Posibilidades *",
@@ -483,36 +483,36 @@ const initialState = {
       price: 10,
       thumbnails: {
         principals: [
-          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja1.jpg",
-          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja2.jpg",
-          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja3.jpg",
-          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja4.jpg",
-          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja5.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja1.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja2.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja3.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja4.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja5.jpg",
         ],
         colors: [
           {
             name: "blue",
             size: "small",
             showName: "Azul",
-            url: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja6-small-blue.jpg",
+            url: "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja6-small-blue.jpg",
           },
           {
             name: "grey",
             size: "small",
             showName: "Gris",
-            url: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja6-small-grey.jpg",
+            url: "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja6-small-grey.jpg",
           },
           {
             name: "blue",
             size: "big",
             showName: "Azul",
-            url: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja6-big-blue.jpg",
+            url: "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja6-big-blue.jpg",
           },
           {
             name: "grey",
             size: "big",
             showName: "Gris",
-            url: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja6-big-grey.jpg",
+            url: "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja6-big-grey.jpg",
           },
         ],
       },
@@ -548,7 +548,7 @@ const initialState = {
         puntuacion: 4.5,
         valoraciones: 74,
         vendidos: +100,
-        img: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja-review.jpg",
+        img: "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-bandeja/freidora-de-aire-bandeja-review.jpg",
       },
       descriptionDetails: [
         "* Cocina sin Aceite *",
@@ -590,11 +590,11 @@ const initialState = {
       price: 15,
       thumbnails: {
         principals: [
-          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2-1.jpg",
-          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2-2.jpg",
-          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2-3.jpg",
-          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2-4-small.jpg",
-          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2-4-big.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-kit2/kit2-1.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-kit2/kit2-2.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-kit2/kit2-3.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-kit2/kit2-4-small.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-kit2/kit2-4-big.jpg",
         ],
         colors: [],
       },
@@ -646,7 +646,7 @@ const initialState = {
         puntuacion: 4.6,
         valoraciones: 197,
         vendidos: +200,
-        img: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-kit2/kit2-review.jpg",
+        img: "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-kit2/kit2-review.jpg",
       },
       descriptionDetails: [
         "* Cocina sin Aceite *",
@@ -688,8 +688,8 @@ const initialState = {
       price: 15,
       thumbnails: {
         principals: [
-          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-pulverizador/pulverizador.jpg",
-          "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-pulverizador/pulverizador-2.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-pulverizador/pulverizador.jpg",
+          "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-pulverizador/pulverizador-2.jpg",
         ],
         colors: [""],
       },
@@ -703,7 +703,7 @@ const initialState = {
         puntuacion: 4.3,
         valoraciones: 166,
         vendidos: +500,
-        img: "https://aigostar-img.s3.amazonaws.com/accesorios-airfryer-pulverizador/pulverizador-reviews.jpg",
+        img: "https://images-aigostar-cooking.s3.amazonaws.com/accesorios-airfryer-pulverizador/pulverizador-reviews.jpg",
       },
       descriptionDetails: [
         "* Aplica Aceite de Forma Uniforme *",
@@ -741,7 +741,7 @@ const initialState = {
   recipes: [
     {
       name: 'pollo-freidora-aire',
-      img: 'https://aigostar-img.s3.amazonaws.com/recetas/receta-freidora-aire-pollo2.jpg',
+      img: 'https://images-aigostar-cooking.s3.amazonaws.com/recetas/receta-freidora-aire-pollo2.jpg',
       title: 'Crujiente y Saludable Fantasía de Pollo',
       description: 'Receta Freidora de Aire: Una experiencia crujiente y deliciosa que hará que el pollo sea tu nueva opción favorita. ¡Prepárate para conquistar el paladar!',
       keywords: 'Recetas freidora de aire, Pollo en freidora de aire, Comida saludable',
@@ -763,7 +763,7 @@ const initialState = {
     },
     {
       name: 'patatas-fritas-freidora-aire',
-      img: 'https://aigostar-img.s3.amazonaws.com/recetas/receta-freidora-aire-patatas-fritas.jpg',
+      img: 'https://images-aigostar-cooking.s3.amazonaws.com/recetas/receta-freidora-aire-patatas-fritas.jpg',
       title: 'Delirio Crujiente: Patatas Fritas Saludables en la Freidora de Aire',
       description: 'Sumérgete en el placer de unas patatas fritas irresistiblemente crujientes. ¡Una opción deliciosa y saludable para satisfacer tus antojos!',
       keywords: 'Recetas freidora de aire, Patatas fritas en freidora de aire, Snacks saludables',
@@ -784,7 +784,7 @@ const initialState = {
     },
     {
       name: 'croquetas-freidora-aire',
-      img: "https://aigostar-img.s3.amazonaws.com/recetas/receta-freidora-aire-croquetas.jpg",
+      img: "https://images-aigostar-cooking.s3.amazonaws.com/recetas/receta-freidora-aire-croquetas.jpg",
       title: 'Crocantes Tesoros: Croquetas Doradas en la Freidora de Aire',
       description: 'Descubre la perfección en cada bocado con estas croquetas doradas por fuera y suaves por dentro. ¡Una delicia para compartir!',
       keywords: 'Recetas freidora de aire, Croquetas en freidora de aire, Aperitivos saludables',
